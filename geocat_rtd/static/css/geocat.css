@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body, html, h1, h2, h3, h4, h5 {
+body, html, h1, h2, h3, h4, h5, .rst-content .toctree-wrapper p.caption {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -28,9 +28,21 @@ p {
 a {
 	color: #0366d6;
 }
-a:hover {
+a:hover, a:focus, a:visited {
 	color: #0366d6;
 	text-decoration: underline;
+}
+
+/* index page */
+.genindex-jumpbox {
+	margin-bottom: 15px;
+}
+
+/* search page */
+#search-results .search li {
+	border-top: 1px solid #e1e4e5;
+	border-bottom: 0;
+	margin-bottom: 0;
 }
 
 /* sidebar */
@@ -115,6 +127,7 @@ a:hover {
 .wy-nav-top {
 	background-color: #29abe0;
 }
+
 /* content */
 .wy-nav-content {
 	margin: 0 auto;
@@ -148,10 +161,24 @@ a:hover {
 	background-color: #fff;
 	border-color: #ccc;
 }
+.btn:hover {
+	text-decoration: none;
+}
+.btn:active {
+	box-shadow: none;
+}
+.btn .fa {
+	display: none;
+}
 
 /* tables */
-.wy-table td, .rst-content table.docutils td, .rst-content table.field-list td, .wy-table th, .rst-content table.docutils th, .rst-content table.field-list th {
+.wy-table td, .rst-content table.docutils td, .rst-content table.field-list td, .wy-table th,
+.rst-content table.docutils th, .rst-content table.field-list th {
 	font-size: 100%;
+}
+/* table in a message */
+.rst-content .admonition table td, .rst-content .admonition table th {
+	background: #fff !important;
 }
 
 /* messages */
@@ -175,7 +202,7 @@ a:hover {
 	content: "";
 }
 .admonition.hint, .admonition.important, .admonition.tip {
-	background-color: #f3f5f7;
+	background-color: #f6f8fa;
 	border-color: #42b983;
 }
 .admonition.attention, .admonition.caution, .admonition.warning { 
@@ -233,6 +260,14 @@ code, .rst-content tt, .rst-content code {
 	font-size: 85%;
 	background-color: rgba(27,31,35,.05);
 	border-radius: 3px;
+}
+/* glossary */
+.glossary {
+	padding: 12px;
+	background-color: #f6f8fa;
+	border: 0;
+	border-radius: 3px;
+	line-height: 1.45;
 }
 /* footnote */
 .footnote {
