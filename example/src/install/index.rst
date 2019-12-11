@@ -141,15 +141,15 @@ Notes and warnings
 
 .. Tip:: 15% if the service is good.
 
-    +---------+
-    | Example |
-    +=========+
-    | Thing1  |
-    +---------+
-    | Thing2  |
-    +---------+
-    | Thing3  |
-    +---------+
+    +---------+---------+---------+
+    | Example | Example | Example |
+    +=========+=========+=========+
+    | Thing1  | Thing1  | Thing1  |
+    +---------+---------+---------+
+    | Thing2  | Thing2  | Thing2  |
+    +---------+---------+---------+
+    | Thing3  | Thing3  | Thing3  |
+    +---------+---------+---------+
 
 .. WARNING:: Strong prose may provoke extreme mental exertion.
    Reader discretion is strongly advised.
@@ -173,10 +173,10 @@ Figures
    A figure is an image with a caption and/or a legend:
 
 Blocks
-======
+------
 
 Literal Blocks
---------------
+^^^^^^^^^^^^^^
 
 Literal blocks are indicated with a double-colon ("::") at the end of
 the preceding paragraph (over there ``-->``).  They can be indented::
@@ -193,7 +193,7 @@ Or they can be quoted without indentation::
 > Why didn't I think of that?
 
 Line Blocks
------------
+^^^^^^^^^^^
 
 You can use line blocks, but block quotes are easier.
 
@@ -226,7 +226,7 @@ Take it away, Eric the Orchestra Leader!
     | Singing...
 
 Block Quotes
-------------
+^^^^^^^^^^^^
 
 Block quotes consist of indented body elements:
 
@@ -239,7 +239,7 @@ Block quotes consist of indented body elements:
     -- Anne Elk (Miss)
 
 Doctest Blocks
---------------
+^^^^^^^^^^^^^^
 
 >>> print 'Python-specific usage examples; begun with ">>>"'
 Python-specific usage examples; begun with ">>>"
@@ -247,7 +247,7 @@ Python-specific usage examples; begun with ">>>"
 (cut and pasted from interactive Python sessions)
 
 Code Blocks
------------
+^^^^^^^^^^^
 
 .. parsed-literal::
 
@@ -292,11 +292,44 @@ Emphasized lines with line numbers
        print 'This one is not...'
        print '...but this one is.'
 
+This is done with the following code::
+
+   .. code-block:: python
+      :linenos:
+      :emphasize-lines: 3,5
+
+      def some_function():
+         interesting = False
+         print 'This line is highlighted.'
+         print 'This one is not...'
+         print '...but this one is.'
+
+Sidebar
+-------
+
+.. sidebar:: Sidebar title
+
+    The first hexagram is made up of six unbroken lines. These unbroken lines stand for the primal power.
+
+    .. image:: img/example.jpg
+
+The first hexagram is made up of six unbroken lines. These unbroken lines stand for the primal power,
+which is light-giving, active, strong, and of the spirit. The hexagram is consistently strong in character,
+and since it is without weakness, its essence is power or energy. Its image is heaven.
+Its energy is represented as unrestricted by any fixed conditions in space and is therefore conceived of as motion.
+Time is regarded as the basis of this motion.
+Thus the hexagram includes also the power of time and the power of persisting in time, that is, duration.
+
+The power represented by the hexagram is to be interpreted in a dual sense in terms of its action
+on the universe and of its action on the world of men. In relation to the universe, the hexagram expresses the strong,
+creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage,
+of the ruler or leader of men, who through his power awakens and develops their higher nature.
+
 References
-==========
+----------
 
 Footnotes
----------
+^^^^^^^^^
 
 .. [1] A footnote contains body elements, consistently indented by at
    least 3 spaces.
@@ -321,7 +354,7 @@ Footnotes
    nonexistent footnote: [5]_.
 
 Citations
----------
+^^^^^^^^^
 
 .. [11] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.
 
@@ -336,7 +369,7 @@ Here's a reference to the above, [12]_, and a [nonexistent]_ citation.
 Here is another type of citation: `citation`
 
 Glossary
---------
+^^^^^^^^
 
 This is a glossary with definition terms for thing like :term:`Writing`:
 
@@ -352,7 +385,7 @@ This is a glossary with definition terms for thing like :term:`Writing`:
       The process of putting thoughts into a medium for other people to :term:`read <Reading>`.
 
 Targets
--------
+^^^^^^^
 
 .. _example:
 
