@@ -279,6 +279,31 @@ Code Blocks
     "session_name": "shorthands"
     }
 
+CSS code also looks good
+
+.. code-block:: CSS
+
+    /* sidebar in content */
+    .rst-content .sidebar .sidebar-title {
+      display: block;
+      font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      background: #f6f8fa;
+      padding: 12px 24px 0 24px;
+      margin: -24px -24px 24px;
+      font-size: 100%;
+    }
+    .rst-content .sidebar {
+      float: right;
+      width: 40%;
+      display: block;
+      margin: 0 0 24px 24px;
+      padding: 24px;
+      background: #f6f8fa;
+      border: 0;
+      border-radius: 3px;
+    }
+
 Emphasized lines with line numbers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

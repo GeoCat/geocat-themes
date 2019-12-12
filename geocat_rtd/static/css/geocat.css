@@ -73,7 +73,7 @@ a:hover, a:focus, a:visited {
 	border-radius: 3px;
 }
 .wy-side-nav-search input[type=text]:focus {
-	border-bottom-color: #0366d6;
+	border-color: #ccc;
 }
 /* navigation */
 .wy-menu-vertical {
