@@ -104,6 +104,9 @@ Notes and warnings
     +---------+---------+---------+
     | Thing3  | Thing3  | Thing3  |
     +---------+---------+---------+
+    
+    .. the above kind of table is not recommended as it is hard to maintain
+       please use list-table instead
 
 .. WARNING:: Strong prose may provoke extreme mental exertion.
    Reader discretion is strongly advised.
@@ -133,51 +136,109 @@ Literal Blocks
 ^^^^^^^^^^^^^^
 
 Literal blocks are indicated with a double-colon ("::") at the end of
-the preceding paragraph (over there ``-->``).  They can be indented::
+the preceding paragraph, with the indenting to indicate the literal contents.
 
-    if literal_block:
-        text = 'is left as-is'
-        spaces_and_linebreaks = 'are preserved'
-        markup_processing = None
+Example:
 
-Or they can be quoted without indentation::
+.. code-block:: rst
+   
+   Command:
+   
+   .. code-block:: bash
+   
+      % ls --help
+   
+   Output::
 
->> Great idea!
->
-> Why didn't I think of that?
+     usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
+
+.. tip::
+   
+   Command: 
+   
+   .. code-block:: bash
+  
+      % ls --help
+  
+   Output::
+
+     usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
+
+Code Block
+^^^^^^^^^^
+
+Strongly prefer the use of ``code-block`` so syntax highlighting is available.
+
+Example:
+
+.. code-block:: rst
+
+   .. code-block:: python
+
+      if literal_block:
+          text = 'is left as-is'
+          spaces_and_linebreaks = 'are preserved'
+          markup_processing = None
+
+.. tip::
+
+   .. code-block:: python
+
+      if literal_block:
+          text = 'is left as-is'
+          spaces_and_linebreaks = 'are preserved'
+          markup_processing = None
+
+Block quote
+^^^^^^^^^^^
+
+Block quotes:
+   
+.. code-block:: rst
+
+   >> Great idea!
+   >
+   > Why didn't I think of that?
+
+.. tip::
+
+
+   >> Great idea!
+   >
+   > Why didn't I think of that?
 
 Line Blocks
 ^^^^^^^^^^^
 
 You can use line blocks, but block quotes are easier.
 
-| This is a line block. It ends with a blank line.
-|     Each new line begins with a vertical bar ("|").
-|     Line breaks and initial indents are preserved.
-| Continuation lines are wrapped portions of long lines;
-  they begin with a space in place of the vertical bar.
-|     The left edge of a continuation line need not be aligned with
-  the left edge of the text above it.
+.. code-block:: rst
 
-| This is a second line block.
-|
-| Blank lines are permitted internally, but they must begin with a "|".
+   | This is a line block. It ends with a blank line.
+   |     Each new line begins with a vertical bar ("|").
+   |     Line breaks and initial indents are preserved.
+   | Continuation lines are wrapped portions of long lines;
+     they begin with a space in place of the vertical bar.
+   |     The left edge of a continuation line need not be aligned with
+     the left edge of the text above it.
 
-Take it away, Eric the Orchestra Leader!
+   | This is a second line block.
+   |
+   | Blank lines are permitted internally, but they must begin with a "|".
 
-    | A one, two, a one two three four
-    |
-    | Half a bee, philosophically,
-    |     must, *ipso facto*, half not be.
-    | But half the bee has got to be,
-    |     *vis a vis* its entity.  D'you see?
-    |
-    | But can a bee be said to be
-    |     or not to be an entire bee,
-    |         when half the bee is not a bee,
-    |             due to some ancient injury?
-    |
-    | Singing...
+.. tip::
+
+   | This is a line block. It ends with a blank line.
+   |     Each new line begins with a vertical bar ("|").
+   |     Line breaks and initial indents are preserved.
+   | Continuation lines are wrapped portions of long lines;
+     they begin with a space in place of the vertical bar.
+   |     The left edge of a continuation line need not be aligned with
+     the left edge of the text above it.
+
+   | This is a second line block.
+   |
+   | Blank lines are permitted internally, but they must begin with a "|".
 
 Block Quotes
 ^^^^^^^^^^^^
