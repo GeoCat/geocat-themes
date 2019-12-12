@@ -94,7 +94,7 @@ extlinks = {
 html_theme = 'geocat_rtd'
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ['../themes']
+html_theme_path = ['../..']
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -102,7 +102,8 @@ html_theme_path = ['../themes']
 #
 html_theme_options = {
     'logo_only': True,
-    'display_version': False
+    'display_version': False,
+    'show_sphinx': False
 }
 
 # The name of an image file (relative to this directory) to place at the top
