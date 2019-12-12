@@ -67,8 +67,13 @@ a:hover, a:focus, a:visited {
 	background-color: #f6f8fa;
 }
 .wy-side-nav-search input[type=text] {
-	border-color: #ccc;
+	border-color: #e1e4e5;
 	font-size: 14px;
+	box-shadow: none;
+	border-radius: 3px;
+}
+.wy-side-nav-search input[type=text]:focus {
+	border-bottom-color: #0366d6;
 }
 /* navigation */
 .wy-menu-vertical {
