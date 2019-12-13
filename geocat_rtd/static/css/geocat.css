@@ -134,7 +134,23 @@ a:hover, a:focus, a:visited {
 
 /* top */
 .wy-nav-top {
-	background-color: #29abe0;
+	background-color: #fff;
+	color: #404040;
+	padding: .4045em 1em;
+	border-bottom: 1px solid #e1e4e5;
+}
+.wy-nav-top a {
+	color: #404040;
+}
+/* breadcrumbs */
+.wy-breadcrumbs .gc-logo {
+	width: 25px;
+	height: 25px;
+	float: left;
+}
+.wy-breadcrumbs .project-name {
+	line-height: 25px;
+	margin-left: 5px;
 }
 
 /* content */
@@ -160,6 +176,11 @@ a:hover, a:focus, a:visited {
 	background: #f6f8fa;
 	border: 0;
 	border-radius: 3px;
+}
+/* lists */
+.rst-content .section ul li p:last-child, .rst-content .section ul li ul, .rst-content .toctree-wrapper ul li p:last-child,
+.rst-content .toctree-wrapper ul li ul, .wy-plain-list-disc li p:last-child, .wy-plain-list-disc li ul, article ul li p:last-child,article ul li ul {
+	margin-bottom: 12px;
 }
 
 /* buttons */
@@ -305,4 +326,62 @@ code, .rst-content tt, .rst-content code {
 }
 .rst-content .footnote-reference, .rst-content .citation-reference {
 	top: auto;
+}
+
+
+/* dark theme */
+@media (prefers-color-scheme: dark) {
+	body, h1, h2, h3, h4, h5 {
+		color: #e4e4e4;
+	}
+	a, a:hover, a:focus, a:visited {
+		color: #0ACEE5;
+	}
+	.wy-body-for-nav, .wy-nav-content-wrap, .wy-nav-content {
+		background: #272822 !important;
+	}
+	/* breadcrumbs */
+	.wy-breadcrumbs .gc-g {
+		fill: #e4e4e4;
+	}
+	hr {
+		border-color: #41433C;
+	}
+	/* sidebar */
+	.wy-nav-side {
+		color: #e4e4e4;
+		background: #272822;
+		border-color: #41433C;
+	}
+	/* search */
+	.wy-side-nav-search {
+		background-color: #272822;
+	}
+	#rtd-search-form {
+		border-color: #41433C;
+		background-color: #333;
+	}
+	.wy-side-nav-search input[type=text] {
+		border-color: #41433C;
+	}
+	.wy-side-nav-search input[type=text]:focus {
+		border-color: #333;
+	}
+	/* navigation */
+	.wy-menu-vertical header, .wy-menu-vertical p.caption {
+		color: #0ACEE5;
+	}
+	.wy-menu-vertical a {
+		color: #e4e4e4;
+	}
+	.wy-menu-vertical a:hover {
+		color: #fff;
+	}
+	.wy-menu-vertical a:hover .toctree-expand:before {
+		color: #fff;
+	}
+	.wy-menu-vertical li.current>a, .wy-menu-vertical li.on a, .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l3 a,
+	.wy-menu-vertical li.toctree-l4 a {
+		color: #e4e4e4;
+	}
 }
