@@ -61,9 +61,9 @@
               <a href="https://{{ gitlab_host|default("gitlab.com") }}/{{ gitlab_user }}/{{ gitlab_repo }}/{{ theme_vcs_pageview_mode|default("blob") }}/{{ gitlab_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-gitlab"> {{ _('Edit on GitLab') }}</a>
             {% endif %}
           {% elif show_source and source_url_prefix %}
-            <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">{{ _('View page source') }}</a>
+            <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}" class="source-code" title="{{ _('View page source') }}"><i class="fa fa-file-code-o"></i></a>
           {% elif show_source and has_source and sourcename %}
-            <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> {{ _('View page source') }}</a>
+            <a href="{{ pathto('_sources/' + sourcename, true)|e }}" class="source-code" title="{{ _('View page source') }}" rel="nofollow"><i class="fa fa-file-code-o"></i></a>
           {% endif %}
         {% endif %}
       </li>
