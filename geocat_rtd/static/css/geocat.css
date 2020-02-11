@@ -439,7 +439,12 @@ code, .rst-content tt, .rst-content code {
 .rst-content .footnote-reference, .rst-content .citation-reference {
 	top: auto;
 }
-
+/* images and figures */
+.rst-content div.figure p.caption {
+	font-style: normal;
+	font-size: 12px;
+	color: #525252;
+}
 
 /* dark theme */
 @media (prefers-color-scheme: dark) {
