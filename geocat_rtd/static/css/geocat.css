@@ -449,14 +449,14 @@ code, .rst-content tt, .rst-content code {
 /* dark theme */
 @media (prefers-color-scheme: dark) {
 	body, h1, h2, h3, h4, h5 {
-		color: #e4e4e4;
+		color: #F8F8F2;
 	}
 	h2 {
-    border-bottom: 2px solid #676767;
+    border-bottom: 0;
 		display: inline-block;
 	}
 	a, a:hover, a:focus, a:visited {
-		color: #0ACEE5;
+		color: #66D9EF;
 	}
 	.wy-body-for-nav, .wy-nav-content-wrap, .wy-nav-content {
 		background: #272822 !important;
@@ -480,9 +480,12 @@ code, .rst-content tt, .rst-content code {
 	}
 	.wy-menu-vertical li.toctree-l1>a {
     border-left-color: #272822;
-}
+	}
 	.wy-menu-vertical li.toctree-l1.current>a {
-		border-left: 4px solid #0ACEE5 !important;
+		border-left: 4px solid #66D9EF !important;
+	}
+	.wy-side-nav-search > div.version {
+    color: #F8F8F2;
 	}
 	/* search */
 	.wy-side-nav-search {
@@ -500,7 +503,7 @@ code, .rst-content tt, .rst-content code {
 	}
 	/* navigation */
 	.wy-menu-vertical header, .wy-menu-vertical p.caption {
-		color: #0ACEE5;
+		color: #66D9EF;
 	}
 	.wy-menu-vertical a {
 		color: #e4e4e4;
@@ -515,17 +518,56 @@ code, .rst-content tt, .rst-content code {
 	.wy-menu-vertical li.toctree-l4 a {
 		color: #e4e4e4;
 	}
+	/* footer */
+	.rst-footer-buttons .btn {
+    color: #66D9EF !important;
+	}
 	/* content */
 	.rst-content blockquote, .line-block {
 		border-left-color: #41433C;
 	}
 	.rst-content .guilabel {
     border: 1px solid rgb(9, 177, 196);
-    background: #0ACEE5;
+    background: #66D9EF;
 		color: #fff;
 	}		
 	.rst-content pre.literal-block, .rst-content div[class^='highlight'] {
     background-color: #41433C;
+	}
+	.rst-content table.docutils caption, .rst-content table.field-list caption, .wy-table caption {
+		color: #e4e4e4;
+	}
+	.rst-content div.figure p.caption {
+		color: #e4e4e4;
+	}
+	.rst-content .footnote-reference, .rst-content .citation-reference, .footnote .brackets .fn-backref {
+    color: #F92672;
+	}
+	.rst-content code.literal, .rst-content tt.literal {
+		color: #F92672;
+	}
+	/* messages */
+	.rst-content .admonition, .rst-content .admonition-todo, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .note, .rst-content .seealso, .rst-content .tip, .rst-content .warning, .wy-alert {
+		background: #3a3a3a;
+	}
+	.rst-content .admonition-title {
+    color: #27ae60;
+	}
+	/* tables */
+	.rst-content table.docutils {
+		border: 1px solid #41433C;
+		background-color: #333;
+	}
+	.rst-content table.docutils thead th, .rst-content table.field-list thead th, .wy-table thead th {
+		color: #e4e4e4;
+    border-bottom: 1px solid #41433C;
+	}
+	.rst-content table.docutils td, .wy-table-bordered-all td {
+		border-bottom: 1px solid #41433C;
+		border-left: 1px solid #41433C;
+	}
+	.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td, .wy-table-backed, .wy-table-odd td, .wy-table-striped tr:nth-child(2n-1) td {
+		background-color: #3a3a3a;
 	}
 }
 
@@ -536,8 +578,4 @@ code, .rst-content tt, .rst-content code {
 }
 .clearfix:after {
   clear: both;
-}
-
-.menuselection {
-	border:1px solid #7fbbe3;background:#e7f2fa;font-size:80%;font-weight:700;border-radius:4px;padding:2.4px 6px;margin:auto 2px;
 }
