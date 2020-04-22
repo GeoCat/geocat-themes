@@ -25,10 +25,11 @@
 {% endif %}
 
 <div role="navigation" aria-label="breadcrumbs navigation" class="header clearfix">
-
+{% if theme_is_prerelease %}
   <div id="gc_prerelease" class="admonition danger">
     &#9888; Pre-release
   </div>
+{% endif %}
   
   <ul class="wy-breadcrumbs">
     {% block breadcrumbs %}
