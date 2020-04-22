@@ -344,8 +344,6 @@ a.reference.external:after {
 }
 
 /* messages */
-
-/* ----- general */
 .admonition {
 	padding: .1rem 1.5rem;
 	border-left-width: .25em;
@@ -391,16 +389,6 @@ a.reference.external:after {
 .admonition.hint .admonition-title, .admonition.important .admonition-title, 
 .admonition.tip .admonition-title, .admonition.note .admonition-title {
 	color: #2c3e50;
-}
-/* ----- pre-release or unstable message */
-#gc_prerelease {
-	position: fixed;
-	right: 0;
-	top: 0;
-	min-width: 150px;
-	border-right-width: 4px;
-	border-right-style: solid;
-	border-left: 0;
 }
 
 /* blocks */
