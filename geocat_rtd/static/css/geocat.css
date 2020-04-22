@@ -336,7 +336,14 @@ a.reference.external:after {
 /* tables */
 .wy-table td, .rst-content table.docutils td, .rst-content table.field-list td, .wy-table th,
 .rst-content table.docutils th, .rst-content table.field-list th {
+	text-align: left;
 	font-size: 100%;
+	white-space: normal;
+	vertical-align: text-top;
+}
+.wy-table td p, .rst-content table.docutils td p, .rst-content table.field-list td p, .wy-table th p,
+.rst-content table.docutils th p, .rst-content table.field-list th p {
+	margin: 0;
 }
 /* table in a message */
 .rst-content .admonition table td, .rst-content .admonition table th {
