@@ -218,6 +218,17 @@ a.reference.external:after {
 	margin-top: -2px;
 	display: inline-block;
 }
+.wy-breadcrumbs li a {
+	padding-right: 0;
+}
+.wy-breadcrumbs li:before {
+	content: "/";
+	margin-right: 5px;
+}
+.wy-breadcrumbs .wy-breadcrumb-first:before, .wy-breadcrumbs .wy-breadcrumbs-aside:before {
+	content: "";
+}
+
 /* geocat logo */
 .gc-menu {
 	float: right;
