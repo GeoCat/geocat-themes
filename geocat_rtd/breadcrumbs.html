@@ -33,10 +33,12 @@
   
   <ul class="wy-breadcrumbs">
     {% block breadcrumbs %}
-      <li class="wy-breadcrumb-first"><a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{project}}</a></li>
+      <!-- link to GeoCat docs home -->
+      <li class="wy-breadcrumb-first"><a href="https://www.geocat.net/docs" title="GeoCat Documents Home" class="icon icon-home"> Docs</a></li>
+      <li><a href="{{ pathto(master_doc) }}">{{project}}</a></li>
       {% if title != project %}
           {% for doc in parents %}
-            <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+            <li><a title="{{ doc.title }}" href="{{ doc.link|e }}">{{ doc.title }}</a></li>
           {% endfor %}
           <li>{{ title }}</li>
       {% endif %}

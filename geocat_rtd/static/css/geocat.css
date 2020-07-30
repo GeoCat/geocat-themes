@@ -224,7 +224,8 @@ a.reference.external:after {
 	padding-right: 0;
 }
 .wy-breadcrumbs li:before {
-	content: "/";
+	content: "❯";
+	color: #5f5f5f;
 	margin-right: 5px;
 }
 .wy-breadcrumbs .wy-breadcrumb-first:before, .wy-breadcrumbs .wy-breadcrumbs-aside:before {
