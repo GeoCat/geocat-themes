@@ -1,0 +1,181 @@
+@import url(slides.css);
+
+h1, h2, h3 {
+  letter-spacing: normal;
+}
+a {
+  color: #0366d6;
+}
+pre {
+  box-shadow: none;
+}
+.slides > article {
+  font-family: 'Open Sans', Arial, sans-serif;
+	color: #333;
+	font-size: 1em;
+  line-height: 1.5em;
+  box-shadow: none;
+  border-radius: 4px;
+  border: none;
+	letter-spacing: normal;
+}
+.slides.table > article {
+  box-shadow: none;
+  border-radius: 4px;
+  border: none;
+	letter-spacing: normal;
+}
+
+/* title page */
+.slides > article.level-1 {
+	color: #333;
+}
+.slides > article.level-1 h1 {
+  margin-top: 75px;
+}
+.slides.table > article.level-1 h1 {
+  margin-top: 40px;
+}
+/* section page */
+.slides > article.level-2 {
+  color: #333;
+}
+.slides > article.level-2 h2 {
+	margin-top: 75px;
+}
+.slides > article.level-2 p {
+	margin-top: 20px;
+}
+.slides.table > article.level-2 h2 {
+  margin-top: 40px;
+}
+
+/* footer */
+.slide footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 5px 15px;
+}
+.slide-footer {
+  position: relative;
+  bottom: auto;
+  float: left;
+  left: auto;
+}
+.slide-no {
+  position: relative;
+  bottom: auto;
+  float: right;
+  right: auto;
+}
+
+/* table mode */
+
+/* special slides */
+.slide-intro {
+  background: linear-gradient(to bottom, #fff 0%,#fff 40%,#009BD2 40%,#009BD2 60%,#009BD2 100%);
+}
+.slide-intro h1 {
+  display: none;
+}
+.slide-intro p {
+  color: #fff;
+}
+.slide-intro .figure {
+  margin-bottom: 100px;
+}
+.slides.table .slide-intro .figure {
+  margin-bottom: 55px;
+}
+.slides.table .slide-intro .figure img {
+  max-width: 60%;
+}
+.slide-author h1 {
+  display: none;
+}
+.slide-author .figure {
+  padding: 15px 0;
+  text-align: left;
+}
+.slide-author .figure img {
+  max-height: 250px;
+}
+.slides.table .slide-author .figure {
+  padding: 0;
+}
+.slides.table .slide-author .figure img {
+  max-width: 60%;
+  max-height: 125px;
+}
+.slide-geocat {
+  background-color: #009BD2 !important;
+  text-align: center;
+}
+.slide-bridge {
+  background-color: #FFD200 !important;
+  text-align: center;
+}
+.slide-live {
+  background-color: #FF9900 !important;
+  text-align: center;
+}
+.slide-geoserver {
+  background-color: #00AD9F !important;
+  text-align: center;
+}
+.slide-service {
+  background-color: #1F1249 !important;
+  text-align: center;
+}
+/* ----- titles */
+.slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geoserver h1, .slide-service h1 {
+  color: #fff;
+  margin-top: 225px !important;
+}
+.slides.table .slide-geocat h1, .slides.table .slide-bridge h1, .slides.table .slide-live h1, 
+.slides.table .slide-geoserver h1, .slides.table .slide-service h1 {
+  color: #fff;
+  margin-top: 115px !important;
+}
+/* full background */
+.slide-bennekom {
+  background-image: url("img/bennekom.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+}
+.slide-bennekom h1 {
+  margin-top: 30px !important;
+  color: #fff;
+}
+.slides.table .slide-bennekom h1 {
+  margin-top: 15px !important;
+}
+.slide-victoria {
+  background-image: url("img/victoria.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+}
+.slide-victoria h1 {
+  margin-top: 500px !important;
+  color: #fff;
+}
+.slides.table .slide-victoria h1 {
+  margin-top: 250px !important;
+}
+.slide-heart {
+  background-image: url("img/heart.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 40%;
+  background-color: #192b43 !important;
+}
+.slide-heart h1 {
+  display: none;
+}
+
