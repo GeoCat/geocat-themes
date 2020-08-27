@@ -17,9 +17,9 @@ Custom slides are defined by their class, for example:
 A list of the current special slides
 
 | Type | Description | Class | Extra |
-| ---- | ----------- | ----- | ----- |
+| ---- | ----------- | ---------------------- | ----- |
 | Introduction | Standard GeoCat introduction (Logo + Text). Title is not used. | `:class: slide-intro` | |
-| Author |   | `:class: slide-author` | |
+| Author | Page for the Author | `:class: slide-author` | |
 | Heart | Adds the t-shirt slogan: Put your Heart in everything you do! | `:class: slide-heart` | |
 | GeoCat | Adds the lighter blue background, to be used for a GeoNetwork Enterprise title page, the 'title' is centered, do not use with additional text | `:class: slide-geocat` | Background color: #009BD2 |
 | GeoServer | To be used for a GeoNetwork Enterprise title page, the 'title' is centered, do not use with additional text | `:class: slide-geoserver` | Background color: #00AD9F |
@@ -28,3 +28,4 @@ A list of the current special slides
 | Service | Adds the dark blue background, to be used for a GeoCat Services title page, the 'title' is centered, do not use with additional text | `:class: slide-service` | Background color: #1F1249 |
 | Bennekom | Adds a photo of Bennekom as background, do not use with additional text | `:class: slide-bennekom` | |
 | Victoria | Adds a photo of Victoria as background, do not use with additional text | `:class: slide-victoria` | |
+| Outro | Slide to end your workshop/presentation, the content is positioned at the bottom, designed for a maximum of 2 lines of text | `:class: slide-outro` | |

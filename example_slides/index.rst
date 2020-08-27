@@ -8,22 +8,17 @@
    :caption: Contents:
 
    
-.. slide:: GeoCat Slides Example
+.. slide:: Presentation Title Page
    :level: 1
 
-   This is the GeoCat Sphinx Hieroglyph theme.
+   **This is the GeoCat Sphinx Hieroglyph theme**
 
    This example slideshow contains all kinds of extra, custom slides. These can be used as (title) pages for an Introduction, Location, Author and as a start for a GeoCat Product overview.
 
-.. slide:: GeoCat Slides Example
-   :level: 1
-   :class: slide-intro
+.. slide:: Presentation Subtitle Page
+   :level: 2
 
-   .. figure:: /_static/gc_geocat_logo_text_500.png
-
-   Spatial Data publication and discovery following the free and open source source software philosophy.
-
-   We are a Software Development Company based in Bennekom, with developers in the Netherlands, Spain and Canada.
+   The description of your workshop/presentation goes here.
 
 .. slide:: Author
    :level: 1
@@ -36,6 +31,16 @@
    Date: **August 2020**
 
    **Workshop for GeoServer and GeoNetwork**
+
+.. slide:: GeoCat Introduction
+   :level: 1
+   :class: slide-intro
+
+   .. figure:: /_static/gc_geocat_logo_text_500.png
+
+   Spatial Data publication and discovery following the free and open source source software philosophy.
+
+   We are a Software Development Company based in Bennekom, with developers in the Netherlands, Spain and Canada.
 
 .. slide:: Put your Heart in everything you do
    :level: 1
@@ -109,5 +114,6 @@ Level 2 CSS Code
 
 .. slide:: Made with ♥ by GeoCat
    :level: 2
+   :class: slide-outro
 
-
+   For more information about GeoCat, you can always visit our website: `www.geocat.net <https://www.geocat.net>`_ 

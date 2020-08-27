@@ -131,6 +131,12 @@ pre {
   background-color: #1F1249 !important;
   text-align: center;
 }
+.slide-outro h2 {
+  margin-bottom: 300px;
+}
+.slides.table .slide-outro h2 {
+  margin-bottom: 160px;
+}
 /* ----- titles */
 .slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geoserver h1, .slide-service h1 {
   color: #fff;
