@@ -2,6 +2,7 @@
 
 h1, h2, h3 {
   letter-spacing: normal;
+  padding-right: 0;
 }
 a {
   color: #0366d6;
@@ -73,8 +74,6 @@ pre {
   right: auto;
 }
 
-/* table mode */
-
 /* special slides */
 .slide-intro {
   background: linear-gradient(to bottom, #fff 0%,#fff 40%,#009BD2 40%,#009BD2 60%,#009BD2 100%);
@@ -132,10 +131,10 @@ pre {
   text-align: center;
 }
 .slide-outro h2 {
-  margin-bottom: 300px;
+  margin-bottom: 300px !important;
 }
 .slides.table .slide-outro h2 {
-  margin-bottom: 160px;
+  margin-bottom: 160px !important;
 }
 /* ----- titles */
 .slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geoserver h1, .slide-service h1 {
@@ -185,3 +184,45 @@ pre {
   display: none;
 }
 
+/* console */
+.slides.slides.table > article.past, .slides.slides.table > article.next {
+  height: 280px !important;
+  width: 370px !important;
+  margin-top: 45px !important;
+}
+.slides.table > article.past {
+  transform: translate(-400px) !important;
+  -o-transform: translate(-400px) !important;
+  -moz-transform: translate(-400px) !important;
+  -webkit-transform: translate3d(-400px, 0, 0) !important;
+}
+.slides.table > article.past h1, .slides.table > article.next h1 {
+  margin-top: 10px !important;
+  font-size: 1em;
+}
+.slides.table > article.past h2, .slides.table > article.next h2 {
+  margin-top: 10px !important;
+  font-size: 0.9em;
+}
+.slides.table > article.past p, .slides.table > article.next p, .slides.table > article.past li, .slides.table > article.next li {
+  font-size: 0.75em;
+}
+.slides.table > article.past pre, .slides.table > article.next pre {
+  margin-top: 15px !important;
+  font-size: 0.75em;
+}
+.slides.table .slide-geocat.past h1, .slides.table .slide-bridge.past h1, .slides.table .slide-live.past h1, 
+.slides.table .slide-geoserver.past h1, .slides.table .slide-service.past h1,
+.slides.table .slide-geocat.next h1, .slides.table .slide-bridge.next h1, .slides.table .slide-live.next h1, 
+.slides.table .slide-geoserver.next h1, .slides.table .slide-service.next h1 {
+  margin-top: 90px !important;
+}
+.slides.table .slide-intro.past .figure, .slides.table .slide-intro.next .figure {
+  margin-bottom: 30px !important;
+}
+.slides.table .slide-intro.past p, .slides.table .slide-intro.next p {
+  margin-top: 5px !important;
+}
+.slides.table .slide-victoria.past h1, .slides.table .slide-victoria.next h1 {
+  margin-top: 190px !important;
+}
