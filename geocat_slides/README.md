@@ -4,6 +4,14 @@ Based on the default Hieroglyph theme and GeoCat styles.
 
 This slideshow contains all kinds of extra, custom slides. These can be used as (title) pages for an Introduction, Location, Author and as a start for a GeoCat Product overview.
 
+If you haven't installed Hierogplyph yet
+
+```
+pip install hieroglyph
+```
+
+Hieroglyph needs Python 3
+
 ## Custom Slides
 
 Custom slides are defined by their class, for example:
