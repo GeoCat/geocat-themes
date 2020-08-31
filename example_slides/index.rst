@@ -6,7 +6,6 @@
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
    
 .. slide:: Presentation Title Page
    :level: 1
@@ -83,6 +82,12 @@ Level 2 CSS Code
    :level: 2
 
    Lorem ipsum dolor sit amet, `consectetur adipiscing elit <https://www.geocat.net>`_. Pellentesque sodales mauris ut porta vehicula. Suspendisse interdum enim et lorem commodo fermentum. Quisque eu congue nisi. Nunc nec elit in libero consectetur posuere gravida at risus. Nunc a blandit justo. Praesent sagittis lacinia dolor, quis pretium tortor iaculis id.
+
+   .. Note:: 
+   
+      This is a note admonition. 
+
+      It will not appear in the slides.
 
 .. slide:: GeoNetwork
    :level: 1
