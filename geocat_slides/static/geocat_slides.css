@@ -96,6 +96,25 @@ pre {
 .slides.table .slide-intro .figure img {
   max-width: 60%;
 }
+/* contents */
+.slide-contents .caption {
+  margin-bottom: 10px;
+}
+.slide-contents ul {
+  margin-top: 0;
+  margin-left: 0;
+}
+.slide-contents li {
+  margin-bottom: .3em;
+  border-bottom: 2px dotted #000;
+}
+.slide-contents li::before {
+  display: none;
+}
+.slide-contents li a {
+  text-decoration: none;
+}
+/* author */
 .slide-author h1 {
   display: none;
 }
