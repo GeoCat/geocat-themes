@@ -187,6 +187,7 @@ code {
   margin-top: 115px !important;
 }
 .slide-geocat p, .slide-bridge p, .slide-live p, .slide-geoserver p, .slide-service p {
+  font-size: 1.5em !important;
   color: #fff !important;
 }
 /* full background */
