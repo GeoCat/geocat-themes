@@ -7,11 +7,24 @@ h1, h2, h3 {
   letter-spacing: normal;
   padding-right: 0;
 }
+p, ul, ul li, ol, ol li {
+  font-size: 26px !important;
+}
+li {
+  line-height: 1.5em;
+  margin-bottom: .4em;
+}
 a {
   color: #0366d6;
 }
 pre {
   box-shadow: none;
+}
+code {
+  color: #e74c3c;
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+    padding: 0 0.2em;
 }
 .slides > article {
   font-family: 'Open Sans', Arial, sans-serif;
@@ -107,6 +120,7 @@ pre {
 .slide-contents li {
   margin-bottom: .3em;
   border-bottom: 2px dotted #000;
+  line-height: 1.6em;
 }
 .slide-contents li::before {
   display: none;
@@ -159,14 +173,21 @@ pre {
   margin-bottom: 160px !important;
 }
 /* ----- titles */
-.slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geoserver h1, .slide-service h1 {
-  color: #fff;
+.slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geoserver h1, .slide-service h1,
+.slide-geocat h2, .slide-bridge h2, .slide-live h2, .slide-geoserver h2, .slide-service h2 {
+  color: #fff !important;
+  font-size: 2em !important;
   margin-top: 225px !important;
 }
 .slides.table .slide-geocat h1, .slides.table .slide-bridge h1, .slides.table .slide-live h1, 
-.slides.table .slide-geoserver h1, .slides.table .slide-service h1 {
-  color: #fff;
+.slides.table .slide-geoserver h1, .slides.table .slide-service h1,
+.slides.table .slide-geocat h2, .slides.table .slide-bridge h2, .slides.table .slide-live h2, 
+.slides.table .slide-geoserver h2, .slides.table .slide-service h2 {
+  color: #fff !important;
   margin-top: 115px !important;
+}
+.slide-geocat p, .slide-bridge p, .slide-live p, .slide-geoserver p, .slide-service p {
+  color: #fff !important;
 }
 /* full background */
 .slide-bennekom {
