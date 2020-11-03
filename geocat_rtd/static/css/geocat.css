@@ -224,8 +224,7 @@ a.reference.external:after {
 	padding-right: 0;
 }
 .wy-breadcrumbs li:before {
-	content: "❯";
-	color: #0366d6;
+	content: "/";
 	margin-right: 5px;
 }
 .wy-breadcrumbs .wy-breadcrumb-first:before, .wy-breadcrumbs .wy-breadcrumbs-aside:before {
@@ -479,6 +478,9 @@ code, .rst-content tt, .rst-content code {
 	a, a:hover, a:focus, a:visited {
 		color: #3ab1fd;
 	}
+	a.reference.external:after {
+		color: #3ab1fd;
+	}
 	.wy-body-for-nav, .wy-nav-content-wrap, .wy-nav-content {
 		background: #272822 !important;
 	}
@@ -610,6 +612,12 @@ code, .rst-content tt, .rst-content code {
 	.admonition.hint .admonition-title, .admonition.important .admonition-title, 
 	.admonition.tip .admonition-title, .admonition.note .admonition-title {
 		color: #2c3e50;
+	}
+	.admonition.attention, .admonition.caution, .admonition.warning { 
+		color: #e7c000;
+	}
+	.admonition.attention .admonition-title, .admonition.caution .admonition-title, .admonition.warning .admonition-title {
+		color: #e7c000;
 	}
 	/* tables */
 	.rst-content table.docutils {
