@@ -511,9 +511,6 @@ code, .rst-content tt, .rst-content code {
     color: #F8F8F2;
 	}
 	/* search */
-	.wy-side-nav-search {
-		background-color: #272822;
-	}
 	#rtd-search-form {
 		border-color: #41433C;
 		background-color: #333;
