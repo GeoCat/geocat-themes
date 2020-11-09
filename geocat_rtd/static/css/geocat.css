@@ -553,6 +553,9 @@ code, .rst-content tt, .rst-content code {
 	.rst-content a {
 		text-decoration: underline;
 	}
+	.rst-content h2 .toc-backref, .rst-content h3 .toc-backref {
+		color: #F8F8F2;
+	}
 	.rst-content .wy-breadcrumbs a {
 		text-decoration: none;
 	}
@@ -606,13 +609,16 @@ code, .rst-content tt, .rst-content code {
     color: #27ae60;
 	}
 	.admonition.note {
-		border-color: #6ab0de;
-		background-color: #a0daff;
-		color: #2c3e50;
+		border-color: #48494b;
+		background-color: #525150;
+		color: #fcfaf8;
 	}
 	.admonition.hint .admonition-title, .admonition.important .admonition-title, 
-	.admonition.tip .admonition-title, .admonition.note .admonition-title {
+	.admonition.tip .admonition-title {
 		color: #2c3e50;
+	}
+	.admonition.note .admonition-title {
+		color: #fcfaf8;
 	}
 	.admonition.attention, .admonition.caution, .admonition.warning { 
 		color: #e7c000;
