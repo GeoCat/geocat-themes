@@ -507,6 +507,9 @@ code, .rst-content tt, .rst-content code {
 	.wy-menu-vertical li.toctree-l1.current>a {
 		border-left: 4px solid #3ab1fd !important;
 	}
+	.wy-side-nav-search {
+		background-color: #f5f5f5;
+	}
 	.wy-side-nav-search > div.version {
     color: #F8F8F2;
 	}
@@ -517,6 +520,7 @@ code, .rst-content tt, .rst-content code {
 	}
 	.wy-side-nav-search input[type=text] {
 		border-color: #41433C;
+		background-color: #f5f5f5;
 	}
 	.wy-side-nav-search input[type=text]:focus {
 		border-color: #333;
