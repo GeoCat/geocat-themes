@@ -49,7 +49,14 @@ a.reference.external:after {
 	margin-right: 3px;
 	color: #aaa;
 }
-
+::-moz-selection {
+	background: #ff9900;
+	color: #F8F8F2;
+}
+::selection {
+	background: #ff9900;
+	color: #F8F8F2;
+}
 /* index page */
 .genindex-jumpbox {
 	margin-bottom: 15px;
