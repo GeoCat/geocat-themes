@@ -29,3 +29,14 @@ ant -p
 ant clean
 ant build
 ```
+
+# GitHub Pages
+
+This project is deployed GitHub pages using the `docs` folder at the root of the project.
+
+```
+mvn deploy
+git add ../docs
+git commit -m "documentation update"
+git push
+```

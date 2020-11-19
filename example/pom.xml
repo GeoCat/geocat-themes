@@ -56,6 +56,42 @@
           </execution>
         </executions>
      </plugin>
+     <plugin>
+       <artifactId>maven-install-plugin</artifactId>
+       <version>3.0.0-M1</version>
+       <configuration>
+         <skip>true</skip><!-- do not install zip into local repository -->
+       </configuration>
+     </plugin>
+     <plugin>
+       <artifactId>maven-deploy-plugin</artifactId>
+       <version>3.0.0-M1</version>
+       <configuration>
+         <skip>true</skip><!-- do not deploy zip to nexus repository -->
+       </configuration>
+     </plugin>
+     <plugin>
+       <artifactId>maven-resources-plugin</artifactId>
+       <version>3.2.0</version>
+       <executions>
+         <execution>
+           <id>publish</id>
+           <phase>deploy</phase>
+           <goals><goal>copy-resources</goal></goals>
+           <configuration>
+             <outputDirectory>../docs</outputDirectory>
+             <resources>
+               <resource>
+                 <directory>${project.build.directory}/html</directory>
+               </resource>
+             </resources>
+             <addDefaultExcludes/>
+             <encoding>UTF-8</encoding>
+             <overwrite>true</overwrite>
+           </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
