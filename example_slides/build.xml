@@ -1,0 +1,86 @@
+<project name="setup" default="build"
+ xmlns:if="ant:if"
+ xmlns:unless="ant:unless"
+> 
+  <description>
+Ant script to run sphinx-build from maven:
+
+ant clean
+ant build
+ant build -Drelease=1.0 -Dversion=SNAPSHOT
+ant build -Dopen=true
+ant -Dbuilder=html -Dopen=true
+
+
+</description>
+  <!-- maven defaults -->
+  <property name="build" value="${basedir}/target"/>
+  <property name="src" value="${basedir}/src/"/>
+  
+  <!-- _sphinx target defaults -->
+  <property name="builder" value="slides"/>
+  <property name="sourcedir" value="${src}/sphinx"/>
+  <property name="outputdir" value="${build}/${builder}"/>
+  <property name="sphinx_build_options" value="-q -N -W --keep-going -n -j auto"/>
+  
+  <property environment="env" />
+  <available file="sphinx-build"  
+             filepath="${env.PATH}"  
+             property="sphinx.available"/>
+  
+  <target name="build" description="build documentation (requires sphinx-build)">
+    <antcall target="_sphinx">
+      <param name="sourcedir" value="${src}/sphinx"/>
+      <param name="outputdir" value="${build}/${builder}"/>
+      <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+    <antcall target="_check">
+        <param name="file" value="${build}/${builder}/index.html"/>
+    </antcall>
+  </target>
+  
+  <target name="_init">
+    <mkdir dir="${build}"/>
+  </target>
+  
+  <target name="clean" description="clean up build directory">
+     <delete dir="${build}"/>
+  </target>
+
+  <target name="_sphinx" if="sphinx.available">
+    <mkdir dir="${outputdir}"/>
+    <exec executable="sphinx-build" failonerror="true">
+      <arg line="${tags}" if:set="tags"/>
+      <arg line="${sphinx_build_options}"/>      
+      <arg line="-b ${builder}"/>
+      <arg line="-Dhtml_theme=${theme}" if:set="theme"/>
+      <arg line="${theme_options}" if:set="theme_options"/>
+      <arg line="${config_settings}" if:set="config_settings"/>
+      <arg line="-d ${doctrees}" if:set="doctrees"/>
+      <arg line="-D release=${release}" if:set="release"/>
+      <arg line="-D version=${version}" if:set="version"/>
+      <arg path="${sourcedir}"/>
+      <arg path="${outputdir}"/>
+    </exec>
+  </target>
+  
+  <target name="_check">
+    <!-- check if file created -->
+    <available file="${file}" type="file" property="file.present"/>
+    <echo level="info" if:set="file.present">File generated ${file}</echo>
+    <echo level="error" unless:set="file.present">File not generated ${file}</echo>
+    
+    <!-- macOS -->
+    <condition property="open.present" value="true">
+      <and>
+        <equals arg1="${open}" arg2="true"/>
+        <available file="/usr/bin/open" type="file"/>
+      </and>
+    </condition>
+    <exec executable="open" if:set="open.present">
+       <arg line="${file}"/>
+    </exec>
+    
+  </target>
+
+</project>

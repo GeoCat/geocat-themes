@@ -7,9 +7,16 @@ REM Command file for Sphinx documentation
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
-set SOURCEDIR=.
-set BUILDDIR=_build
-set SPHINXPROJ=GeoCatTestSlides
+
+# You can set these variables from the command line.
+set SPHINXOPTS=-j auto -W --keep-going -n
+set SPHINXPROJ= GeoCatTestSlides
+set SOURCEDIR=src/sphinx
+set BUILDDIR=target
+
+
+# Hide internal sphinx warnings
+set PYTHONWARNINGS=
 
 if "%1" == "" goto help
 

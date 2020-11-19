@@ -13,6 +13,15 @@
    **This is the GeoCat Sphinx Hieroglyph theme**
 
    This example slideshow contains all kinds of extra, custom slides. These can be used as (title) pages for an Introduction, Location, Author and as a start for a GeoCat Product overview.
+   
+   * :kbd:`t` for slide table
+   * :kbd:`c` for presenters console
+
+   .. note::
+   
+      * version: |version|
+      * release: |release|
+      * today: |today|
 
 .. slide:: Presentation Subtitle Page
    :level: 2
