@@ -29,14 +29,14 @@ year = now.year
 
 # -- Project information -----------------------------------------------------
 
-project = 'GeoServer Enterprise'
+project = 'GeoCat Theme Example'
 copyright = u'{}, GeoCat BV'.format(year)
 author = 'GeoCat BV'
 
-# The short X.Y version
-version = '2,16'
-# The full version, including alpha/beta/rc tags
-release = '2.16.1'
+# The short X.Y version.
+version = now.strftime('%Y.%m')
+# The full version, including alpha/beta/rc tags.
+release = now.strftime('%Y.%m.%d')
 
 
 # -- General configuration ---------------------------------------------------
@@ -50,7 +50,8 @@ release = '2.16.1'
 # ones.
 extensions = [
   'sphinx.ext.ifconfig',
-  'sphinx.ext.extlinks'
+  'sphinx.ext.extlinks',
+  'hieroglyph',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -75,11 +76,10 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
-
 
 # -- Extension External Links ------------------------------------------------
 
@@ -94,7 +94,9 @@ extlinks = {
 html_theme = 'geocat_rtd'
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ['../..']
+html_theme_path = [
+  '../../..'
+]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -103,17 +105,21 @@ html_theme_path = ['../..']
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
-    'show_sphinx': False
+    'show_sphinx': False,
+    'show_home': False,
+    'is_prerelease': False
 }
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = 'geocat_logo_text.png'
+# html_logo = 'geocat_logo_text.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 html_favicon = 'favicon.ico'
+
+html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -134,7 +140,7 @@ html_favicon = 'favicon.ico'
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'GeoServerEnterprisedoc'
+htmlhelp_basename = 'GeoCatThemeExampledoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -161,7 +167,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'GeoServerEnterprise.tex', 'GeoServer Enterprise Documentation',
+    (master_doc, 'GeoCatThemeExample.tex', 'GeoCat Theme Example',
      'GeoCat BV', 'manual'),
 ]
 
@@ -171,7 +177,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'geoserverenterprise', 'GeoServer Enterprise Documentation',
+    (master_doc, 'example', 'GeoCat Theme Example',
      [author], 1)
 ]
 

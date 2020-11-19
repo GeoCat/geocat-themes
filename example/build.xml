@@ -2,21 +2,19 @@
  xmlns:if="ant:if"
  xmlns:unless="ant:unless"
 > 
-  <description>
-Ant script to run sphinx-build from maven:
+  <description>Ant script to run sphinx-build from maven:
 
 ant clean
 ant build
-ant build -Drelease=1.0 -Dversion=SNAPSHOT
 ant build -Dopen=true
-ant -Dbuilder=html -Dopen=true
-</description>
+ant build -Drelease=1.0 -Dversion=SNAPSHOT
+ant -Dbuilder=slides -Dopen=true</description>
   <!-- maven defaults -->
   <property name="build" value="${basedir}/target"/>
   <property name="src" value="${basedir}/src/"/>
   
   <!-- _sphinx target defaults -->
-  <property name="builder" value="slides"/>
+  <property name="builder" value="html"/>
   <property name="sourcedir" value="${src}/sphinx"/>
   <property name="outputdir" value="${build}/${builder}"/>
   <property name="sphinx_build_options" value="-q -N -W --keep-going -n -j auto"/>
