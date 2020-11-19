@@ -326,6 +326,22 @@ a.reference.external:after {
 	margin-top: 5px;
 }
 
+/* ui & menu */
+.rst-content .guilabel {
+	font-size: 85%;
+	padding: 2px 4px;
+	color: #000;
+	font-weight: normal;
+	border-radius: 0;
+}
+.rst-content .menuselection {
+	border: 1px solid #ccc;
+	background-color: #f7f7f7;
+	color: #000;
+	font-size: 85%;
+	padding: 2px 4px;
+}
+
 /* buttons */
 .btn {
 	display: inline-block;
