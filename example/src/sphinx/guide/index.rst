@@ -23,7 +23,7 @@ Sphinx writing guide providing cut and paste examples. Each section provides a v
    Writing Guide
    =============
    
-   Page heading above is as text shown for :command:`doc` references.
+   Page heading above is as text shown for internal :command:`doc` links.
 
 .. note:: Rich Structured Text is very flexible and and there are often more than one way to define lists, tables, or bold a couple of words in a paragraph. This writing guide only shows one way, and very rarely provides a note on practices to avoid.
 
@@ -274,15 +274,15 @@ Use inline literals to reference names of tables, columns and list items.
 Naming terms and standards
 --------------------------
 
-Avoid repeatedly terms such as metadata or WFS, a :command:`glossary` can be used if needed:
+Avoid repeatedly defining terms such as metadata or WFS, a :command:`glossary` can be used if needed:
 
-  :guilabel:`GeoServer` is a popular web service implementing the :term:`WFS` standard.
+  :command:`GeoServer` is a popular web service implementing the :term:`WFS` standard used to publish features using GML and :term:`json <GeoJSON>`.
   
   The OGC :term:`Web Feature Service <WFS>` standard is an example of a open web service making use of `GetCapabilities` to describe published data products and operations.
 
 .. code-block:: rst
 
-  :guilabel:`GeoServer` is a popular web service implementing the :term:`WFS` standard used to publish features using :term:`GML` and :term:`GeoJSON`.
+  :command:`GeoServer` is a popular web service implementing the :term:`WFS` standard used to publish features using :term:`GML` and :term:`json <GeoJSON>`.
   
   The OGC :term:`Web Feature Service` standard is an example of a open web service making use of `GetCapabilities` operation to describe published data products and operations to web and desktop clients.
 
@@ -371,10 +371,81 @@ Use the :command:`file` directive when working with filenames, file extensions o
 
    It is tricky to describe user supplied locations in a path, consider using ``{`` and ``}`` characters as shown above.
 
-URLs and External links
------------------------
+URL and External links
+----------------------
 
 URLs links are included in generated output, links can also be added to text by reference, anonymous reference, or as an external link defined in :file:`config.py`.
+   
+   The running application is now available at http://localhost:8080/geonetwork .
+   
+   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`_ website.
+   
+   The optional GeoServer :geoserver:`WPS Extension <services/wps/index.html>` can be used to process your published layers, providing additional flexibility for web client applications.
+   
+   For more information on `SLD Standard`_ vist the OGC website.
+   
+   .. _SLD Standard: https://www.ogc.org/standards/sld
+
+
+.. code-block:: rst
+
+   The running application is now available at http://localhost:8080/geonetwork .
+   
+   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`_ website.
+   
+   The optional GeoServer :geoserver:`WPS Extension <services/wps/index.html>` can be used to process your published layers, providing additional flexibility for web client applications.
+   
+   For more information on `SLD Standard`_ vist the OGC website.
+   
+   .. _SLD Standard: https://www.ogc.org/standards/sld
+
+
+:file:`config.py`:
+
+.. code-block:: python
+   
+   extensions = [
+     'sphinx.ext.extlinks',
+   ]
+
+   extlinks = { 
+       'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
+   }
+
+.. _references_and_links:
+
+References and internal links
+-----------------------------
+
+Linking to individual pages, headings and anchors:
+
+  See details on :ref:`references_and_links`, on page :doc:`index`.
+  
+  Return to :doc:`home page </index>`.
+  
+.. code-block:: rst
+
+   See details on :ref:`references_and_links`, on page :doc:`index`.
+ 
+   Return to :doc:`home page </index>`.
+  
+:file:`index.rst`:
+
+.. code-block:: rst
+   
+   Writing Guide
+   =============
+   
+   Page heading above is as text shown for internal :command:`doc` links.
+   
+   .. _references_and_links::
+   
+   References and internal links
+   -----------------------------
+   
+   Heading text is shown as label for internal command:`ref` links.
+
+.. note:: GeoNetwork and GeoServer manuals use references extensively to link to headings even if the content changes location within the manual over time.
 
 Block Directives
 ================

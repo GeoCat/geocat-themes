@@ -1,17 +1,20 @@
-# Example slides for using the GeoCat Hieroglyph theme
+# Example of using the GeoCat theme
 
-This example slideshow contains all kinds of extra, custom slides. These can be used as (title) pages for an Introduction, Location, Author and as a start for a GeoCat Product overview.
+This example acts as a visual reference and writing guide for different kinds of documentation.
 
-The GeoCat Hieroglyph theme can be found here: https://github.com/GeoCat/geocat-themes/tree/master/geocat_slides
+* user manuals
+* training material
+* presentations
+
+This is a work in progress, focused on providing real world cut and paste examples.
 
 ## Make
 
 ```
 make help
 make clean
-make slides
+make html
 ```
-
 
 ## Maven and Ant
 
