@@ -2,11 +2,13 @@
 
 GeoCat documentation themes for Sphinx, Hieroglyph, DocBook, Jekyll and more!
 
-example
-: writing guidliens
+*example*: document used to test `geocat_rtd` theme
 
-example_slides
-: presentation example
+* Provides a handy writing guide for GeoCat products, training and presentations.
+* Covers guidence for contributing sphinx documentation to GeoNetwork and GeoServer communities.
+* Published as GitHub pages: https://geocat.github.io/geocat-themes/ 
+
+example_slides: slide example testing `geocat_slides` theme
 
 ## sphinx-build environment
 
@@ -27,4 +29,14 @@ windows:
 ```
 pip install -U sphinx
 pip install hieroglyph
+```
+
+## update github pages
+
+```
+cd example
+mvn clean deploy
+git add ../docs
+git commit -m "update docs"
+git push
 ```
