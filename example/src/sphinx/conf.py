@@ -16,6 +16,16 @@ now = datetime.datetime.now()
 #Current year
 year = now.year
 
+build_dir = os.path.sep.join(os.getcwd().split(os.path.sep)[:-2])
+properties_file = os.path.join(build_dir,'build.properties')
+
+build_properties = dict()
+with open(properties_file, 'r') as file:
+    for line in file:
+        key = line.split('=')[0]
+        value = line.split('=')[1].strip('\n')
+        build_properties[key] = value
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -29,9 +39,9 @@ year = now.year
 
 # -- Project information -----------------------------------------------------
 
-project = 'GeoCat Theme Example'
+project = build_properties['project']
 copyright = u'{}, GeoCat BV'.format(year)
-author = 'GeoCat BV'
+author = build_properties['author']
 
 # The short X.Y version.
 version = now.strftime('%Y.%m')
@@ -51,7 +61,7 @@ release = now.strftime('%Y.%m.%d')
 extensions = [
   'sphinx.ext.ifconfig',
   'sphinx.ext.extlinks',
-  'hieroglyph',
+  'hieroglyph'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -95,7 +105,7 @@ html_theme = 'geocat_rtd'
 
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = [
-  '../../..'
+  os.path.join(build_dir,build_properties['theme_path'])
 ]
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -105,6 +115,7 @@ html_theme_path = [
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
+    'prev_next_buttons_location': 'none',
     'show_sphinx': False,
     'show_home': False,
     'is_prerelease': False
@@ -142,6 +153,24 @@ html_show_sourcelink = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'GeoCatThemeExampledoc'
 
+# -- Options for Hieroglyph output ---------------------------------------------
+
+slide_title = project
+
+autoslides = True
+slide_theme = 'geocat_slides'
+subtitle = build_properties['subtitle']
+slide_footer = 'GeoCat '+version
+slide_levels = 4
+slide_numbers = True
+
+# requires html and slides build
+slide_link_to_html = True
+slide_link_html_to_slides = True
+slide_link_html_sections_to_slides = True
+slide_relative_path = '../slides/'
+slide_html_relative_path = '../instructor' 
+slide_html_slide_link_symbol = '§'
 
 # -- Options for LaTeX output ------------------------------------------------
 

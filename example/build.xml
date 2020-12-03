@@ -2,13 +2,12 @@
  xmlns:if="ant:if"
  xmlns:unless="ant:unless"
 > 
-  <description>Ant script to run sphinx-build from maven:
+  <description>Ant script to run sphinx-build.
 
 ant clean
-ant build
-ant build -Dopen=true
-ant build -Drelease=1.0 -Dversion=SNAPSHOT
-ant -Dbuilder=slides -Dopen=true</description>
+ant workbook
+ant workbook -Dopen=true
+</description>
   <!-- maven defaults -->
   <property name="build" value="${basedir}/target"/>
   <property name="src" value="${basedir}/src/"/>
@@ -23,6 +22,41 @@ ant -Dbuilder=slides -Dopen=true</description>
   <available file="sphinx-build"  
              filepath="${env.PATH}"  
              property="sphinx.available"/>
+  
+  <target name="workbook" description="attendee workbook">
+    <antcall target="_sphinx">
+      <param name="sourcedir" value="${src}/sphinx"/>
+      <param name="outputdir" value="${build}/workbook"/>
+      <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+    <antcall target="_check">
+        <param name="file" value="${build}/workbook/index.html"/>
+    </antcall>
+  </target>
+
+  <target name="instructor" description="instructor notes">
+    <antcall target="_sphinx">
+      <param name="tags" value="-t instructor"/>
+      <param name="sourcedir" value="${src}/sphinx"/>
+      <param name="outputdir" value="${build}/instructor"/>
+      <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+    <antcall target="_check">
+        <param name="file" value="${build}/instructor/index.html"/>
+    </antcall>
+  </target>
+  
+  <target name="slides" description="instructor slides">
+    <antcall target="_sphinx">
+      <param name="builder" value="slides"/>
+      <param name="sourcedir" value="${src}/sphinx"/>
+      <param name="outputdir" value="${build}/slides"/>
+      <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+    <antcall target="_check">
+        <param name="file" value="${build}/slides/index.html"/>
+    </antcall>
+  </target>
   
   <target name="build" description="build documentation (requires sphinx-build)">
     <antcall target="_sphinx">
@@ -47,7 +81,7 @@ ant -Dbuilder=slides -Dopen=true</description>
     <mkdir dir="${outputdir}"/>
     <exec executable="sphinx-build" failonerror="true">
       <arg line="${tags}" if:set="tags"/>
-      <arg line="${sphinx_build_options}"/>      
+      <arg line="${sphinx_build_options}"/>
       <arg line="-b ${builder}"/>
       <arg line="-Dhtml_theme=${theme}" if:set="theme"/>
       <arg line="${theme_options}" if:set="theme_options"/>
