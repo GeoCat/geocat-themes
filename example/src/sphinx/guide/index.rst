@@ -555,11 +555,8 @@ Figures
 
    A figure is an image with a caption and/or a legend:
 
-Blocks
-------
-
 Literal Blocks
-^^^^^^^^^^^^^^
+--------------
 
 Literal blocks are indicated with a double-colon ("::") at the end of
 the preceding paragraph, with the indenting to indicate the literal contents.
@@ -590,8 +587,10 @@ Example:
 
      usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
 
+Literal blocks do not offer syntax highlighting and are almost exclusively used for command output as shown in the example above.
+
 Code Block
-^^^^^^^^^^
+----------
 
 Strongly prefer the use of ``code-block`` so syntax highlighting is available.
 
@@ -616,7 +615,7 @@ Example:
           markup_processing = None
 
 Block quote
-^^^^^^^^^^^
+-----------
 
 Block quotes:
    
@@ -634,7 +633,7 @@ Block quotes:
    > Why didn't I think of that?
 
 Line Blocks
-^^^^^^^^^^^
+-----------
 
 You can use line blocks, but block quotes are easier.
 
@@ -666,8 +665,8 @@ You can use line blocks, but block quotes are easier.
    |
    | Blank lines are permitted internally, but they must begin with a "|".
 
-Block Quotes
-^^^^^^^^^^^^
+Block Quotes (Indentation)
+--------------------------
 
 Block quotes consist of indented body elements:
 
@@ -678,6 +677,8 @@ Block quotes consist of indented body elements:
     own it, and what it is too.
 
     -- Anne Elk (Miss)
+
+Accidentially getting indentation wrong and 
 
 Doctest Blocks
 ^^^^^^^^^^^^^^
