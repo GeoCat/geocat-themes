@@ -155,32 +155,24 @@ Use three levels of headings to match slide theme.
    -------
 
    Slide content
-   
-Slides
-''''''
-
-Use `nextslide` directive to breakup content into multiple slides.
-
-.. code-block:: rst
-
-   Content
-   -------
-
-   Slide content
-   
-   .. nextslide::
-   
-   More content
-   
-   .. nextslide: Update
-   
-   Also content
 
 .. nextslide:: Slide directive
 
 `slide` directive for additional slides.
 
-... nextslide: Slide classes
+.. code-block:: rst
+
+   .. slide:: GeoCat Introduction
+      :level: 1
+      :class: slide-intro
+
+      .. figure:: /img/geocat_logo_text.*
+
+      Spatial data publication and discovery with products, services and philosophy following the free and open source source software.
+   
+      Software development company based in Bennekom, with developers in the Netherlands, Spain and Canada.
+
+.. nextslide:: Slide classes
 
 Theme provides built-in slide classes.
 
@@ -198,26 +190,25 @@ Theme provides built-in slide classes.
 
 .. nextslide:: Slide inline-content
 
-Use inline content to include slide text in workbook.
-
-    .. slide:: GeoCat Documentation Example
-       :level: 2
-       :inline-contents: True
+Use `inline-contents` to generate a slide, and include the text in the workbook.
    
+.. ifnotslides::
+    
        Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.
-
+   
 .. figure:: img/slide-inline-example.png
    
-   Sline indline-contents example
-   
+   Slide inline-contents example
+
+.. nextslide::
+
 .. code-block:: rst
 
-.. slide:: GeoCat Documentation Example
-   :level: 2
-   :inline-contents: True
-   
-   Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.
-
+   .. slide:: GeoCat Documentation Example
+      :level: 2
+      :inline-contents: True
+  
+      Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.
 
 Simplicity
 ''''''''''
@@ -248,11 +239,13 @@ Use `ifslides` and `ifnotslides` to control content included in presentation and
 
 Some content like references may only be in the workbook.
 
-    .. ifnotslides::
+.. ifnotslides::
+      
+   ..
+      
+      Reference:
 
-       Reference:
- 
-       * :geoserver:`WMS reference <services/wms/reference.html>`
+      * :geoserver:`WMS reference <services/wms/reference.html>`
 
 .. code-block:: rst
          
@@ -266,6 +259,12 @@ Exercises
 ^^^^^^^^^
 
 Use `admonition` and `ifnotslides` directive to avoid including the full exercises into presentations.
+      
+.. admonition:: Exercise issue WMS 1.3.0 GetCapabilities request
+   
+   .. ifnotslides::
+   
+      .. include:: wms_getcapabilities_exercise.txt
 
 .. code-block:: rst
    
@@ -277,8 +276,19 @@ Use `admonition` and `ifnotslides` directive to avoid including the full exercis
       
          .. include:: wms_getcapabilities_exercise.txt
 
-.. nextslide:: Exercise admonitions
+.. nextslide:: Exercise Contents
 
+Exercises are written using `txt` extension to avoid being processed by :command:`sphinx-build` until included.
+
+   .. literalinclude:: wms_getcapabilities_exercise.txt
+      :language: rst
+
+.. nextslide:: Exercise `admonitions`
+
+.. ifnotslides::
+   
+   Use `admonition` to indicate exercise purpose.
+   
 .. ifnot slides::
    
    Consistently use:
@@ -299,18 +309,18 @@ Use `admonition` and `ifnotslides` directive to avoid including the full exercis
    
    Go beyond the workbook with experimentation and research.
 
-.. nextslide:: Exercise Contents
-
-Exercises are written using `txt` extension to avoid being processed by :command:`sphinx-build` until included.
-
-   .. literalinclude:: wms_getcapabilities_exercise.txt
-      :language: rst
-
-
 Instructor notes
 ^^^^^^^^^^^^^^^^
 
 Use ``only`` directive to include content in the instructor build of the workbook.
+
+.. admonition:: Explore
+
+   What is the difference between the ``CRS:84`` and ``EPSG:4326``?
+
+   .. admonition:: Instructor Notes
+
+      The difference is the strict definition of axis order.
 
 .. code-block:: rst
    :linenos:
