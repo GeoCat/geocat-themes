@@ -57,7 +57,8 @@ Headings are tricky to manage as they need to be consistent across pages, and fo
 :file:`section/index.rst`:
 
 .. code-block:: rst
-   
+
+   *******   
    Section
    *******
    
@@ -680,13 +681,6 @@ Block quotes consist of indented body elements:
 
 Accidentially getting indentation wrong and 
 
-Doctest Blocks
-^^^^^^^^^^^^^^
-
->>> print 'Python-specific usage examples; begun with ">>>"'
-Python-specific usage examples; begun with ">>>"
->>> print '(cut and pasted from interactive Python sessions)'
-(cut and pasted from interactive Python sessions)
 
 Code Blocks
 ^^^^^^^^^^^

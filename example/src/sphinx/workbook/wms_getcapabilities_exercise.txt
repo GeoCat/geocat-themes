@@ -1,0 +1,14 @@
+To show the WMS GetCapabilities:
+
+#. Navigate to :menuselection:`Demo --> Demo Requests` page.
+
+#. Select the ``WMS_1.1.1_GetCapabilities.url`` request. The full request is reproduced below, with line breaks added for clarity::
+
+     http://localhost:8080/geoserver/wms?
+       service=wms&
+       version=1.1.1&
+       request=GetCapabilities
+
+   The server endpoint, ``service``, and ``version`` are all the same as we have seen before. The only difference is the ``request``, which is ``GetCapabilities``. There are no other parameters needed.
+
+#. Click :guilabel:`Submit`.
