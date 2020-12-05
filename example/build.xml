@@ -50,22 +50,29 @@ ant workbook -Dopen=true
     <antcall target="_sphinx">
       <param name="builder" value="slides"/>
       <param name="sourcedir" value="${src}/sphinx"/>
-      <param name="outputdir" value="${build}/slides"/>
+      <param name="outputdir" value="${build}/instructor/_slides"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
     <antcall target="_check">
-        <param name="file" value="${build}/slides/index.html"/>
+        <param name="file" value="${build}/instructor/_slides/index.html"/>
     </antcall>
   </target>
   
   <target name="build" description="build documentation (requires sphinx-build)">
     <antcall target="_sphinx">
+      <param name="tags" value="-t instructor"/>
       <param name="sourcedir" value="${src}/sphinx"/>
-      <param name="outputdir" value="${build}/${builder}"/>
+      <param name="outputdir" value="${build}/instructor"/>
+      <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+    <antcall target="_sphinx">
+      <param name="builder" value="slides"/>
+      <param name="sourcedir" value="${src}/sphinx"/>
+      <param name="outputdir" value="${build}/instructor/_slides"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
     <antcall target="_check">
-        <param name="file" value="${build}/${builder}/index.html"/>
+        <param name="file" value="${build}/instructor/index.html"/>
     </antcall>
   </target>
   

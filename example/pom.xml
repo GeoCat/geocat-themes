@@ -29,7 +29,7 @@
             <configuration>
               <target>
                  <ant antfile="${basedir}/build.xml" dir="${basedir}" target="build">
-                    <property name="version" value="${project.version}"/>
+                    <property name="version" value="${project.version}"/>c
                  </ant>
               </target>
             </configuration>
@@ -82,7 +82,7 @@
              <outputDirectory>../docs</outputDirectory>
              <resources>
                <resource>
-                 <directory>${project.build.directory}/html</directory>
+                 <directory>${project.build.directory}/instructor</directory>
                </resource>
              </resources>
              <addDefaultExcludes/>

@@ -6,7 +6,7 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <directory>target/html</directory>
+      <directory>target/instructor</directory>
       <outputDirectory></outputDirectory>
     </fileSet>
   </fileSets>

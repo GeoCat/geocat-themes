@@ -6,7 +6,9 @@ Writing Guide
 
 .. slide:: Writing Guide
    
-   Writing guide best viewed as an html document showing visual examples alongside cut and paste code-blocks.
+   `Workbook <../../guide/index.html>`__ with visual examples alongside cut and paste code-blocks.
+   
+   :ref:`^<Contents>`
 
 Sphinx writing guide providing cut and paste examples. Each section provides a visual example along with the a `code-block` showing the `rst` directives used. Where the example depends on :file:`config.py` configuration, or page stucture, these will be noted also.
 

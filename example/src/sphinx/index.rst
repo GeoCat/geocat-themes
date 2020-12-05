@@ -2,10 +2,8 @@
 GeoCat Documentation Example
 ############################
 
-.. slide:: GeoCat Documentation Example
-   :level: 2
-   :inline-contents: True
-   
+.. ifnotslides::
+
    Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.
 
 .. slide:: GeoCat Introduction
@@ -17,10 +15,8 @@ GeoCat Documentation Example
    Spatial data publication and discovery with products, services and philosophy following the free and open source source software.
    
    Software development company based in Bennekom, with developers in the Netherlands, Spain and Canada.
-      
-.. slide:: Free and Open Source Company
-   :level: 1
-   :class: slide-heart
+
+.. _contents:
 
 .. slide:: GeoCat Documentation Example
    :level: 2
@@ -28,14 +24,9 @@ GeoCat Documentation Example
    
    .. toctree::
       :maxdepth: 1
-      :caption: Writing
+      :caption: Contents
   
       guide/index
-   
-   .. toctree::
-      :maxdepth: 1
-      :caption: Training
-
       workbook/index
 
 .. toctree::
@@ -44,24 +35,26 @@ GeoCat Documentation Example
    
    glossary
 
-.. slide:: Reference
-   :level: 2
-   :inline-contents: True
+.. ifnotslides::
    
-   Indices and tables:
+   Reference:
 
    * :doc:`glossary`
    * :ref:`genindex`
+   
+.. only:: instructor
+   
+   .. admonition:: `Sides <_slides/index.html>`__
+      
+      * :kbd:`t` for slide table
+      * :kbd:`c` for presenters console
+
+.. slide:: Free and Open Source Company
+   :level: 1
+   :class: slide-heart
 
 .. slide:: Made with ♥ by GeoCat
    :level: 2
    :class: slide-outro
-
+   
    For more information about GeoCat, visit `www.geocat.net <https://www.geocat.net>`__ 
-   
-.. only:: instructor
-   
-   .. admonition:: `Sides <../slides/index.html>`__
-      
-      * :kbd:`t` for slide table
-      * :kbd:`c` for presenters console

@@ -6,10 +6,16 @@
 # full list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
 
+
 # -- setup --------------------------------------------------------------------
 
 import datetime
 import os
+import warnings
+
+# ignore warning from docutils code
+# https://github.com/sphinx-contrib/confluencebuilder/pull/289
+warnings.filterwarnings("ignore", category=FutureWarning) 
 
 now = datetime.datetime.now()
 
@@ -96,6 +102,7 @@ pygments_style = None
 extlinks = { 
     'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
 }
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -118,7 +125,7 @@ html_theme_options = {
     'prev_next_buttons_location': 'none',
     'show_sphinx': False,
     'show_home': False,
-    'is_prerelease': False
+    'is_prerelease': True
 }
 
 # The name of an image file (relative to this directory) to place at the top
@@ -168,8 +175,8 @@ slide_numbers = True
 slide_link_to_html = True
 slide_link_html_to_slides = True
 slide_link_html_sections_to_slides = True
-slide_relative_path = '../slides/'
-slide_html_relative_path = '../instructor' 
+slide_relative_path = '_slides/'
+slide_html_relative_path = '../' 
 slide_html_slide_link_symbol = '§'
 
 # -- Options for LaTeX output ------------------------------------------------
