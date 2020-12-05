@@ -1,0 +1,323 @@
+@import url(slides.css);
+
+body {
+  background: #d7d7d7 !important;
+}
+h1, h2, h3 {
+  letter-spacing: normal;
+  padding-right: 0;
+}
+p, ul, ul li, ol, ol li {
+  font-size: 26px !important;
+}
+li {
+  line-height: 1.5em;
+  margin-bottom: .4em;
+}
+a {
+  color: #0366d6;
+}
+pre {
+  box-shadow: none;
+}
+code {
+  color: #e74c3c;
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  padding: 0 0.2em;
+}
+.slides > article {
+  font-family: 'Open Sans', Arial, sans-serif;
+	color: #333;
+	font-size: 1em;
+  line-height: 1.5em;
+  box-shadow: none;
+  border-radius: 4px;
+  border: none;
+	letter-spacing: normal;
+}
+.slides.table > article {
+  box-shadow: none;
+  border-radius: 4px;
+  border: none;
+	letter-spacing: normal;
+}
+
+/* title page */
+.slides > article.level-1 {
+	color: #333;
+}
+.slides > article.level-1 h1 {
+  margin-top: 75px;
+}
+.slides.table > article.level-1 h1 {
+  margin-top: 40px;
+}
+/* section page */
+.slides > article.level-2 {
+  color: #333;
+}
+.slides > article.level-2 h2 {
+	margin-top: 75px;
+}
+.slides > article.level-2 p {
+	margin-top: 20px;
+}
+.slides.table > article.level-2 h2 {
+  margin-top: 40px;
+}
+
+/* footer */
+.slide footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 5px 15px;
+}
+.slide-footer {
+  position: relative;
+  bottom: auto;
+  float: left;
+  left: auto;
+}
+.slide-no {
+  position: relative;
+  bottom: auto;
+  float: right;
+  right: auto;
+}
+
+/* special slides */
+.slide-intro {
+  background: linear-gradient(to bottom, #fff 0%,#fff 40%,#009BD2 40%,#009BD2 60%,#009BD2 100%);
+}
+.slide-intro h1 {
+  display: none;
+}
+.slide-intro p {
+  color: #fff;
+}
+.slide-intro .figure {
+  margin-bottom: 100px;
+}
+.slides.table .slide-intro .figure {
+  margin-bottom: 55px;
+}
+.slides.table .slide-intro .figure img {
+  max-width: 60%;
+}
+/* contents */
+.slide-contents .caption {
+  margin-bottom: 10px;
+}
+.slide-contents ul {
+  margin-top: 0;
+  margin-left: 0;
+}
+.slide-contents li {
+  margin-bottom: .3em;
+  border-bottom: 2px dotted #000;
+  line-height: 1.6em;
+}
+.slide-contents li::before {
+  display: none;
+}
+.slide-contents li a {
+  text-decoration: none;
+}
+/* author */
+.slide-author h1 {
+  display: none;
+}
+.slide-author .figure {
+  padding: 15px 0;
+  text-align: left;
+}
+.slide-author .figure img {
+  max-height: 250px;
+}
+.slides.table .slide-author .figure {
+  padding: 0;
+}
+.slides.table .slide-author .figure img {
+  max-width: 60%;
+  max-height: 125px;
+}
+.slide-geocat {
+  background-color: #009BD2 !important;
+  text-align: center;
+}
+.slide-bridge {
+  background-color: #FFD200 !important;
+  text-align: center;
+}
+.slide-live {
+  background-color: #FF9900 !important;
+  text-align: center;
+}
+.slide-geoserver {
+  background-color: #00AD9F !important;
+  text-align: center;
+}
+.slide-service {
+  background-color: #1F1249 !important;
+  text-align: center;
+}
+.slide-outro h2 {
+  margin-bottom: 300px !important;
+}
+.slides.table .slide-outro h2 {
+  margin-bottom: 160px !important;
+}
+/* ----- titles */
+.slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geoserver h1, .slide-service h1,
+.slide-geocat h2, .slide-bridge h2, .slide-live h2, .slide-geoserver h2, .slide-service h2 {
+  color: #fff !important;
+  font-size: 2em !important;
+  margin-top: 225px !important;
+}
+.slides.table .slide-geocat h1, .slides.table .slide-bridge h1, .slides.table .slide-live h1, 
+.slides.table .slide-geoserver h1, .slides.table .slide-service h1,
+.slides.table .slide-geocat h2, .slides.table .slide-bridge h2, .slides.table .slide-live h2, 
+.slides.table .slide-geoserver h2, .slides.table .slide-service h2 {
+  color: #fff !important;
+  margin-top: 115px !important;
+}
+.slide-geocat p, .slide-bridge p, .slide-live p, .slide-geoserver p, .slide-service p {
+  font-size: 1.5em !important;
+  color: #fff !important;
+}
+.slides.table p, .slides.table ul, .slides.table ul li, .slides.table ol, .slides.table ol li {
+  font-size: 0.9em !important;
+}
+/* full background */
+.slide-bennekom {
+  background-image: url("img/bennekom.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+}
+.slide-bennekom h1 {
+  margin-top: 30px !important;
+  color: #fff;
+}
+.slides.table .slide-bennekom h1 {
+  margin-top: 15px !important;
+}
+.slide-victoria {
+  background-image: url("img/victoria.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+}
+.slide-victoria h1 {
+  margin-top: 500px !important;
+  color: #fff;
+}
+.slides.table .slide-victoria h1 {
+  margin-top: 250px !important;
+}
+.slide-heart {
+  background-image: url("img/heart.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 40%;
+  background-color: #192b43 !important;
+}
+.slide-heart h1 {
+  display: none;
+}
+
+/* console */
+.slides.table > article ol {
+  padding-left: 20px;
+}
+.slides.slides.table > article.past, .slides.slides.table > article.next {
+  height: 280px !important;
+  width: 370px !important;
+  margin-top: 45px !important;
+}
+.slides.table > article.past {
+  transform: translate(-400px) !important;
+  -o-transform: translate(-400px) !important;
+  -moz-transform: translate(-400px) !important;
+  -webkit-transform: translate3d(-400px, 0, 0) !important;
+}
+.slides.table > article.past h1, .slides.table > article.next h1 {
+  margin-top: 10px !important;
+  font-size: 1em;
+}
+.slides.table > article.past h2, .slides.table > article.next h2 {
+  margin-top: 10px !important;
+  font-size: 0.9em;
+}
+.slides.table > article.past p, .slides.table > article.next p, .slides.table > article.past li, .slides.table > article.next li {
+  font-size: 0.75em;
+}
+.slides.table > article.past pre, .slides.table > article.next pre {
+  margin-top: 15px !important;
+  font-size: 0.75em;
+}
+.slides.table .slide-geocat.past h1, .slides.table .slide-bridge.past h1, .slides.table .slide-live.past h1, 
+.slides.table .slide-geoserver.past h1, .slides.table .slide-service.past h1,
+.slides.table .slide-geocat.next h1, .slides.table .slide-bridge.next h1, .slides.table .slide-live.next h1, 
+.slides.table .slide-geoserver.next h1, .slides.table .slide-service.next h1 {
+  margin-top: 90px !important;
+}
+.slides.table .slide-intro.past .figure, .slides.table .slide-intro.next .figure {
+  margin-bottom: 30px !important;
+}
+.slides.table .slide-intro.past p, .slides.table .slide-intro.next p {
+  margin-top: 5px !important;
+}
+.slides.table .slide-victoria.past h1, .slides.table .slide-victoria.next h1 {
+  margin-top: 190px !important;
+}
+.slides.table .slide-outro h2 {
+  margin-bottom: 140px !important;
+}
+.slides.table .slide-author p {
+  margin-top: 0;
+}
+
+/* presenter notes */
+
+/* ----- controls */
+#controls #prev, #controls #next {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+#controls #prev:hover, #controls #next:hover {
+  background-color: #0366d6;
+}
+#controls #prev {
+  margin-right: 10px;
+}
+#controls #prev::before {
+  content: "←";
+  margin-right: 5px;
+}
+#controls #next {
+  margin-left: 10px;
+}
+#controls #next::after {
+  content: "→";
+  margin-left: 5px;
+}
+/* ----- notes */
+.presenter_notes {
+  top: 450px !important;
+  font-size: 24px !important;
+}
+.presenter_notes p {
+  margin: 10px 0;
+}

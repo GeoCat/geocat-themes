@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Writing Guide &mdash; GeoCat Theme Example 2020.11.23 documentation</title>
+  <title>Writing Guide &mdash; GeoCat Theme Example 2020.12.04 documentation</title>
   
 
   
@@ -32,14 +32,14 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Glossary" href="../glossary.html" />
+    <link rel="next" title="Workbook" href="../workbook/index.html" />
     <link rel="prev" title="GeoCat Documentation Example" href="../index.html" /> 
 </head>
 
@@ -85,7 +85,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Writing Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#document-structure">Document Structure</a><ul>
@@ -119,13 +119,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#figures">Figures</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#blocks">Blocks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#code-block">Code Block</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#block-quote">Block quote</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#block-quotes">Block Quotes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#doctest-blocks">Doctest Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-block">Code Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-quote">Block quote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-quotes-indentation">Block Quotes (Indentation)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#code-blocks">Code Blocks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#emphasized-lines-with-line-numbers">Emphasized lines with line numbers</a></li>
 </ul>
@@ -141,7 +139,9 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/index.html">Workbook</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 </ul>
@@ -185,6 +185,10 @@
 
 
 <div role="navigation" aria-label="breadcrumbs navigation" class="header clearfix">
+
+  <div id="gc_prerelease" class="admonition danger">
+    &#9888; Pre-release
+  </div>
 
   
   <ul class="wy-breadcrumbs">
@@ -326,7 +330,8 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
 </pre></div>
 </div>
 <p><code class="file docutils literal notranslate"><span class="pre">section/index.rst</span></code>:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Section</span>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">*******</span>
+<span class="gh">Section</span>
 <span class="gh">*******</span>
 
 <span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
@@ -482,7 +487,7 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
 <h3>Keyboard input<a class="headerlink" href="#keyboard-input" title="Permalink to this headline">¶</a></h3>
 <p>Keyboard input, intended to be typed, using the <strong class="command">kbd</strong> directive:</p>
 <blockquote>
-<div><p>Select all text using <kbd class="kbd docutils literal notranslate">Control-a</kbd>.</p>
+<div><p>Select all text using <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">a</kbd></kbd>.</p>
 </div></blockquote>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Select all text using <span class="na">:kbd:</span><span class="nv">`Control-a`</span>.
 </pre></div>
@@ -550,8 +555,8 @@ Use <span class="na">:guilabel:</span><span class="nv">`Legal restrictions`</spa
 <h3>Naming terms and standards<a class="headerlink" href="#naming-terms-and-standards" title="Permalink to this headline">¶</a></h3>
 <p>Avoid repeatedly defining terms such as metadata or WFS, a <strong class="command">glossary</strong> can be used if needed:</p>
 <blockquote>
-<div><p><strong class="command">GeoServer</strong> is a popular web service implementing the <a class="reference internal" href="../glossary.html#term-wfs"><span class="xref std std-term">WFS</span></a> standard used to publish features using GML and <a class="reference internal" href="../glossary.html#term-geojson"><span class="xref std std-term">json</span></a>.</p>
-<p>The OGC <a class="reference internal" href="../glossary.html#term-wfs"><span class="xref std std-term">Web Feature Service</span></a> standard is an example of a open web service making use of <cite>GetCapabilities</cite> to describe published data products and operations.</p>
+<div><p><strong class="command">GeoServer</strong> is a popular web service implementing the <a class="reference internal" href="../glossary.html#term-WFS"><span class="xref std std-term">WFS</span></a> standard used to publish features using GML and <a class="reference internal" href="../glossary.html#term-GeoJSON"><span class="xref std std-term">json</span></a>.</p>
+<p>The OGC <a class="reference internal" href="../glossary.html#term-WFS"><span class="xref std std-term">Web Feature Service</span></a> standard is an example of a open web service making use of <cite>GetCapabilities</cite> to describe published data products and operations.</p>
 </div></blockquote>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="na">:command:</span><span class="nv">`GeoServer`</span> is a popular web service implementing the <span class="na">:term:</span><span class="nv">`WFS`</span> standard used to publish features using <span class="na">:term:</span><span class="nv">`GML`</span> and <span class="na">:term:</span><span class="nv">`json &lt;GeoJSON&gt;`</span>.
 
@@ -830,10 +835,8 @@ Reader discretion is strongly advised.</p>
 </div>
 </div>
 </div>
-<div class="section" id="blocks">
-<h3>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="literal-blocks">
-<h4>Literal Blocks<a class="headerlink" href="#literal-blocks" title="Permalink to this headline">¶</a></h4>
+<h3>Literal Blocks<a class="headerlink" href="#literal-blocks" title="Permalink to this headline">¶</a></h3>
 <p>Literal blocks are indicated with a double-colon (“::”) at the end of
 the preceding paragraph, with the indenting to indicate the literal contents.</p>
 <p>Example:</p>
@@ -859,9 +862,10 @@ Output::
 </pre></div>
 </div>
 </div>
+<p>Literal blocks do not offer syntax highlighting and are almost exclusively used for command output as shown in the example above.</p>
 </div>
 <div class="section" id="code-block">
-<h4>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h4>
+<h3>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h3>
 <p>Strongly prefer the use of <code class="docutils literal notranslate"><span class="pre">code-block</span></code> so syntax highlighting is available.</p>
 <p>Example:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">python</span>
@@ -883,7 +887,7 @@ Output::
 </div>
 </div>
 <div class="section" id="block-quote">
-<h4>Block quote<a class="headerlink" href="#block-quote" title="Permalink to this headline">¶</a></h4>
+<h3>Block quote<a class="headerlink" href="#block-quote" title="Permalink to this headline">¶</a></h3>
 <p>Block quotes:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>&gt;&gt; Great idea!
 &gt;
@@ -898,7 +902,7 @@ Output::
 </div>
 </div>
 <div class="section" id="line-blocks">
-<h4>Line Blocks<a class="headerlink" href="#line-blocks" title="Permalink to this headline">¶</a></h4>
+<h3>Line Blocks<a class="headerlink" href="#line-blocks" title="Permalink to this headline">¶</a></h3>
 <p>You can use line blocks, but block quotes are easier.</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> This is a line block. It ends with a blank line.
 <span class="o">|</span>     Each new line begins with a vertical bar (&quot;|&quot;).
@@ -935,8 +939,8 @@ the left edge of the text above it.</div>
 </div>
 </div>
 </div>
-<div class="section" id="block-quotes">
-<h4>Block Quotes<a class="headerlink" href="#block-quotes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="block-quotes-indentation">
+<h3>Block Quotes (Indentation)<a class="headerlink" href="#block-quotes-indentation" title="Permalink to this headline">¶</a></h3>
 <p>Block quotes consist of indented body elements:</p>
 <blockquote>
 <div><p>My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
@@ -946,16 +950,7 @@ far end.  That is my theory, it is mine, and belongs to me and I
 own it, and what it is too.</p>
 <p class="attribution">—Anne Elk (Miss)</p>
 </div></blockquote>
-</div>
-<div class="section" id="doctest-blocks">
-<h4>Doctest Blocks<a class="headerlink" href="#doctest-blocks" title="Permalink to this headline">¶</a></h4>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s1">&#39;Python-specific usage examples; begun with &quot;&gt;&gt;&gt;&quot;&#39;</span>
-<span class="go">Python-specific usage examples; begun with &quot;&gt;&gt;&gt;&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s1">&#39;(cut and pasted from interactive Python sessions)&#39;</span>
-<span class="go">(cut and pasted from interactive Python sessions)</span>
-</pre></div>
-</div>
-</div>
+<p>Accidentially getting indentation wrong and</p>
 <div class="section" id="code-blocks">
 <h4>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h4>
 <pre class="literal-block"># parsed-literal test
@@ -1123,15 +1118,6 @@ refer to the <a class="reference internal" href="#targets">Targets</a> section.<
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../index.html" class="btn btn-neutral float-left" title="GeoCat Documentation Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

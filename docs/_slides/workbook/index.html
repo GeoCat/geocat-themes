@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Workbook &mdash; GeoCat Theme Example</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/geocat_slides.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2020.12.04',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/common.js"></script>
+    
+    <script type="text/javascript" src="../_static/slides.js"></script>
+    <script type="text/javascript" src="../_static/sync.js"></script>
+    <script type="text/javascript" src="../_static/controller.js"></script>
+    <script type="text/javascript" src="../_static/init.js"></script>
+    
+    
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="GeoCat Theme Example" href="../index.html" />
+    <link rel="next" title="Glossary" href="../glossary.html" />
+    <link rel="prev" title="Writing Guide" href="../guide/index.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="slide level-1" id="workbook">
+
+<h1>Workbook<a class="headerlink" href="../../workbook/index.html#workbook" title="View HTML">§</a></h1>
+
+<p>Setting up a half-day training workbook.</p>
+<p><a class="reference internal" href="../index.html#contents"><span class="std std-ref">^</span></a></p>
+
+
+<footer>
+
+<div class="slide-no">1</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-2" id="workbook-structure">
+
+<h2>Workbook structure<a class="headerlink" href="../../workbook/index.html#workbook-structure" title="View HTML">§</a></h2>
+
+<p>Directory structure:</p>
+<ul class="simple">
+<li><code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code> - optional to ignore files such as the build directory</li>
+<li><code class="file docutils literal notranslate"><span class="pre">README.md</span></code> - workbook title and objectives</li>
+<li><code class="file docutils literal notranslate"><span class="pre">build.xml</span></code> - ant build script</li>
+<li><code class="file docutils literal notranslate"><span class="pre">build.properties</span></code> - fill-in-the blank properties for build script</li>
+<li><code class="file docutils literal notranslate"><span class="pre">target/</span></code> - generated output</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/</span></code> - workbook contents</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/config.py</span></code> - sphinx build file</li>
+</ul>
+
+
+<footer>
+
+<div class="slide-no">2</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="build-xml">
+
+<h3>build.xml<a class="headerlink" href="../../workbook/index.html#build-xml" title="View HTML">§</a></h3>
+
+<p>Apache Ant is a cross platform build system similar to the unix <strong class="command">make</strong> command. It defines a series of build targets that can be performed on the command line. Each build target is a small recipe consisting of tasks to be performed. Build targets can depend on each other (so that training material must be generated before being packaged as a zip bundle).</p>
+
+
+<footer>
+
+<div class="slide-no">3</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id5">
+
+<h3>build.xml<a class="headerlink" href="../../workbook/index.html#id5" title="View HTML">§</a></h3>
+
+<p>To list ant build targets intended for use (those that have a desription):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ant -p
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">4</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="readme-md">
+
+<h3>README.md<a class="headerlink" href="../../workbook/index.html#readme-md" title="View HTML">§</a></h3>
+
+<p>Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflicting with sphinx-build.</p>
+
+
+<footer>
+
+<div class="slide-no">5</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="conf-py">
+
+<h3>conf.py<a class="headerlink" href="../../workbook/index.html#conf-py" title="View HTML">§</a></h3>
+
+<p>Configuration file for <strong class="command">sphinx-build</strong> and configure builders for <cite>html</cite> and <cite>slide</cite> output.</p>
+<p>The <code class="file docutils literal notranslate"><span class="pre">config.py</span></code> file is written in python, we have used this to:</p>
+<ul class="simple">
+<li>Parse <code class="file docutils literal notranslate"><span class="pre">build.properites</span></code></li>
+<li>Current year, copyright and license information</li>
+<li>Extensions used</li>
+<li>External links</li>
+<li>Configure html builder</li>
+<li>Configure slide builder</li>
+</ul>
+
+
+<footer>
+
+<div class="slide-no">6</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="build-properties">
+
+<h3>build.properties<a class="headerlink" href="../../workbook/index.html#build-properties" title="View HTML">§</a></h3>
+
+<p>Provide properties to <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-properties notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="na">project</span><span class="o">=</span><span class="s">GeoCat Theme Example</span>
+<span class="na">subtitle</span><span class="o">=</span><span class="s">Writing guidelines</span>
+<span class="na">author</span><span class="o">=</span><span class="s">GeoCat BV</span>
+<span class="na">theme_path</span><span class="o">=</span><span class="s">..</span>
+<span class="na">pdf</span><span class="o">=</span><span class="s">Writing_Guide</span>
+</pre></div>
+</td></tr></table></div>
+
+
+<footer>
+
+<div class="slide-no">7</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-2" id="workbook-contents">
+
+<h2>Workbook contents<a class="headerlink" href="../../workbook/index.html#workbook-contents" title="View HTML">§</a></h2>
+
+<p>Sphinx toctree contents:</p>
+<ul class="simple">
+<li><code class="file docutils literal notranslate"><span class="pre">src/index.rst</span></code> - title page and table of contents</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/figure/</span></code> - diagrams and illustrations</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/img/</span></code> - common images</li>
+</ul>
+<p>Common sections:</p>
+<ul class="simple">
+<li><code class="file docutils literal notranslate"><span class="pre">src/welcome/index.rst</span></code> - overview and objectives</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/review/index.rst</span></code> - optional review for certifications</li>
+</ul>
+
+
+<footer>
+
+<div class="slide-no">8</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-2" id="id6">
+
+<h2>Workbook contents<a class="headerlink" href="../../workbook/index.html#id6" title="View HTML">§</a></h2>
+
+<p>Section contents:</p>
+<ul class="simple">
+<li><code class="file docutils literal notranslate"><span class="pre">src/</span><em><span class="pre">section</span></em><span class="pre">/index.rst</span></code> - section page</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/</span><em><span class="pre">section</span></em><span class="pre">/exercsie.txt</span></code> - exercise included in text</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/</span><em><span class="pre">section</span></em><span class="pre">/img</span></code> - images and screen snaps</li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/</span><em><span class="pre">section</span></em><span class="pre">/files</span></code> - files for literal includes and downloads</li>
+</ul>
+
+
+<footer>
+
+<div class="slide-no">9</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="initial-index-rst">
+
+<h3>Initial index.rst<a class="headerlink" href="../../workbook/index.html#initial-index-rst" title="View HTML">§</a></h3>
+
+<p>Carefully constructed providing:</p>
+<ul class="simple">
+<li>Workbook title</li>
+<li><cite>toctree</cite> caption for the <cite>rtd</cite> theme</li>
+<li>Instructor note linking to slides</li>
+<li>placeholder slides as needed</li>
+</ul>
+
+
+<footer>
+
+<div class="slide-no">10</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="figure-folder">
+
+<h3>figure folder<a class="headerlink" href="../../workbook/index.html#figure-folder" title="View HTML">§</a></h3>
+
+<p>Used for <cite>svg</cite> and <cite>png</cite> diagrams:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoserver_data_directory</span><span class="o">.</span><span class="n">svg</span>
+<span class="n">geoserver_data_directory</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>Figures are provided with a caption describing the content (even if that ends up repeating some of the text).</p>
+<blockquote>
+<div><p>The GeoServer data directory is the location of the configuration information on disk.</p>
+<div class="figure align-default" id="id1">
+<img alt="../_images/geoserver_data_directory.svg" src="../_images/geoserver_data_directory.svg" /><p class="caption"><span class="caption-text">GeoServer data directory</span></p>
+</div>
+</div></blockquote>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>The GeoServer data directory is the location of the configuration information on disk.
+
+<span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> /figure/geoserver_data_directory.*
+
+   GeoServer data directory
+</pre></div>
+</div>
+<p>Recommend use of a single shared <cite>figure</cite> folder as shown above with (leading <code class="file docutils literal notranslate"><span class="pre">/</span></code> indicates path is relative to the <code class="file docutils literal notranslate"><span class="pre">config.py</span></code> file). This makes it easier to manage and update diagrams.</p>
+
+
+<footer>
+
+<div class="slide-no">11</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="files-folder">
+
+<h3>files folder<a class="headerlink" href="../../workbook/index.html#files-folder" title="View HTML">§</a></h3>
+
+<p>Used for scripts, configuration files, and sample data such as icons:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elevation</span><span class="o">.</span><span class="n">sld</span>
+<span class="n">place</span><span class="o">.</span><span class="n">png</span>
+<span class="n">place</span><span class="o">.</span><span class="n">svg</span>
+</pre></div>
+</div>
+<p>Keep in mind this content is bundled with the workbook content and is not intended for handling large files.</p>
+<p>Scripts and configuration files are often presented as a code example using <cite>literalinclude</cite> directive.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Here is an improved <a class="reference download internal" download="" href="../_downloads/10d73596e93f0150e923b0bf41504382/elevation.sld"><code class="xref download docutils literal notranslate"><span class="pre">elevation.sld</span></code></a> SLD showing the elevations:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;StyledLayerDescriptor</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span>
+  <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd&quot;</span>
+  <span class="na">xmlns=</span><span class="s">&quot;http://www.opengis.net/sld&quot;</span> <span class="na">xmlns:ogc=</span><span class="s">&quot;http://www.opengis.net/ogc&quot;</span>
+  <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;NamedLayer&gt;</span>
+    <span class="nt">&lt;Name&gt;</span>elevation_points<span class="nt">&lt;/Name&gt;</span>
+    <span class="nt">&lt;UserStyle&gt;</span>
+      <span class="nt">&lt;Title&gt;</span>Elevation Points<span class="nt">&lt;/Title&gt;</span>
+      <span class="nt">&lt;FeatureTypeStyle&gt;</span>
+        <span class="nt">&lt;Rule&gt;</span>
+          <span class="nt">&lt;Title&gt;</span>azure point<span class="nt">&lt;/Title&gt;</span>
+          <span class="nt">&lt;PointSymbolizer&gt;</span>
+            <span class="nt">&lt;Graphic&gt;</span>
+              <span class="nt">&lt;Mark&gt;</span>
+                <span class="nt">&lt;WellKnownName&gt;</span>cross<span class="nt">&lt;/WellKnownName&gt;</span>
+                <span class="nt">&lt;Fill&gt;</span>
+                  <span class="nt">&lt;CssParameter</span> <span class="na">name=</span><span class="s">&quot;fill&quot;</span><span class="nt">&gt;</span>#333333<span class="nt">&lt;/CssParameter&gt;</span>
+                <span class="nt">&lt;/Fill&gt;</span>
+              <span class="nt">&lt;/Mark&gt;</span>
+              <span class="nt">&lt;Size&gt;</span>3<span class="nt">&lt;/Size&gt;</span>
+            <span class="nt">&lt;/Graphic&gt;</span>
+          <span class="nt">&lt;/PointSymbolizer&gt;</span>
+          <span class="nt">&lt;TextSymbolizer&gt;</span>
+           <span class="nt">&lt;Label&gt;</span>
+             <span class="nt">&lt;ogc:PropertyName&gt;</span>elevation<span class="nt">&lt;/ogc:PropertyName&gt;</span> m
+           <span class="nt">&lt;/Label&gt;</span>
+           <span class="nt">&lt;LabelPlacement&gt;</span>
+             <span class="nt">&lt;PointPlacement&gt;</span>
+               <span class="nt">&lt;AnchorPoint&gt;</span>
+                 <span class="nt">&lt;AnchorPointX&gt;</span>0.5<span class="nt">&lt;/AnchorPointX&gt;</span>
+                 <span class="nt">&lt;AnchorPointY&gt;</span>0.0<span class="nt">&lt;/AnchorPointY&gt;</span>
+               <span class="nt">&lt;/AnchorPoint&gt;</span>
+               <span class="nt">&lt;Displacement&gt;</span>
+                 <span class="nt">&lt;DisplacementX&gt;</span>0<span class="nt">&lt;/DisplacementX&gt;</span>
+                 <span class="nt">&lt;DisplacementY&gt;</span>2<span class="nt">&lt;/DisplacementY&gt;</span>
+               <span class="nt">&lt;/Displacement&gt;</span>
+             <span class="nt">&lt;/PointPlacement&gt;</span>
+           <span class="nt">&lt;/LabelPlacement&gt;</span>
+          <span class="nt">&lt;/TextSymbolizer&gt;</span>
+        <span class="nt">&lt;/Rule&gt;</span>
+      <span class="nt">&lt;/FeatureTypeStyle&gt;</span>
+    <span class="nt">&lt;/UserStyle&gt;</span>
+  <span class="nt">&lt;/NamedLayer&gt;</span>
+<span class="nt">&lt;/StyledLayerDescriptor&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="m">#.</span> Here is an improved <span class="na">:download:</span><span class="nv">`elevation.sld &lt;files/elevation.sld&gt;`</span> SLD showing the elevations:
+
+<span class="p">   ..</span> <span class="ow">literalinclude</span><span class="p">::</span> files/elevation.sld
+      <span class="nc">:language:</span> xml
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">12</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="img-folder">
+
+<h3>img folder<a class="headerlink" href="../../workbook/index.html#img-folder" title="View HTML">§</a></h3>
+
+<p>The root <code class="file docutils literal notranslate"><span class="pre">img</span></code> folder is primarily used for branding or common screens such as how to login.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc_geosever_logo_300x300</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>Each section has an <code class="file docutils literal notranslate"><em><span class="pre">section</span></em><span class="pre">/img</span></code> folder used to manage screen snaps for the section.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage_dem_bands</span><span class="o">.</span><span class="n">png</span>
+<span class="n">coverage_parameters</span><span class="o">.</span><span class="n">png</span>
+<span class="n">gray_preview</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>Screen snaps are used with the <cite>figure</cite> directive, so we can provide a caption.</p>
+<blockquote>
+<div><blockquote>
+<div><p>The <span class="guilabel">SUGGESTED_TILE_SIZE</span> parameter is set automatically by GeoServer when images use internal tiling (generally this setting is not changed from its default).</p>
+<div class="figure align-default">
+<img alt="../_images/coverage_parameters.png" src="../_images/coverage_parameters.png" />
+</div>
+</div></blockquote>
+<p>Coverage parameters</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The :guilabel:`SUGGESTED_TILE_SIZE` parameter is set automatically by GeoServer when images use internal tiling (generally this setting is not changed from its default).
+
+.. figure:: img/coverage_parameters.png
+
+   Coverage parameters
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">13</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="section-index-rst">
+
+<h3>Section index.rst<a class="headerlink" href="../../workbook/index.html#section-index-rst" title="View HTML">§</a></h3>
+
+<p>Use straight forward writing with three levels of headings:</p>
+<ul class="simple">
+<li>Consistency is required as content is generted into both slides and workbooks</li>
+<li>Consistent structure and writing is both profesional and functional helping comprehension and ability to scan and review material.</li>
+</ul>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Page</span>
+<span class="gh">****</span>
+
+<span class="gh">Section</span>
+<span class="gh">=======</span>
+
+<span class="gh">Content</span>
+<span class="gh">-------</span>
+
+Content
+</pre></div>
+</div>
+<p>We are gradually shifting to numbering <cite>toctree</cite> and providing a heading for exercises to help attendees locate the right section to work on.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Exercise</span>
+<span class="o">^^^^^^^^</span>
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">14</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-2" id="workbook-writing">
+
+<h2>Workbook Writing<a class="headerlink" href="../../workbook/index.html#workbook-writing" title="View HTML">§</a></h2>
+
+<p>Care is taken to ensure that content generates as slides and workbook.</p>
+<p>Workbooks are built with <cite>autoslides</cite>:</p>
+<ul class="simple">
+<li>Each page turns into a single presentation.</li>
+<li>Each heading becomes a new slide.</li>
+<li>Headings are cross linked between workbook and slides</li>
+</ul>
+
+
+<footer>
+
+<div class="slide-no">15</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="slide-headings">
+
+<h3>Slide headings<a class="headerlink" href="../../workbook/index.html#slide-headings" title="View HTML">§</a></h3>
+
+<p>Use straight forward writing with three levels of headings:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Page</span>
+<span class="gh">****</span>
+
+<span class="gh">Section</span>
+<span class="gh">=======</span>
+
+<span class="gh">Content</span>
+<span class="gh">-------</span>
+
+Slide content
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">16</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id7">
+
+<h3>Autoslides Presentations<a class="headerlink" href="../../workbook/index.html#id7" title="View HTML">§</a></h3>
+
+<p>Manage long pages using <cite>include</cite> directive.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Basics</span>
+<span class="gh">******</span>
+
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> admin.txt
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> workspace.txt
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> datastore.txt
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> layer.txt
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> group.txt
+<span class="p">..</span> <span class="ow">include</span><span class="p">::</span> style.txt
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">17</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="ifslides-and-ifnotslides">
+
+<h3>ifslides and ifnotslides<a class="headerlink" href="../../workbook/index.html#ifslides-and-ifnotslides" title="View HTML">§</a></h3>
+
+<p>Use <cite>ifslides</cite> and <cite>ifnotslides</cite> to control content included in presentation and workbook.</p>
+<q>
+Data directory access required for icons and fonts.</q>
+
+
+<footer>
+
+<div class="slide-no">18</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id8">
+
+<h3>ifslides and ifnotslides<a class="headerlink" href="../../workbook/index.html#id8" title="View HTML">§</a></h3>
+
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">ifslides</span><span class="p">::</span>
+
+   Data directory access required for icons and fonts.
+
+<span class="p">..</span> <span class="ow">ifnotslides</span><span class="p">::</span>
+
+   Access to the GeoServer data directory is required to manage the icons and fonts used for styling.
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">19</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id9">
+
+<h3>Workbook references<a class="headerlink" href="../../workbook/index.html#id9" title="View HTML">§</a></h3>
+
+<p>Some content like references may only be in the workbook.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">ifnotslides</span><span class="p">::</span>
+
+   Reference:
+
+   <span class="m">*</span> <span class="na">:geoserver:</span><span class="nv">`WMS reference &lt;services/wms/reference.html&gt;`</span>
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">20</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="slide-directive">
+
+<h3>Slide directive<a class="headerlink" href="../../workbook/index.html#slide-directive" title="View HTML">§</a></h3>
+
+<p><cite>slide</cite> directive for additional slides.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> GeoCat Introduction
+   <span class="nc">:level:</span> 1
+   <span class="nc">:class:</span> slide-intro
+
+<span class="p">   ..</span> <span class="ow">figure</span><span class="p">::</span> /img/geocat_logo_text.*
+
+   Spatial data publication and discovery with products, services and philosophy following the free and open source source software.
+
+   Software development company based in Bennekom, with developers in the Netherlands, Spain and Canada.
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">21</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id10">
+
+<h3>Slide classes<a class="headerlink" href="../../workbook/index.html#id10" title="View HTML">§</a></h3>
+
+<p>Theme provides built-in slide classes:</p>
+<div class="figure align-default" id="id2">
+<img alt="../_images/slide-heart.png" src="../_images/slide-heart.png" />
+<p class="caption"><span class="caption-text">Slide-heart class</span></p>
+</div>
+
+
+<footer>
+
+<div class="slide-no">22</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id11">
+
+<h3>Slide directive<a class="headerlink" href="../../workbook/index.html#id11" title="View HTML">§</a></h3>
+
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Free and Open Source Company
+   <span class="nc">:level:</span> 1
+   <span class="nc">:class:</span> slide-heart
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">23</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id12">
+
+<h3>Ending a presentation<a class="headerlink" href="../../workbook/index.html#id12" title="View HTML">§</a></h3>
+
+<p>Theme <cite>slide-outro</cite> is a nice way to end a presentation:</p>
+<div class="figure align-default" id="id3">
+<img alt="../_images/slide_questions.png" src="../_images/slide_questions.png" />
+<p class="caption"><span class="caption-text">Use of <cite>slide-outro</cite> to end presentation.</span></p>
+</div>
+<p>Note <cite>doc</cite> link to return to top-level:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Questions and Review
+  <span class="nc">:level:</span> 2
+  <span class="nc">:class:</span> slide-outro
+
+  <span class="na">:doc:</span><span class="nv">`/index`</span>
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">24</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id13">
+
+<h3>Slide directive inline-contents<a class="headerlink" href="../../workbook/index.html#id13" title="View HTML">§</a></h3>
+
+<div class="figure align-default" id="id4">
+<img alt="../_images/slide-inline-example.png" src="../_images/slide-inline-example.png" />
+<p class="caption"><span class="caption-text">Slide inline-contents example</span></p>
+</div>
+
+
+<footer>
+
+<div class="slide-no">25</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id14">
+
+<h3>Slide directive<a class="headerlink" href="../../workbook/index.html#id14" title="View HTML">§</a></h3>
+
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> GeoCat Documentation Example
+   <span class="nc">:level:</span> 2
+   <span class="nc">:inline-contents:</span> True
+
+   Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">26</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="instructor-notes">
+
+<h3>Instructor notes<a class="headerlink" href="../../workbook/index.html#instructor-notes" title="View HTML">§</a></h3>
+
+<p>Use <code class="docutils literal notranslate"><span class="pre">only</span></code> directive to include content in the instructor build of the workbook.</p>
+<blockquote>
+<div><div class="admonition-explore admonition">
+<p class="first admonition-title">Explore</p>
+<p>What is the difference between the <code class="docutils literal notranslate"><span class="pre">CRS:84</span></code> and <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code>?</p>
+<div class="admonition-instructor-notes last admonition">
+<p class="first admonition-title">Instructor Notes</p>
+<p class="last">The difference is the strict definition of axis order.</p>
+</div>
+</div>
+</div></blockquote>
+<div class="highlight-rst notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Explore
+
+   What is the difference between the <span class="s">``CRS:84``</span> and <span class="s">``EPSG:4326``</span>?
+
+<span class="p">   ..</span> <span class="ow">only</span><span class="p">::</span> instructor
+
+<span class="p">      ..</span> <span class="ow">admonition</span><span class="p">::</span> Instructor Notes
+
+         The difference is the strict definition of axis order.
+</pre></div>
+</td></tr></table></div>
+
+
+<footer>
+
+<div class="slide-no">27</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-2" id="writing-exercises">
+
+<h2>Writing Exercises<a class="headerlink" href="../../workbook/index.html#writing-exercises" title="View HTML">§</a></h2>
+
+
+
+<footer>
+
+<div class="slide-no">28</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="avoid-including-exercise-in-slides">
+
+<h3>Avoid including exercise in slides<a class="headerlink" href="../../workbook/index.html#avoid-including-exercise-in-slides" title="View HTML">§</a></h3>
+
+<p>Use <cite>admonition</cite> and <cite>ifnotslides</cite> directive to avoid including the full exercises into presentations.</p>
+<div class="admonition-exercise-issue-wms-1-3-0-getcapabilities-request admonition">
+<p class="first last admonition-title">Exercise issue WMS 1.3.0 GetCapabilities request</p>
+</div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">nextslide</span><span class="p">::</span> WMS Exercises
+
+<span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Exercise issue WMS 1.3.0 GetCapabilities request
+
+<span class="p">   ..</span> <span class="ow">ifnotslides</span><span class="p">::</span>
+
+<span class="p">      ..</span> <span class="ow">include</span><span class="p">::</span> wms_getcapabilities_exercise.txt
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">29</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="use-admonition-block-directives">
+
+<h3>Use admonition block-directives<a class="headerlink" href="../../workbook/index.html#use-admonition-block-directives" title="View HTML">§</a></h3>
+
+<div class="admonition-demo admonition">
+<p class="first admonition-title">Demo</p>
+<p class="last">Instructor demo on screen or online video.</p>
+</div>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Step-by-step exercise required to proceed with workbook.</p>
+</div>
+<div class="admonition-explore admonition">
+<p class="first admonition-title">Explore</p>
+<p class="last">Review and apply concepts covered in workbook.</p>
+</div>
+<div class="admonition-challenge admonition">
+<p class="first admonition-title">Challenge</p>
+<p class="last">Go beyond the workbook with experimentation and research.</p>
+</div>
+
+
+<footer>
+
+<div class="slide-no">30</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="manage-long-exercises-in-separate-txt-file">
+
+<h3>Manage long exercises in separate txt file<a class="headerlink" href="../../workbook/index.html#manage-long-exercises-in-separate-txt-file" title="View HTML">§</a></h3>
+
+<p>Manage long pages as a <cite>txt</cite> file using <cite>include</cite> directive.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> wms_getcapabilities_exercise.txt
+   <span class="nc">:language:</span> rst
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">31</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="step-by-step-instructions">
+
+<h3>Step-by-step instructions<a class="headerlink" href="../../workbook/index.html#step-by-step-instructions" title="View HTML">§</a></h3>
+
+<p>Writing step-by-step insteuctions:</p>
+<ul class="simple">
+<li>Step should clearly state what is being performed</li>
+<li>Include a screen snap attendee can use to check their work before hitting <span class="guilabel">OK</span>.</li>
+<li>Show the result of the action as a new numbered step with a screen snap.</li>
+</ul>
+<p>Sphinx rst tips for step-by-step instructions:</p>
+<ul class="simple">
+<li>Use <code class="docutils literal notranslate"><span class="pre">#.</span></code> to number steps, so new steps can be added over time.</li>
+<li>Use directives <code class="docutils literal notranslate"><span class="pre">kbd</span></code>, <code class="docutils literal notranslate"><span class="pre">gui-label</span></code>, <code class="docutils literal notranslate"><span class="pre">command</span></code>, <code class="docutils literal notranslate"><span class="pre">menu-selection</span></code> consistently to allow theme designer to improve workbook appearance over time.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">figure</span></code> directive to provide caption for each screen snap</li>
+<li></li>
+</ul>
+
+
+<footer>
+
+<div class="slide-no">32</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="id15">
+
+<h3>Step-by-step instructions<a class="headerlink" href="../../workbook/index.html#id15" title="View HTML">§</a></h3>
+
+<p>Do not complicate step-by-step instructions with description or discussion. Or introduce new concepts, these should be covered in the presentation content.</p>
+<p>If you really need to take a break for discussion, perhaps in an instructor demo. Make a clearly numbered step that is just discussion.</p>
+
+
+<footer>
+
+<div class="slide-no">33</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+<article class="slide-outro slide level-2">
+
+<h2>Questions and Review</h2>
+
+<p><a class="reference internal" href="../index.html#contents"><span class="std std-ref">^</span></a></p>
+
+
+<footer>
+
+<div class="slide-no">34</div>
+
+
+<div class="slide-footer">GeoCat 2020.12</div>
+
+</footer>
+
+</article>
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>

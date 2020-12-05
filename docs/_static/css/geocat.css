@@ -656,7 +656,7 @@ a.copybtn:hover > img {
 	.rst-content .highlight .go {
 		color: #F8F8F2;
 	}
-	.rst-content .highlight .nv {
+	.rst-content .highlight .nv, .rst-content .highlight .n {
 		color: #080808;
 	}
 	.rst-content .highlight .c {
