@@ -2,12 +2,19 @@
  xmlns:if="ant:if"
  xmlns:unless="ant:unless"
 > 
-  <description>Ant script to run sphinx-build.
+  <loadproperties srcFile="build.properties"/>
 
-ant clean
-ant workbook
-ant workbook -Dopen=true
+  <description>${project} ${subtitle}
+ant script to run sphinx-build:
+  ant clean
+  ant workbook
+  ant workbook -Dopen=true
+  
 </description>
+
+  <!-- defines DSTAMP -->
+  <tstamp/>
+  
   <!-- maven defaults -->
   <property name="build" value="${basedir}/target"/>
   <property name="src" value="${basedir}/src/"/>
@@ -19,9 +26,18 @@ ant workbook -Dopen=true
   <property name="sphinx_build_options" value="-q -N -W --keep-going -n -j auto"/>
   
   <property environment="env" />
+  
   <available file="sphinx-build"  
              filepath="${env.PATH}"  
              property="sphinx.available"/>
+
+  <target name="_init">
+    <mkdir dir="${build}"/>
+  </target>
+  
+  <target name="clean" description="clean up build directory">
+     <delete dir="${build}"/>
+  </target>
   
   <target name="workbook" description="attendee workbook">
     <antcall target="_sphinx">
@@ -37,7 +53,6 @@ ant workbook -Dopen=true
   <target name="instructor" description="instructor notes">
     <antcall target="_sphinx">
       <param name="tags" value="-t instructor"/>
-      <param name="sourcedir" value="${src}/sphinx"/>
       <param name="outputdir" value="${build}/instructor"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
@@ -49,7 +64,6 @@ ant workbook -Dopen=true
   <target name="slides" description="instructor slides">
     <antcall target="_sphinx">
       <param name="builder" value="slides"/>
-      <param name="sourcedir" value="${src}/sphinx"/>
       <param name="outputdir" value="${build}/instructor/_slides"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
@@ -61,13 +75,11 @@ ant workbook -Dopen=true
   <target name="build" description="build documentation (requires sphinx-build)">
     <antcall target="_sphinx">
       <param name="tags" value="-t instructor"/>
-      <param name="sourcedir" value="${src}/sphinx"/>
       <param name="outputdir" value="${build}/instructor"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
     <antcall target="_sphinx">
       <param name="builder" value="slides"/>
-      <param name="sourcedir" value="${src}/sphinx"/>
       <param name="outputdir" value="${build}/instructor/_slides"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
@@ -76,14 +88,28 @@ ant workbook -Dopen=true
     </antcall>
   </target>
   
-  <target name="_init">
-    <mkdir dir="${build}"/>
-  </target>
-  
-  <target name="clean" description="clean up build directory">
-     <delete dir="${build}"/>
+  <target name="package" depends="workbook"
+    description="Package workbook for attendees">
+    <zip destfile="${build}/${destfile}_${DSTAMP}.zip">
+      <zipfileset dir="${build}/workbook"/>
+    </zip>
+    <antcall target="_check">
+        <param name="file" value="${build}/${destfile}_${DSTAMP}.zip"/>
+        <param name="open" value="False"/>
+    </antcall>
   </target>
 
+  <target name="bundle" depends="build"
+    description="Package instructor workbook and slides">
+    <zip destfile="${build}/${destfile}_instructor_${DSTAMP}.zip">
+      <zipfileset dir="${build}/instructor" prefix="${module_number}"/>
+    </zip>
+    <antcall target="_check">
+        <param name="file" value="${build}/${destfile}_instructor_${DSTAMP}.zip"/>
+        <param name="open" value="False"/>
+    </antcall>
+  </target>
+  
   <target name="_sphinx" if="sphinx.available">
     <mkdir dir="${outputdir}"/>
     <exec executable="sphinx-build" failonerror="true">

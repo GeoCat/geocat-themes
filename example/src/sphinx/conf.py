@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# (c) GeoCat B.V. and others
 #
 # Configuration file for the Sphinx documentation builder.
 #
@@ -17,10 +17,7 @@ import warnings
 # https://github.com/sphinx-contrib/confluencebuilder/pull/289
 warnings.filterwarnings("ignore", category=FutureWarning) 
 
-now = datetime.datetime.now()
-
-#Current year
-year = now.year
+# -- Build properties --------------------------------------------------------
 
 build_dir = os.path.sep.join(os.getcwd().split(os.path.sep)[:-2])
 properties_file = os.path.join(build_dir,'build.properties')
@@ -42,8 +39,10 @@ with open(properties_file, 'r') as file:
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
+
+now = datetime.datetime.now()
+year = now.year
 
 project = build_properties['project']
 copyright = u'{}, GeoCat BV'.format(year)
@@ -51,6 +50,7 @@ author = build_properties['author']
 
 # The short X.Y version.
 version = now.strftime('%Y.%m')
+
 # The full version, including alpha/beta/rc tags.
 release = now.strftime('%Y.%m.%d')
 
@@ -59,7 +59,7 @@ release = now.strftime('%Y.%m.%d')
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #
-# needs_sphinx = '1.0'
+# needs_sphinx = '3.2.1'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -71,13 +71,18 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = [
+  os.path.join(build_dir,build_properties['theme_path'])
+]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
+
+# The encoding of source files.
+source_encoding = 'utf-8'
 
 # The master toctree document.
 master_doc = 'index'
@@ -96,6 +101,9 @@ exclude_patterns = ['Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
+
+# Disable smart quotes as they cause issues with code examples
+smartquotes = False
 
 # -- Extension External Links ------------------------------------------------
 
