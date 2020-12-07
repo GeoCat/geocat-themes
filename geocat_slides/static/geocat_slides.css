@@ -8,7 +8,7 @@ h1, h2, h3 {
   padding-right: 0;
 }
 p, ul, ul li, ol, ol li {
-  font-size: 26px !important;
+  font-size: 22px !important;
 }
 li {
   line-height: 1.5em;
@@ -35,7 +35,7 @@ code {
   font-family: 'Open Sans', Arial, sans-serif;
 	color: #333;
 	font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.4em;
   box-shadow: none;
   border-radius: 4px;
   border: none;
