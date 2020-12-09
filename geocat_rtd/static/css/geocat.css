@@ -94,6 +94,11 @@ a.reference.external:after {
 	height: 100vh;
 	overflow: auto;
 }
+@media print {
+	.wy-nav-content-wrap {
+		height: 100%;
+	}
+}
 
 /* sidebar */
 .wy-nav-side {
