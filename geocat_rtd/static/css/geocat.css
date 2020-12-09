@@ -688,6 +688,9 @@ a.copybtn:hover > img {
 	.rst-content table.docutils caption, .rst-content table.field-list caption, .wy-table caption {
 		color: #e4e4e4;
 	}
+	.rst-content div.figure img {
+		background-color: #ffffff;
+	}
 	.rst-content div.figure p.caption {
 		color: #e4e4e4;
 	}
