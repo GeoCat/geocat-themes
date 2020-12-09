@@ -741,21 +741,23 @@ a.copybtn:hover > img {
 	
 	/* tables */
 	.rst-content table.docutils {
-		border: 1px solid #41433C;
-		background-color: #333;
+		border: 1px solid #41433C !important;
+		background-color: #333 !important;
 	}
 	.rst-content table.docutils thead th, .rst-content table.field-list thead th, .wy-table thead th {
-		color: #e4e4e4;
-		border-bottom: 1px solid #41433C;
+		color: #e4e4e4 !important;
+		border-bottom: 1px solid #41433C !important;
 	}
 	.rst-content table.docutils th, .wy-table-bordered-all th, .rst-content table.docutils td, .wy-table-bordered-all td {
-		border-color: #41433C;
+		border-color: #41433C !important;
+		background-color: #333 !important;
 	}
 	.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td, .wy-table-backed, .wy-table-odd td, .wy-table-striped tr:nth-child(2n-1) td {
-		background-color: #3a3a3a;
+		background-color: #333333 !important;
 	}
+
 	html.writer-html5 .rst-content table.docutils th {
-    border-color: #41433C;
+    border-color: #41433C !important;
 	}
 	.rst-content .admonition.tip table td, .rst-content .admonition.tip table th {
 		background: transparent !important;
