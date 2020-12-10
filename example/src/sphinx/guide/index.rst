@@ -481,6 +481,7 @@ Bulleted lists can sometimes be cumbersome and hard to follow.  When dealing wit
 
 .. list-table::
    :widths: 30 70
+   :width: 100%
    :stub-columns: 1
    
    * - Show All
@@ -494,6 +495,7 @@ This is done with the following code:
 
   .. list-table::
      :widths: 30 70
+     :width: 100%
      :stub-columns: 1
  
      * - Show All
@@ -554,6 +556,15 @@ Figures
 ^^^^^^^
 
 .. figure:: img/example.jpg
+   :alt: reStructuredText, the markup syntax
+
+   A figure is an image with a caption and/or a legend:
+
+
+Use `figwidth` to control based on line width, rather than scale which is based on original size.
+
+.. figure:: img/example.jpg
+   :figwidth: 80%
    :alt: reStructuredText, the markup syntax
 
    A figure is an image with a caption and/or a legend:
