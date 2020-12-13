@@ -99,7 +99,15 @@ language = None
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['Thumbs.db', '.DS_Store']
 
-# The name of the Pygments (syntax highlighting) style to use.
+# highlight language pygments lexer name (defaults to 'default' tries python3 and falls back to none)
+highlight_language = 'none'
+
+# options for pygments lexer
+highlight_options = {
+   'tabsize': 2
+}
+
+# The name of the Pygments (syntax highlighting) style to use, or None for theme.conf default
 pygments_style = None
 
 # Disable smart quotes as they cause issues with code examples
@@ -109,6 +117,7 @@ smartquotes = False
 
 extlinks = { 
     'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/%s','')
 }
 
 # -- Options for HTML output -------------------------------------------------
