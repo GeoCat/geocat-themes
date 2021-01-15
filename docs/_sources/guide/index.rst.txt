@@ -114,7 +114,7 @@ Bullet lists are useful for a small number of items, where no order is implied:
    * iso19139: describing information or resources that have geographic extent
    * iso19110: classification of feature types into a feature catalogue 
 
-.. tip:: Bullet  lists should all be of a consistent style, either short sentence fragments, or full sentences. 
+.. note:: Example Bullet  lists should all be of a consistent style, either short sentence fragments, or full sentences. 
    
    Switch to numbered lists when presenting more than five ideas.
 
@@ -453,26 +453,62 @@ Linking to individual pages, headings and anchors:
 Block Directives
 ================
 
-Block directives 
+Block directives follow a clear pattern:
+
+.. code-block:: rst
+   
+   .. {directive}:: value
+      :option: value
+      
+      directive content
+
+An example is `code-block` directive:
+
+.. code-block:: rst
+   
+   .. code-block:: bat
+      
+      cd %GEOSERVER_DATA_DIR%
+
+.. admonition:: Example
+   
+   .. code-block:: bat
+      
+      cd %GEOSERVER_DATA_DIR%
 
 Comments
 --------
 
-Comments can be added at any point
+Comments can be added at any point, and have a similar structure to directives:
 
-   .. this is a comment
+.. code-block:: rst
    
-   .. code-block 
+   .. this is a comment
       
-      This is a code-block directive that was commented out removing the `::`
+      Any content is ignored
+
+.. Tip: Comment-out a directive
+
+To quickly turn off or hide a directive remove the ``::`` turning it into a comment:
 
 .. code-block:: rst
 
-   .. this is a comment
-   
-   .. code-block 
+   .. code-block bat
       
-      This is a code-block directive that was commented out removing the `::`
+      cd %GEOSERVER_DATA_DIR%
+
+This can be used to hide exercises or notes that our out-of-date.
+
+.. nextslide:: Tip: Troubleshooting python failures
+
+Commenting out sections of the file is the best way to troubleshoot document generation without losing your work!
+
+.. note:: Example Comment out the second half of your document:
+
+   * If the error still exists the problem is in the first half of the document
+   * If the error does not exist the problem is in the second half of the document
+
+Some low-level python failures when generating references and slides can be challenging to troubleshoot. Most directives will produce a clear error message. 
 
 List-tables
 -----------
@@ -481,6 +517,7 @@ Bulleted lists can sometimes be cumbersome and hard to follow.  When dealing wit
 
 .. list-table::
    :widths: 30 70
+   :width: 100%
    :stub-columns: 1
    
    * - Show All
@@ -494,6 +531,7 @@ This is done with the following code:
 
   .. list-table::
      :widths: 30 70
+     :width: 100%
      :stub-columns: 1
  
      * - Show All
@@ -503,45 +541,123 @@ This is done with the following code:
 
 .. note:: RST provides a number of other table formatting ideas, :command:`list-table` above is recommended as the easiest to maintain.
 
-Notes and warnings
-------------------
+Admonition directives
+---------------------
 
-.. Attention:: Directives at large.
+A wide range of "admonition" boxes are available, usually only `note` and `warning` directives are styled distinctly.
 
-.. Caution:: Don't take any wooden nickels.
+Note directive
+^^^^^^^^^^^^^^
 
-.. DANGER:: Mad scientist at work!
+Note directives have a distinct visual appearance, and can be used to supply additional detail.
 
-.. Error:: Does not compute.
 
-.. Hint:: It's bigger than a bread box.
+.. nextslide::  Note directive: slides
 
-.. Important:: Wash behind your ears.
+When generating slides notes are shown in the presenters console. Occasionally this is useful to document a difficult discussion topic:
 
-.. Note:: This is a note.
-   Equations within a note:
-   :math:`G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})`.
+.. code-block:: rst
 
-.. Tip:: 15% if the service is good.
+   .. note::
+  
+      We will not be discussing the REST interface in this workbook, but you can read more about the :geoserver:`GeoServer REST interface <rest>`.
 
-    +---------+---------+---------+
-    | Example | Example | Example |
-    +=========+=========+=========+
-    | Thing1  | Thing1  | Thing1  |
-    +---------+---------+---------+
-    | Thing2  | Thing2  | Thing2  |
-    +---------+---------+---------+
-    | Thing3  | Thing3  | Thing3  |
-    +---------+---------+---------+
-    
-    .. the above kind of table is not recommended as it is hard to maintain
-       please use list-table instead
+.. admonition:: Example
 
-.. WARNING:: Strong prose may provoke extreme mental exertion.
-   Reader discretion is strongly advised.
+   .. note::
+  
+      We will not be discussing the REST interface in this workbook, but you can read more about the :geoserver:`GeoServer REST interface <rest>`.
+
+.. nextslide::  Note directive: instructor
+
+Training materials use the note directive frequently to leave notes for instructors as shown below.
+
+.. code-block:: rst
+   
+   .. only:: instructor
+      
+      .. note:: *Instructor*: These exercises represent the minimal participation expected of an attendee:
+
+.. admonition:: Example
+
+   .. only:: instructor
+      
+      .. note:: *Instructor*: These exercises represent the minimal participation expected of an attendee:
+      
+Warning directive
+^^^^^^^^^^^^^^^^^
+
+We do not use warnings often, use when caution is required.
+
+
+   .. note:: *Instructor*: These exercises represent the minimal participation expected of an attendee:
+
+.. nextslide:: warning
+
+
+Admonition directive
+^^^^^^^^^^^^^^^^^^^^
+
+We use ``admonition`` directives frequently, to provide a title for our exericse, explore and challenge activities.
+
+.. code-block:: rst
+
+   .. admonition:: Exercise
+   
+      Download and install GeoServer Enterprise and data directory.
+
+.. admonition:: Example
+
+   .. admonition:: Exercise
+   
+      Download and install GeoServer Enterprise and data directory.
+
 
 Images & Figures
 ----------------
+
+Figure directive
+^^^^^^^^^^^^^^^^
+
+When using :file:`svg` graphics we use ``*`` wildcard to provide both a :file:`svg` and :file:`png` image.
+
+.. code-block:: rst
+   
+  * Editing **data directory** configuration files by hand and reloading *(not usually recommended)*.
+  
+    .. figure:: /figure/geoserver_data_directory.*
+     
+       GeoServer data directory
+
+.. admonition:: Example
+
+   * Editing **data directory** configuration files by hand and reloading *(not usually recommended)*.
+ 
+     .. figure:: /figure/geoserver_data_directory.*
+    
+        GeoServer data directory
+
+The use of :file:`/figure` is relative to :file:`conf.py`, we often export out a single directory of diagrams for an entire document.
+
+.. nextslide:: Figure directive screen snaps
+
+.. code-block:: rst
+
+.. figure:: img/example.jpg
+   :alt: reStructuredText, the markup syntax
+
+   A figure is an image with a caption and/or a legend:
+
+
+Use `figwidth` to control based on line width, rather than scale which is based on original size.
+
+.. figure:: img/example.jpg
+   :figwidth: 80%
+   :alt: reStructuredText, the markup syntax
+
+   A figure is an image with a caption and/or a legend:
+
+
 
 Images
 ^^^^^^
@@ -550,13 +666,6 @@ An image example:
 
 .. image:: img/example.jpg
 
-Figures
-^^^^^^^
-
-.. figure:: img/example.jpg
-   :alt: reStructuredText, the markup syntax
-
-   A figure is an image with a caption and/or a legend:
 
 Literal Blocks
 --------------
@@ -578,7 +687,7 @@ Example:
 
      usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
 
-.. tip::
+.. admonition:: Example
    
    Command: 
    
@@ -590,32 +699,59 @@ Example:
 
      usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
 
-Literal blocks do not offer syntax highlighting and are almost exclusively used for command output as shown in the example above.
+.. nextslide:: default highlighting
+
+Literal blocks a "default" syntax highlighting and are almost exclusively used for command output as shown in the example above.
+
+:file:`conf.py` configuration:
+
+.. code-block:: python
+   
+   # The name of the Pygments (syntax highlighting) style to use.
+   pygments_style = None
+
+:file:`theme.conf` default:
+  
+.. code-block:: python
+
+   pygments_style = tango
+
+.. ifnotslides::
+   
+   Reference: :sphinx:`Literal blocks <usage/restructuredtext/basics.html#literal-blocks>`
 
 Code Block
 ----------
 
-Strongly prefer the use of ``code-block`` so syntax highlighting is available.
+Strongly prefer the use of ``code-block`` for syntax highlighting.
 
 Example:
 
 .. code-block:: rst
 
-   .. code-block:: python
+   .. code-block:: xml
+   
+      <Context docBase="geoserver.war">
+        <Parameter name="GEOSERVER_DATA_DIR"
+                   value="C:\ProgramData\GeoServer\data" override="false"/>
+        <Parameter name="GEOSERVER_REQUIRE_FILE"
+                   value="C:\ProgramData\GeoServer\data\global.xml" override="false"/>
+        <Parameter name="GEOWEBCACHE_CACHE_DIR"
+                   value="C:\ProgramData\GeoServer\tilecache" override="false"/>
+      </Context>
 
-      if literal_block:
-          text = 'is left as-is'
-          spaces_and_linebreaks = 'are preserved'
-          markup_processing = None
+.. admonition:: Example
 
-.. tip::
-
-   .. code-block:: python
-
-      if literal_block:
-          text = 'is left as-is'
-          spaces_and_linebreaks = 'are preserved'
-          markup_processing = None
+   .. code-block:: xml
+   
+      <Context docBase="geoserver.war">
+        <Parameter name="GEOSERVER_DATA_DIR"
+                   value="C:\ProgramData\GeoServer\data" override="false"/>
+        <Parameter name="GEOSERVER_REQUIRE_FILE"
+                   value="C:\ProgramData\GeoServer\data\global.xml" override="false"/>
+        <Parameter name="GEOWEBCACHE_CACHE_DIR"
+                   value="C:\ProgramData\GeoServer\tilecache" override="false"/>
+      </Context>
 
 Block quote
 -----------
@@ -628,7 +764,7 @@ Block quotes:
    >
    > Why didn't I think of that?
 
-.. tip::
+.. admonition:: Example
 
 
    >> Great idea!
@@ -654,7 +790,7 @@ You can use line blocks, but block quotes are easier.
    |
    | Blank lines are permitted internally, but they must begin with a "|".
 
-.. tip::
+.. admonition:: Example
 
    | This is a line block. It ends with a blank line.
    |     Each new line begins with a vertical bar ("|").

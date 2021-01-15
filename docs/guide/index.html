@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Writing Guide &mdash; GeoCat Theme Example 2020.12.04 documentation</title>
+  <title>Writing Guide &mdash; GeoCat Theme Example 2021.01.14 documentation</title>
   
 
   
@@ -32,7 +32,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -113,10 +112,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#block-directives">Block Directives</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#list-tables">List-tables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#notes-and-warnings">Notes and warnings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#admonition-directives">Admonition directives</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#note-directive">Note directive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#warning-directive">Warning directive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#admonition-directive">Admonition directive</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#images-figures">Images &amp; Figures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#figure-directive">Figure directive</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#images">Images</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#figures">Figures</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
@@ -383,9 +387,9 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
 <span class="m">*</span> iso19110: classification of feature types into a feature catalogue
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Bullet  lists should all be of a consistent style, either short sentence fragments, or full sentences.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Example Bullet  lists should all be of a consistent style, either short sentence fragments, or full sentences.</p>
 <p>Switch to numbered lists when presenting more than five ideas.</p>
 </div>
 </div>
@@ -442,7 +446,7 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
 </li>
 </ol>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#. Choice of spatial reference system for ``SRID``:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#. Choice of spatial reference system for ``SRID``:
 
    * ``4326``: WGS84 popular with geographic professionals and the scientific community used for GPS data.
    * ``3857``: Web mercator using a simplified, spherical, model of the world for performance.
@@ -502,7 +506,7 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
 <p>Use <span class="guilabel">Legal restrictions</span> to select <code class="docutils literal notranslate"><span class="pre">Creative</span> <span class="pre">Commons</span> <span class="pre">Level</span> <span class="pre">0</span></code> from the list of licenses.</p>
 <p>Use the <span class="guilabel">Name</span> field to input <kbd class="kbd docutils literal notranslate">Population</kbd>.</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Press :guilabel:`OK` to change the security settings.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Press :guilabel:`OK` to change the security settings.
 
 Click :guilabel:`more details` to view settings.
 
@@ -704,24 +708,55 @@ Heading text is shown as label for internal command:<span class="nv">`ref`</span
 </div>
 <div class="section" id="block-directives">
 <h2>Block Directives<a class="headerlink" href="#block-directives" title="Permalink to this headline">¶</a></h2>
-<p>Block directives</p>
-<div class="section" id="comments">
-<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
-<p>Comments can be added at any point</p>
-<blockquote>
-<div></div></blockquote>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="cp">.. this is a comment</span>
+<p>Block directives follow a clear pattern:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="cp">.. {directive}:: value</span>
+<span class="cp">   :option: value</span>
 
-<span class="cp">.. code-block</span>
-
-<span class="cp">   This is a code-block directive that was commented out removing the `::`</span>
+<span class="cp">   directive content</span>
 </pre></div>
 </div>
+<p>An example is <cite>code-block</cite> directive:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> bat
+
+   cd %GEOSERVER_DATA_DIR%
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">cd</span> <span class="nv">%GEOSERVER_DATA_DIR%</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>Comments can be added at any point, and have a similar structure to directives:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="cp">.. this is a comment</span>
+
+<span class="cp">   Any content is ignored</span>
+</pre></div>
+</div>
+<p>To quickly turn off or hide a directive remove the <code class="docutils literal notranslate"><span class="pre">::</span></code> turning it into a comment:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="cp">.. code-block bat</span>
+
+<span class="cp">   cd %GEOSERVER_DATA_DIR%</span>
+</pre></div>
+</div>
+<p>This can be used to hide exercises or notes that our out-of-date.</p>
+<p>Commenting out sections of the file is the best way to troubleshoot document generation without losing your work!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Example Comment out the second half of your document:</p>
+<ul class="simple">
+<li><p>If the error still exists the problem is in the first half of the document</p></li>
+<li><p>If the error does not exist the problem is in the second half of the document</p></li>
+</ul>
+</div>
+<p>Some low-level python failures when generating references and slides can be challenging to troubleshoot. Most directives will produce a clear error message.</p>
 </div>
 <div class="section" id="list-tables">
 <h3>List-tables<a class="headerlink" href="#list-tables" title="Permalink to this headline">¶</a></h3>
 <p>Bulleted lists can sometimes be cumbersome and hard to follow.  When dealing with a long list of items, use list-tables.  For example, to talk about a list of options, create a table that looks like this:</p>
-<table class="colwidths-given docutils align-default">
+<table class="colwidths-given docutils align-default" style="width: 100%">
 <colgroup>
 <col style="width: 30%" />
 <col style="width: 70%" />
@@ -738,6 +773,7 @@ Heading text is shown as label for internal command:<span class="nv">`ref`</span
 <p>This is done with the following code:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">list-table</span><span class="p">::</span>
    <span class="nc">:widths:</span> 30 70
+   <span class="nc">:width:</span> 100%
    <span class="nc">:stub-columns:</span> 1
 
    <span class="m">*</span> - Show All
@@ -751,93 +787,111 @@ Heading text is shown as label for internal command:<span class="nv">`ref`</span
 <p>RST provides a number of other table formatting ideas, <strong class="command">list-table</strong> above is recommended as the easiest to maintain.</p>
 </div>
 </div>
-<div class="section" id="notes-and-warnings">
-<h3>Notes and warnings<a class="headerlink" href="#notes-and-warnings" title="Permalink to this headline">¶</a></h3>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Directives at large.</p>
+<div class="section" id="admonition-directives">
+<h3>Admonition directives<a class="headerlink" href="#admonition-directives" title="Permalink to this headline">¶</a></h3>
+<p>A wide range of &quot;admonition&quot; boxes are available, usually only <cite>note</cite> and <cite>warning</cite> directives are styled distinctly.</p>
+<div class="section" id="note-directive">
+<h4>Note directive<a class="headerlink" href="#note-directive" title="Permalink to this headline">¶</a></h4>
+<p>Note directives have a distinct visual appearance, and can be used to supply additional detail.</p>
+<p>When generating slides notes are shown in the presenters console. Occasionally this is useful to document a difficult discussion topic:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">note</span><span class="p">::</span>
+
+   We will not be discussing the REST interface in this workbook, but you can read more about the <span class="na">:geoserver:</span><span class="nv">`GeoServer REST interface &lt;rest&gt;`</span>.
+</pre></div>
 </div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Don’t take any wooden nickels.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Mad scientist at work!</p>
-</div>
-<div class="admonition error">
-<p class="admonition-title">Error</p>
-<p>Does not compute.</p>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>It’s bigger than a bread box.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Wash behind your ears.</p>
-</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is a note.
-Equations within a note:
-<span class="math notranslate nohighlight">\(G_{\mu\nu} = 8 \pi G (T_{\mu\nu}  + \rho_\Lambda g_{\mu\nu})\)</span>.</p>
+<p>We will not be discussing the REST interface in this workbook, but you can read more about the <a class="reference external" href="http://docs.geoserver.org/latest/en/user/rest">GeoServer REST interface</a>.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>15% if the service is good.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Example</p></th>
-<th class="head"><p>Example</p></th>
-<th class="head"><p>Example</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Thing1</p></td>
-<td><p>Thing1</p></td>
-<td><p>Thing1</p></td>
-</tr>
-<tr class="row-odd"><td><p>Thing2</p></td>
-<td><p>Thing2</p></td>
-<td><p>Thing2</p></td>
-</tr>
-<tr class="row-even"><td><p>Thing3</p></td>
-<td><p>Thing3</p></td>
-<td><p>Thing3</p></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Strong prose may provoke extreme mental exertion.
-Reader discretion is strongly advised.</p>
+<p>Training materials use the note directive frequently to leave notes for instructors as shown below.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">only</span><span class="p">::</span> instructor
+
+<span class="p">   ..</span> <span class="ow">note</span><span class="p">::</span> <span class="ge">*Instructor*</span>: These exercises represent the minimal participation expected of an attendee:
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Instructor</em>: These exercises represent the minimal participation expected of an attendee:</p>
+</div>
+</div>
+</div>
+<div class="section" id="warning-directive">
+<h4>Warning directive<a class="headerlink" href="#warning-directive" title="Permalink to this headline">¶</a></h4>
+<p>We do not use warnings often, use when caution is required.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Instructor</em>: These exercises represent the minimal participation expected of an attendee:</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="admonition-directive">
+<h4>Admonition directive<a class="headerlink" href="#admonition-directive" title="Permalink to this headline">¶</a></h4>
+<p>We use <code class="docutils literal notranslate"><span class="pre">admonition</span></code> directives frequently, to provide a title for our exericse, explore and challenge activities.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Exercise
+
+   Download and install GeoServer Enterprise and data directory.
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Download and install GeoServer Enterprise and data directory.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="images-figures">
 <h3>Images &amp; Figures<a class="headerlink" href="#images-figures" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="figure-directive">
+<h4>Figure directive<a class="headerlink" href="#figure-directive" title="Permalink to this headline">¶</a></h4>
+<p>When using <code class="file docutils literal notranslate"><span class="pre">svg</span></code> graphics we use <code class="docutils literal notranslate"><span class="pre">*</span></code> wildcard to provide both a <code class="file docutils literal notranslate"><span class="pre">svg</span></code> and <code class="file docutils literal notranslate"><span class="pre">png</span></code> image.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="m">*</span> Editing <span class="gs">**data directory**</span> configuration files by hand and reloading <span class="ge">*(not usually recommended)*</span>.
+
+<span class="p">  ..</span> <span class="ow">figure</span><span class="p">::</span> /figure/geoserver_data_directory.*
+
+     GeoServer data directory
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ul>
+<li><p>Editing <strong>data directory</strong> configuration files by hand and reloading <em>(not usually recommended)</em>.</p>
+<div class="figure align-default" id="id15">
+<img alt="../_images/geoserver_data_directory.svg" src="../_images/geoserver_data_directory.svg" /><p class="caption"><span class="caption-text">GeoServer data directory</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ul>
+</div>
+<p>The use of <code class="file docutils literal notranslate"><span class="pre">/figure</span></code> is relative to <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code>, we often export out a single directory of diagrams for an entire document.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id16">
+<img alt="reStructuredText, the markup syntax" src="../_images/example.jpg" />
+<p class="caption"><span class="caption-text">A figure is an image with a caption and/or a legend:</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>Use <cite>figwidth</cite> to control based on line width, rather than scale which is based on original size.</p>
+<div class="figure align-default" id="id17" style="width: 80%">
+<img alt="reStructuredText, the markup syntax" src="../_images/example.jpg" />
+<p class="caption"><span class="caption-text">A figure is an image with a caption and/or a legend:</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 <div class="section" id="images">
 <h4>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h4>
 <p>An image example:</p>
 <img alt="../_images/example.jpg" src="../_images/example.jpg" />
 </div>
-<div class="section" id="figures">
-<h4>Figures<a class="headerlink" href="#figures" title="Permalink to this headline">¶</a></h4>
-<div class="figure align-default" id="id15">
-<img alt="reStructuredText, the markup syntax" src="../_images/example.jpg" />
-<p class="caption"><span class="caption-text">A figure is an image with a caption and/or a legend:</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
-</div>
-</div>
 </div>
 <div class="section" id="literal-blocks">
 <h3>Literal Blocks<a class="headerlink" href="#literal-blocks" title="Permalink to this headline">¶</a></h3>
-<p>Literal blocks are indicated with a double-colon (“::”) at the end of
+<p>Literal blocks are indicated with a double-colon (&quot;::&quot;) at the end of
 the preceding paragraph, with the indenting to indicate the literal contents.</p>
 <p>Example:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Command:
@@ -851,37 +905,55 @@ Output::
   usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>Command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>% ls --help
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">ls</span> <span class="p">[</span><span class="o">-</span><span class="nd">@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1</span><span class="o">%</span><span class="p">]</span> <span class="p">[</span><span class="n">file</span> <span class="o">...</span><span class="p">]</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
 </pre></div>
 </div>
 </div>
-<p>Literal blocks do not offer syntax highlighting and are almost exclusively used for command output as shown in the example above.</p>
+<p>Literal blocks a &quot;default&quot; syntax highlighting and are almost exclusively used for command output as shown in the example above.</p>
+<p><code class="file docutils literal notranslate"><span class="pre">conf.py</span></code> configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The name of the Pygments (syntax highlighting) style to use.</span>
+<span class="n">pygments_style</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p><code class="file docutils literal notranslate"><span class="pre">theme.conf</span></code> default:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pygments_style</span> <span class="o">=</span> <span class="n">tango</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#literal-blocks">Literal blocks</a></p>
 </div>
 <div class="section" id="code-block">
 <h3>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h3>
-<p>Strongly prefer the use of <code class="docutils literal notranslate"><span class="pre">code-block</span></code> so syntax highlighting is available.</p>
+<p>Strongly prefer the use of <code class="docutils literal notranslate"><span class="pre">code-block</span></code> for syntax highlighting.</p>
 <p>Example:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">python</span>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">xml</span>
 
-   <span class="k">if</span> <span class="n">literal_block</span><span class="p">:</span>
-       <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;is left as-is&#39;</span>
-       <span class="n">spaces_and_linebreaks</span> <span class="o">=</span> <span class="s1">&#39;are preserved&#39;</span>
-       <span class="n">markup_processing</span> <span class="o">=</span> <span class="kc">None</span>
+   <span class="nt">&lt;Context</span> <span class="na">docBase=</span><span class="s">&quot;geoserver.war&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;Parameter</span> <span class="na">name=</span><span class="s">&quot;GEOSERVER_DATA_DIR&quot;</span>
+                <span class="na">value=</span><span class="s">&quot;C:\ProgramData\GeoServer\data&quot;</span> <span class="na">override=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;Parameter</span> <span class="na">name=</span><span class="s">&quot;GEOSERVER_REQUIRE_FILE&quot;</span>
+                <span class="na">value=</span><span class="s">&quot;C:\ProgramData\GeoServer\data\global.xml&quot;</span> <span class="na">override=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;Parameter</span> <span class="na">name=</span><span class="s">&quot;GEOWEBCACHE_CACHE_DIR&quot;</span>
+                <span class="na">value=</span><span class="s">&quot;C:\ProgramData\GeoServer\tilecache&quot;</span> <span class="na">override=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/Context&gt;</span>
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">literal_block</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;is left as-is&#39;</span>
-    <span class="n">spaces_and_linebreaks</span> <span class="o">=</span> <span class="s1">&#39;are preserved&#39;</span>
-    <span class="n">markup_processing</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Context</span> <span class="na">docBase=</span><span class="s">&quot;geoserver.war&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Parameter</span> <span class="na">name=</span><span class="s">&quot;GEOSERVER_DATA_DIR&quot;</span>
+             <span class="na">value=</span><span class="s">&quot;C:\ProgramData\GeoServer\data&quot;</span> <span class="na">override=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;Parameter</span> <span class="na">name=</span><span class="s">&quot;GEOSERVER_REQUIRE_FILE&quot;</span>
+             <span class="na">value=</span><span class="s">&quot;C:\ProgramData\GeoServer\data\global.xml&quot;</span> <span class="na">override=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;Parameter</span> <span class="na">name=</span><span class="s">&quot;GEOWEBCACHE_CACHE_DIR&quot;</span>
+             <span class="na">value=</span><span class="s">&quot;C:\ProgramData\GeoServer\tilecache&quot;</span> <span class="na">override=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/Context&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -894,11 +966,11 @@ Output::
 &gt; Why didn&#39;t I think of that?
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>&gt;&gt; Great idea!
 &gt;
-&gt; Why didn’t I think of that?</p>
+&gt; Why didn't I think of that?</p>
 </div>
 </div>
 <div class="section" id="line-blocks">
@@ -917,12 +989,12 @@ Output::
 <span class="o">|</span> Blank lines are permitted internally, but they must begin with a &quot;|&quot;.
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <div class="line-block">
 <div class="line">This is a line block. It ends with a blank line.</div>
 <div class="line-block">
-<div class="line">Each new line begins with a vertical bar (“|”).</div>
+<div class="line">Each new line begins with a vertical bar (&quot;|&quot;).</div>
 <div class="line">Line breaks and initial indents are preserved.</div>
 </div>
 <div class="line">Continuation lines are wrapped portions of long lines;
@@ -935,7 +1007,7 @@ the left edge of the text above it.</div>
 <div class="line-block">
 <div class="line">This is a second line block.</div>
 <div class="line"><br /></div>
-<div class="line">Blank lines are permitted internally, but they must begin with a “|”.</div>
+<div class="line">Blank lines are permitted internally, but they must begin with a &quot;|&quot;.</div>
 </div>
 </div>
 </div>
@@ -955,8 +1027,8 @@ own it, and what it is too.</p>
 <h4>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h4>
 <pre class="literal-block"># parsed-literal test
 curl -O <a class="reference external" href="http://someurl/release">http://someurl/release</a>-1.0-SNAPSHOT.tar-gz</pre>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">Code Blocks can have captions.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Code Blocks can have captions.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="nt">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1018,15 +1090,15 @@ curl -O <a class="reference external" href="http://someurl/release">http://someu
 </span></pre></div>
 </td></tr></table></div>
 <p>This is done with the following code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
-   <span class="p">:</span><span class="n">linenos</span><span class="p">:</span>
-   <span class="p">:</span><span class="n">emphasize</span><span class="o">-</span><span class="n">lines</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="mi">5</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.. code-block:: python
+   :linenos:
+   :emphasize-lines: 3,5
 
-   <span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
-      <span class="n">interesting</span> <span class="o">=</span> <span class="kc">False</span>
-      <span class="nb">print</span> <span class="s1">&#39;This line is highlighted.&#39;</span>
-      <span class="nb">print</span> <span class="s1">&#39;This one is not...&#39;</span>
-      <span class="nb">print</span> <span class="s1">&#39;...but this one is.&#39;</span>
+   def some_function():
+      interesting = False
+      print &#39;This line is highlighted.&#39;
+      print &#39;This one is not...&#39;
+      print &#39;...but this one is.&#39;
 </pre></div>
 </div>
 </div>
@@ -1057,22 +1129,22 @@ of the ruler or leader of men, who through his power awakens and develops their 
 <dt class="label" id="id1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>A footnote contains body elements, consistently indented by at
 least 3 spaces.</p>
-<p>This is the footnote’s second paragraph.</p>
+<p>This is the footnote's second paragraph.</p>
 </dd>
 <dt class="label" id="label"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>Footnotes may be numbered, either manually (as in <a class="footnote-reference brackets" href="#id1" id="id2">1</a>) or
-automatically using a “#”-prefixed label.  This footnote has a
+automatically using a &quot;#&quot;-prefixed label.  This footnote has a
 label so it can be referred to from multiple places, both as a
 footnote reference (<a class="footnote-reference brackets" href="#label" id="id3">2</a>) and as a hyperlink reference
 (<a class="reference internal" href="#label">label</a>).</p>
 </dd>
 <dt class="label" id="id4"><span class="brackets">3</span></dt>
 <dd><p>This footnote is numbered automatically and anonymously using a
-label of “#” only.</p>
+label of &quot;#&quot; only.</p>
 </dd>
 <dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id6">*</a></span></dt>
-<dd><p>Footnotes may also use symbols, specified with a “*” label.
-Here’s a reference to the next footnote: <a class="footnote-reference brackets" href="#id5" id="id6">*</a>.</p>
+<dd><p>Footnotes may also use symbols, specified with a &quot;*&quot; label.
+Here's a reference to the next footnote: <a class="footnote-reference brackets" href="#id5" id="id6">*</a>.</p>
 </dd>
 <dt class="label" id="id7"><span class="brackets">†</span></dt>
 <dd><p>This footnote shows the next symbol in the sequence.</p>
@@ -1083,7 +1155,7 @@ Here’s a reference to the next footnote: <a class="footnote-reference brackets
 <h4>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h4>
 <dl class="footnote brackets">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id12">11</a></span></dt>
-<dd><p>This is the citation I made, let’s make this extremely long so that we can tell that it doesn’t follow the normal responsive table stuff.</p>
+<dd><p>This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.</p>
 </dd>
 <dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id13">12</a></span></dt>
 <dd><p>This citation has some <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">blocks</span></code> in it, maybe some <strong>bold</strong> and
@@ -1093,21 +1165,21 @@ Here’s a reference to the next footnote: <a class="footnote-reference brackets
 <dd><p>This citation will have two backlinks.</p>
 </dd>
 </dl>
-<p>Here’s a reference to the above, <a class="footnote-reference brackets" href="#id8" id="id12">11</a>, <a class="footnote-reference brackets" href="#id9" id="id13">12</a> and <a class="footnote-reference brackets" href="#id11" id="id14">13</a> citations.</p>
+<p>Here's a reference to the above, <a class="footnote-reference brackets" href="#id8" id="id12">11</a>, <a class="footnote-reference brackets" href="#id9" id="id13">12</a> and <a class="footnote-reference brackets" href="#id11" id="id14">13</a> citations.</p>
 <p>Here is another type of citation: <cite>citation</cite></p>
 </div>
 <div class="section" id="targets">
 <h4>Targets<a class="headerlink" href="#targets" title="Permalink to this headline">¶</a></h4>
-<p id="example">This paragraph is pointed to by the explicit “example” target.
+<p id="example">This paragraph is pointed to by the explicit &quot;example&quot; target.
 A reference can be found under Inline Markup, above. Inline
 hyperlink targets are also possible.</p>
 <p>Section headers are implicit targets, referred to by name. See
 <a class="reference internal" href="#targets">Targets</a>, which is a subsection of Body Elements.</p>
-<p>Explicit external targets are interpolated into references such as “<a class="reference external" href="http://www.python.org/">Python</a>”.</p>
+<p>Explicit external targets are interpolated into references such as &quot;<a class="reference external" href="http://www.python.org/">Python</a>&quot;.</p>
 <p>Targets may be indirect and anonymous.  Thus this phrase may also
 refer to the <a class="reference internal" href="#targets">Targets</a> section.</p>
 <p>Targets</p>
-<p>Here’s a hyperlink reference without a target, which generates an error.</p>
+<p>Here's a hyperlink reference without a target, which generates an error.</p>
 </div>
 </div>
 </div>
@@ -1125,7 +1197,7 @@ refer to the <a class="reference internal" href="#targets">Targets</a> section.<
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, GeoCat BV
+        &copy; Copyright 2021, GeoCat BV
 
     </p>
   </div> 

@@ -253,8 +253,8 @@ Workbooks are built with `autoslides`:
 * Each heading becomes a new slide.
 * Headings are cross linked between workbook and slides
 
-Slide headings
---------------
+Headings
+--------
 
 Use straight forward writing with three levels of headings:
 
@@ -271,8 +271,26 @@ Use straight forward writing with three levels of headings:
 
    Slide content
 
-.. nextslide:: Autoslides Presentations
+.. nextslide::
 
+We are experimenting with forth level of headings for exercises:
+
+.. code-block:: rst
+   
+   Exercise: WMS GetCapabilities
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   .. ifslides::
+      
+      * Exercise
+   
+   .. ifnotslides::
+   
+      .. include:: wms_getcapabilities_exercise.txt
+
+Distinct numbered heading helps class members locate exercise quickly.
+
+.. nextslide:: Autoslides Presentations
 
 Manage long pages using `include` directive.
 
@@ -288,18 +306,20 @@ Manage long pages using `include` directive.
    .. include:: group.txt
    .. include:: style.txt
 
-ifslides and ifnotslides
-------------------------
+ifslides and ifnotslides directives
+-----------------------------------
 
 Use `ifslides` and `ifnotslides` to control content included in presentation and workbook.
 
-    .. ifslides::
-       
-       Data directory access required for icons and fonts.
+.. admonition:: Example
+
+   .. ifslides::
       
-    .. ifnotslides::
- 
-       Access to the GeoServer data directory is required to manage the icons and fonts used for styling.
+      Data directory access required for icons and fonts.
+     
+   .. ifnotslides::
+
+      Access to the GeoServer data directory is required to manage the icons and fonts used for styling.
 
 .. nextslide::
 
@@ -317,13 +337,11 @@ Use `ifslides` and `ifnotslides` to control content included in presentation and
 
 Some content like references may only be in the workbook.
 
-.. ifnotslides::
+.. admonition:: Example
       
-   ..
-      
-      Reference:
+   Reference:
 
-      * :geoserver:`WMS reference <services/wms/reference.html>`
+   * :geoserver:`WMS reference <services/wms/reference.html>`
 
 .. code-block:: rst
          
@@ -336,7 +354,7 @@ Some content like references may only be in the workbook.
 Slide directive
 ---------------
 
-`slide` directive for additional slides.
+Use `slide` directive for additional slides.
 
 .. code-block:: rst
 
@@ -354,9 +372,11 @@ Slide directive
 
 Theme provides built-in slide classes:
 
-.. figure:: img/slide-heart.png
+.. admonition:: Example
 
-   Slide-heart class
+   .. figure:: img/slide-heart.png
+
+      Slide-heart class
 
 .. nextslide:: 
 
@@ -370,9 +390,11 @@ Theme provides built-in slide classes:
 
 Theme `slide-outro` is a nice way to end a presentation:
 
-.. figure:: img/slide_questions.png
-  
-  Use of `slide-outro` to end presentation.
+.. admonition:: Example
+
+   .. figure:: img/slide_questions.png
+ 
+     Use of `slide-outro` to end presentation.
 
 Note `doc` link to return to top-level:
 
@@ -382,19 +404,23 @@ Note `doc` link to return to top-level:
      :level: 2
      :class: slide-outro
 
-     :doc:`/index`
+     :doc:`^ </index>`
 
 .. nextslide:: Slide directive inline-contents
 
-.. ifnotslides::
+.. admonition:: Example
 
    Slide `inline-contents` used to generate a slide, and include the text in the workbook.
    
       Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.
 
-.. figure:: img/slide-inline-example.png
-   
-   Slide inline-contents example
+.. nextslide::
+
+.. admonition:: Example
+
+   .. figure:: img/slide-inline-example.png
+  
+      Slide inline-contents example
 
 .. nextslide::
 
@@ -411,20 +437,20 @@ Instructor notes
 
 Use ``only`` directive to include content in the instructor build of the workbook.
 
-    .. admonition:: Explore
+.. admonition:: Example
 
-       What is the difference between the ``CRS:84`` and ``EPSG:4326``?
+   .. note:: *Instructor*: What is the difference between the ``CRS:84`` and ``EPSG:4326``?
 
-       .. admonition:: Instructor Notes
+      .. admonition:: Instructor Notes
 
-          The difference is the strict definition of axis order.
+         The difference is the strict definition of axis order.
+
+.. nextslide:: 
 
 .. code-block:: rst
    :linenos:
    
-   .. admonition:: Explore
-
-      What is the difference between the ``CRS:84`` and ``EPSG:4326``?
+   .. note:: *Instructor*: What is the difference between the ``CRS:84`` and ``EPSG:4326``?
 
       .. only:: instructor
 
@@ -439,22 +465,40 @@ Avoid including exercise in slides
 ----------------------------------
 
 Use `admonition` and `ifnotslides` directive to avoid including the full exercises into presentations.
+
+.. admonition:: Example
+   
+   **Exercise WMS 1.3.0 GetCapabilities request**
+  
+   * Exercise
+   
+.. admonition:: Example
+   
+   **Exercise WMS 1.3.0 GetCapabilities request**
+   
+   .. include:: wms_getcapabilities_exercise.txt
+
+.. code-block:: rst
+
+   Exercise: WMS GetCapabilities
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   .. ifslides::
       
-.. admonition:: Exercise issue WMS 1.3.0 GetCapabilities request
+      * Exercise
    
    .. ifnotslides::
    
       .. include:: wms_getcapabilities_exercise.txt
 
-.. code-block:: rst
+.. nextslide:: 
 
-   .. nextslide:: WMS Exercises
-   
-   .. admonition:: Exercise issue WMS 1.3.0 GetCapabilities request
-      
-      .. ifnotslides::
-      
-         .. include:: wms_getcapabilities_exercise.txt
+Exercises are written using `txt` extension to avoid being processed by :command:`sphinx-build` until included.
+
+:file:`wms_getcapabilities_exercise.txt`:
+
+.. literalinclude:: wms_getcapabilities_exercise.txt
+   :language: rst
 
 Use admonition block-directives
 -------------------------------
@@ -479,41 +523,99 @@ Use admonition block-directives
 
    Go beyond the workbook with experimentation and research.
 
-Manage long exercises in separate txt file
-------------------------------------------
-
-Manage long pages as a `txt` file using `include` directive.
-
-.. code-block:: rst
-
-   .. literalinclude:: wms_getcapabilities_exercise.txt
-      :language: rst
+.. nextslide:: Admonition and topic sentence
 
 .. ifnotslides:: 
    
-   Exercises are written using `txt` extension to avoid being processed by :command:`sphinx-build` until included.
-  
+   Use combination of `admonition` to state type of exercise, and a topic sentence to introduce the step-by-step instructions:
+
+.. admonition:: Example
+      
+   .. admonition:: Exercise
+
+      Examine the styles of our newly imported layers, and compare two layers with the same geometries:
+
+      #. Click :guilabel:`Layer Preview`.
+         
+.. code-block:: rst
+
+   .. admonition:: Exercise
+
+      Examine the styles of our newly imported layers, and compare two layers with the same geometries:
+
+      #. Click :guilabel:`Layer Preview`.
+   
 Step-by-step instructions
 -------------------------
 
-Writing step-by-step insteuctions:
+Writing step-by-step instructions:
 
-* Step should clearly state what is being performed
-* Include a screen snap attendee can use to check their work before hitting :guilabel:`OK`.
+* Step clearly state what is being performed
+* Any data entry or form input captured as ``list-table`` directive for cut-and-paste into application
+* Include screen snap attendee can use to check their work (before hitting :guilabel:`OK`)
 * Show the result of the action as a new numbered step with a screen snap.
+* Use ``figure`` directive for screen snap, with caption naming what is on screen, adjusting size with ``figwidth`` as needed
 
+.. next slide:: Instructions: Reference example
+
+.. code-block:: rst
+
+   #. Log in as the GeoServer administrator.
+     
+      .. list-table:: 
+         :widths: 30 70
+         :width: 100%
+         :stub-columns: 1
+
+         * - User:
+           - :kbd:`admin`
+         * - Password:
+           - :kbd:`geoserver`
+         * - Remember me
+           - Unchecked
+
+      .. figure:: img/server_geoserver_login.png
+
+         GeoServer Welcome page
+
+.. nextslide::
+
+.. admonition:: Example
+
+   #. Log in as the GeoServer administrator.
+
+      .. list-table:: 
+         :widths: 30 70
+         :width: 100%
+         :stub-columns: 1
+
+         * - User:
+           - :kbd:`admin`
+         * - Password:
+           - :kbd:`geoserver`
+         * - Remember me
+           - Unchecked
+
+      .. figure:: img/server_geoserver_login.png
+
+         GeoServer Welcome page
+
+.. nextslide:: Instructions: rst tips
 
 Sphinx rst tips for step-by-step instructions:
 
 * Use ``#.`` to number steps, so new steps can be added over time.
 * Use directives ``kbd``, ``gui-label``, ``command``, ``menu-selection`` consistently to allow theme designer to improve workbook appearance over time.
 * Use ``figure`` directive to provide caption for each screen snap
-* 
 
-.. nextslide::
+.. nextslide:: Instructions: Audience respect
 
 Do not complicate step-by-step instructions with description or discussion. Or introduce new concepts, these should be covered in the presentation content.
-  
+
+* Discussion, alternatives and decisions are off-topic and confusing if attendee is stressed
+* Do not use "simple" or "easy" as this is discouraging if attendee is frustrated
+  (Common response is to blame themselves or blame the software and walk away).
+
 If you really need to take a break for discussion, perhaps in an instructor demo. Make a clearly numbered step that is just discussion.
 
 .. slide:: Questions and Review

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Workbook &mdash; GeoCat Theme Example 2020.12.04 documentation</title>
+  <title>Workbook &mdash; GeoCat Theme Example 2021.01.14 documentation</title>
   
 
   
@@ -32,7 +32,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -105,8 +104,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#workbook-writing">Workbook Writing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#slide-headings">Slide headings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ifslides-and-ifnotslides">ifslides and ifnotslides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#headings">Headings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ifslides-and-ifnotslides-directives">ifslides and ifnotslides directives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#slide-directive">Slide directive</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#instructor-notes">Instructor notes</a></li>
 </ul>
@@ -114,7 +113,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#writing-exercises">Writing Exercises</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#avoid-including-exercise-in-slides">Avoid including exercise in slides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-admonition-block-directives">Use admonition block-directives</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#manage-long-exercises-in-separate-txt-file">Manage long exercises in separate txt file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-by-step-instructions">Step-by-step instructions</a></li>
 </ul>
 </li>
@@ -294,16 +292,16 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ant -p
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">ant</span> <span class="o">-</span><span class="n">p</span>
-<span class="n">Buildfile</span><span class="p">:</span> <span class="n">example</span><span class="o">/</span><span class="n">build</span><span class="o">.</span><span class="n">xml</span>
-<span class="n">Ant</span> <span class="n">script</span> <span class="n">to</span> <span class="n">run</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">build</span><span class="o">.</span>
-<span class="n">Main</span> <span class="n">targets</span><span class="p">:</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>% ant -p
+Buildfile: example/build.xml
+Ant script to run sphinx-build.
+Main targets:
 
- <span class="n">clean</span>       <span class="n">clean</span> <span class="n">up</span> <span class="n">build</span> <span class="n">directory</span>
- <span class="n">instructor</span>  <span class="n">instructor</span> <span class="n">notes</span>
- <span class="n">slides</span>      <span class="n">instructor</span> <span class="n">slides</span>
- <span class="n">workbook</span>    <span class="n">attendee</span> <span class="n">workbook</span>
-<span class="n">Default</span> <span class="n">target</span><span class="p">:</span> <span class="n">build</span>
+ clean       clean up build directory
+ instructor  instructor notes
+ slides      instructor slides
+ workbook    attendee workbook
+Default target: build
 </pre></div>
 </div>
 </div>
@@ -570,7 +568,24 @@
 245
 246
 247
-248</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># (c) GeoCat B.V. and others</span>
 <span class="c1">#</span>
 <span class="c1"># Configuration file for the Sphinx documentation builder.</span>
 <span class="c1">#</span>
@@ -589,10 +604,7 @@
 <span class="c1"># https://github.com/sphinx-contrib/confluencebuilder/pull/289</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span> 
 
-<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-
-<span class="c1">#Current year</span>
-<span class="n">year</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span>
+<span class="c1"># -- Build properties --------------------------------------------------------</span>
 
 <span class="n">build_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">sep</span><span class="p">)[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">properties_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">build_dir</span><span class="p">,</span><span class="s1">&#39;build.properties&#39;</span><span class="p">)</span>
@@ -614,8 +626,10 @@
 <span class="c1"># import sys</span>
 <span class="c1"># sys.path.insert(0, os.path.abspath(&#39;.&#39;))</span>
 
-
 <span class="c1"># -- Project information -----------------------------------------------------</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">year</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span>
 
 <span class="n">project</span> <span class="o">=</span> <span class="n">build_properties</span><span class="p">[</span><span class="s1">&#39;project&#39;</span><span class="p">]</span>
 <span class="n">copyright</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, GeoCat BV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
@@ -623,6 +637,7 @@
 
 <span class="c1"># The short X.Y version.</span>
 <span class="n">version</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y.%m&#39;</span><span class="p">)</span>
+
 <span class="c1"># The full version, including alpha/beta/rc tags.</span>
 <span class="n">release</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y.%m.</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
 
@@ -631,7 +646,7 @@
 
 <span class="c1"># If your documentation needs a minimal Sphinx version, state it here.</span>
 <span class="c1">#</span>
-<span class="c1"># needs_sphinx = &#39;1.0&#39;</span>
+<span class="c1"># needs_sphinx = &#39;3.2.1&#39;</span>
 
 <span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
 <span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
@@ -643,13 +658,18 @@
 <span class="p">]</span>
 
 <span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
-<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">build_dir</span><span class="p">,</span><span class="n">build_properties</span><span class="p">[</span><span class="s1">&#39;theme_path&#39;</span><span class="p">])</span>
+<span class="p">]</span>
 
 <span class="c1"># The suffix(es) of source filenames.</span>
 <span class="c1"># You can specify multiple suffix as a list of string:</span>
 <span class="c1">#</span>
 <span class="c1"># source_suffix = [&#39;.rst&#39;, &#39;.md&#39;]</span>
 <span class="n">source_suffix</span> <span class="o">=</span> <span class="s1">&#39;.rst&#39;</span>
+
+<span class="c1"># The encoding of source files.</span>
+<span class="n">source_encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
 
 <span class="c1"># The master toctree document.</span>
 <span class="n">master_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
@@ -666,13 +686,25 @@
 <span class="c1"># This pattern also affects html_static_path and html_extra_path.</span>
 <span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">]</span>
 
-<span class="c1"># The name of the Pygments (syntax highlighting) style to use.</span>
+<span class="c1"># highlight language pygments lexer name (defaults to &#39;default&#39; tries python3 and falls back to none)</span>
+<span class="n">highlight_language</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+
+<span class="c1"># options for pygments lexer</span>
+<span class="n">highlight_options</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">&#39;tabsize&#39;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+
+<span class="c1"># The name of the Pygments (syntax highlighting) style to use, or None for theme.conf default</span>
 <span class="n">pygments_style</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Disable smart quotes as they cause issues with code examples</span>
+<span class="n">smartquotes</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="c1"># -- Extension External Links ------------------------------------------------</span>
 
 <span class="n">extlinks</span> <span class="o">=</span> <span class="p">{</span> 
     <span class="s1">&#39;geoserver&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;http://docs.geoserver.org/latest/en/user/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;sphinx&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://www.sphinx-doc.org/en/master/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1"># -- Options for HTML output -------------------------------------------------</span>
@@ -832,7 +864,7 @@
 <span class="na">subtitle</span><span class="o">=</span><span class="s">Writing guidelines</span>
 <span class="na">author</span><span class="o">=</span><span class="s">GeoCat BV</span>
 <span class="na">theme_path</span><span class="o">=</span><span class="s">..</span>
-<span class="na">pdf</span><span class="o">=</span><span class="s">Writing_Guide</span>
+<span class="na">destfile</span><span class="o">=</span><span class="s">writing_guide</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -991,8 +1023,8 @@
 <div class="section" id="figure-folder">
 <h3>figure folder<a class="headerlink" href="#figure-folder" title="Permalink to this headline">¶</a></h3>
 <p>Used for <cite>svg</cite> and <cite>png</cite> diagrams:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoserver_data_directory</span><span class="o">.</span><span class="n">svg</span>
-<span class="n">geoserver_data_directory</span><span class="o">.</span><span class="n">png</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>geoserver_data_directory.svg
+geoserver_data_directory.png
 </pre></div>
 </div>
 <p>Figures are provided with a caption describing the content (even if that ends up repeating some of the text).</p>
@@ -1014,9 +1046,9 @@
 <div class="section" id="files-folder">
 <h3>files folder<a class="headerlink" href="#files-folder" title="Permalink to this headline">¶</a></h3>
 <p>Used for scripts, configuration files, and sample data such as icons:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elevation</span><span class="o">.</span><span class="n">sld</span>
-<span class="n">place</span><span class="o">.</span><span class="n">png</span>
-<span class="n">place</span><span class="o">.</span><span class="n">svg</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>elevation.sld
+place.png
+place.svg
 </pre></div>
 </div>
 <p>Keep in mind this content is bundled with the workbook content and is not intended for handling large files.</p>
@@ -1084,13 +1116,13 @@
 <div class="section" id="img-folder">
 <h3>img folder<a class="headerlink" href="#img-folder" title="Permalink to this headline">¶</a></h3>
 <p>The root <code class="file docutils literal notranslate"><span class="pre">img</span></code> folder is primarily used for branding or common screens such as how to login.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc_geosever_logo_300x300</span><span class="o">.</span><span class="n">png</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gc_geosever_logo_300x300.png
 </pre></div>
 </div>
 <p>Each section has an <code class="file docutils literal notranslate"><em><span class="pre">section</span></em><span class="pre">/img</span></code> folder used to manage screen snaps for the section.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coverage_dem_bands</span><span class="o">.</span><span class="n">png</span>
-<span class="n">coverage_parameters</span><span class="o">.</span><span class="n">png</span>
-<span class="n">gray_preview</span><span class="o">.</span><span class="n">png</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>coverage_dem_bands.png
+coverage_parameters.png
+gray_preview.png
 </pre></div>
 </div>
 <p>Screen snaps are used with the <cite>figure</cite> directive, so we can provide a caption.</p>
@@ -1103,7 +1135,7 @@
 </div></blockquote>
 <p>Coverage parameters</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The :guilabel:`SUGGESTED_TILE_SIZE` parameter is set automatically by GeoServer when images use internal tiling (generally this setting is not changed from its default).
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The :guilabel:`SUGGESTED_TILE_SIZE` parameter is set automatically by GeoServer when images use internal tiling (generally this setting is not changed from its default).
 
 .. figure:: img/coverage_parameters.png
 
@@ -1131,8 +1163,8 @@ Content
 </pre></div>
 </div>
 <p>We are gradually shifting to numbering <cite>toctree</cite> and providing a heading for exercises to help attendees locate the right section to work on.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Exercise</span>
-<span class="o">^^^^^^^^</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exercise
+^^^^^^^^
 </pre></div>
 </div>
 </div>
@@ -1146,8 +1178,8 @@ Content
 <li><p>Each heading becomes a new slide.</p></li>
 <li><p>Headings are cross linked between workbook and slides</p></li>
 </ul>
-<div class="section" id="slide-headings">
-<h3>Slide headings<a class="headerlink" href="#slide-headings" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="headings">
+<h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h3>
 <p>Use straight forward writing with three levels of headings:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Page</span>
 <span class="gh">****</span>
@@ -1161,6 +1193,20 @@ Content
 Slide content
 </pre></div>
 </div>
+<p>We are experimenting with forth level of headings for exercises:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Exercise: WMS GetCapabilities</span>
+<span class="gh">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+
+<span class="p">..</span> <span class="ow">ifslides</span><span class="p">::</span>
+
+   <span class="m">*</span> Exercise
+
+<span class="p">..</span> <span class="ow">ifnotslides</span><span class="p">::</span>
+
+<span class="p">   ..</span> <span class="ow">include</span><span class="p">::</span> wms_getcapabilities_exercise.txt
+</pre></div>
+</div>
+<p>Distinct numbered heading helps class members locate exercise quickly.</p>
 <p>Manage long pages using <cite>include</cite> directive.</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Basics</span>
 <span class="gh">******</span>
@@ -1174,12 +1220,13 @@ Slide content
 </pre></div>
 </div>
 </div>
-<div class="section" id="ifslides-and-ifnotslides">
-<h3>ifslides and ifnotslides<a class="headerlink" href="#ifslides-and-ifnotslides" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ifslides-and-ifnotslides-directives">
+<h3>ifslides and ifnotslides directives<a class="headerlink" href="#ifslides-and-ifnotslides-directives" title="Permalink to this headline">¶</a></h3>
 <p>Use <cite>ifslides</cite> and <cite>ifnotslides</cite> to control content included in presentation and workbook.</p>
-<blockquote>
-<div><p>Access to the GeoServer data directory is required to manage the icons and fonts used for styling.</p>
-</div></blockquote>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Access to the GeoServer data directory is required to manage the icons and fonts used for styling.</p>
+</div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">ifslides</span><span class="p">::</span>
 
    Data directory access required for icons and fonts.
@@ -1190,12 +1237,13 @@ Slide content
 </pre></div>
 </div>
 <p>Some content like references may only be in the workbook.</p>
-<blockquote>
-<div><p>Reference:</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Reference:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://docs.geoserver.org/latest/en/user/services/wms/reference.html">WMS reference</a></p></li>
 </ul>
-</div></blockquote>
+</div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">ifnotslides</span><span class="p">::</span>
 
    Reference:
@@ -1206,7 +1254,7 @@ Slide content
 </div>
 <div class="section" id="slide-directive">
 <h3>Slide directive<a class="headerlink" href="#slide-directive" title="Permalink to this headline">¶</a></h3>
-<p><cite>slide</cite> directive for additional slides.</p>
+<p>Use <cite>slide</cite> directive for additional slides.</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> GeoCat Introduction
    <span class="nc">:level:</span> 1
    <span class="nc">:class:</span> slide-intro
@@ -1219,9 +1267,12 @@ Slide content
 </pre></div>
 </div>
 <p>Theme provides built-in slide classes:</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <div class="figure align-default" id="id2">
 <img alt="../_images/slide-heart.png" src="../_images/slide-heart.png" />
 <p class="caption"><span class="caption-text">Slide-heart class</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Free and Open Source Company
    <span class="nc">:level:</span> 1
@@ -1229,25 +1280,34 @@ Slide content
 </pre></div>
 </div>
 <p>Theme <cite>slide-outro</cite> is a nice way to end a presentation:</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <div class="figure align-default" id="id3">
 <img alt="../_images/slide_questions.png" src="../_images/slide_questions.png" />
 <p class="caption"><span class="caption-text">Use of <cite>slide-outro</cite> to end presentation.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <p>Note <cite>doc</cite> link to return to top-level:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Questions and Review
   <span class="nc">:level:</span> 2
   <span class="nc">:class:</span> slide-outro
 
-  <span class="na">:doc:</span><span class="nv">`/index`</span>
+  <span class="na">:doc:</span><span class="nv">`^ &lt;/index&gt;`</span>
 </pre></div>
 </div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>Slide <cite>inline-contents</cite> used to generate a slide, and include the text in the workbook.</p>
 <blockquote>
 <div><p>Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.</p>
 </div></blockquote>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <div class="figure align-default" id="id4">
 <img alt="../_images/slide-inline-example.png" src="../_images/slide-inline-example.png" />
 <p class="caption"><span class="caption-text">Slide inline-contents example</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> GeoCat Documentation Example
    <span class="nc">:level:</span> 2
@@ -1260,27 +1320,24 @@ Slide content
 <div class="section" id="instructor-notes">
 <h3>Instructor notes<a class="headerlink" href="#instructor-notes" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">only</span></code> directive to include content in the instructor build of the workbook.</p>
-<blockquote>
-<div><div class="admonition-explore admonition">
-<p class="admonition-title">Explore</p>
-<p>What is the difference between the <code class="docutils literal notranslate"><span class="pre">CRS:84</span></code> and <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code>?</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Instructor</em>: What is the difference between the <code class="docutils literal notranslate"><span class="pre">CRS:84</span></code> and <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code>?</p>
 <div class="admonition-instructor-notes admonition">
 <p class="admonition-title">Instructor Notes</p>
 <p>The difference is the strict definition of axis order.</p>
 </div>
 </div>
-</div></blockquote>
+</div>
 <div class="highlight-rst notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
 6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Explore
-
-   What is the difference between the <span class="s">``CRS:84``</span> and <span class="s">``EPSG:4326``</span>?
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">note</span><span class="p">::</span> <span class="ge">*Instructor*</span>: What is the difference between the <span class="s">``CRS:84``</span> and <span class="s">``EPSG:4326``</span>?
 
 <span class="p">   ..</span> <span class="ow">only</span><span class="p">::</span> instructor
 
@@ -1296,13 +1353,23 @@ Slide content
 <div class="section" id="avoid-including-exercise-in-slides">
 <h3>Avoid including exercise in slides<a class="headerlink" href="#avoid-including-exercise-in-slides" title="Permalink to this headline">¶</a></h3>
 <p>Use <cite>admonition</cite> and <cite>ifnotslides</cite> directive to avoid including the full exercises into presentations.</p>
-<div class="admonition-exercise-issue-wms-1-3-0-getcapabilities-request admonition">
-<p class="admonition-title">Exercise issue WMS 1.3.0 GetCapabilities request</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><strong>Exercise WMS 1.3.0 GetCapabilities request</strong></p>
+<ul class="simple">
+<li><p>Exercise</p></li>
+</ul>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><strong>Exercise WMS 1.3.0 GetCapabilities request</strong></p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
 <p>To show the WMS GetCapabilities:</p>
 <ol class="arabic">
 <li><p>Navigate to <span class="menuselection">Demo ‣ Demo Requests</span> page.</p></li>
 <li><p>Select the <code class="docutils literal notranslate"><span class="pre">WMS_1.1.1_GetCapabilities.url</span></code> request. The full request is reproduced below, with line breaks added for clarity:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms?
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms?
   service=wms&amp;
   version=1.1.1&amp;
   request=GetCapabilities
@@ -1313,13 +1380,37 @@ Slide content
 <li><p>Click <span class="guilabel">Submit</span>.</p></li>
 </ol>
 </div>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">nextslide</span><span class="p">::</span> WMS Exercises
+</div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Exercise: WMS GetCapabilities</span>
+<span class="gh">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
 
-<span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Exercise issue WMS 1.3.0 GetCapabilities request
+<span class="p">..</span> <span class="ow">ifslides</span><span class="p">::</span>
 
-<span class="p">   ..</span> <span class="ow">ifnotslides</span><span class="p">::</span>
+   <span class="m">*</span> Exercise
 
-<span class="p">      ..</span> <span class="ow">include</span><span class="p">::</span> wms_getcapabilities_exercise.txt
+<span class="p">..</span> <span class="ow">ifnotslides</span><span class="p">::</span>
+
+<span class="p">   ..</span> <span class="ow">include</span><span class="p">::</span> wms_getcapabilities_exercise.txt
+</pre></div>
+</div>
+<p>Exercises are written using <cite>txt</cite> extension to avoid being processed by <strong class="command">sphinx-build</strong> until included.</p>
+<p><code class="file docutils literal notranslate"><span class="pre">wms_getcapabilities_exercise.txt</span></code>:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Exercise
+
+   To show the WMS GetCapabilities:
+
+   <span class="m">#.</span> Navigate to <span class="na">:menuselection:</span><span class="nv">`Demo --&gt; Demo Requests`</span> page.
+
+   <span class="m">#.</span> Select the <span class="s">``WMS_1.1.1_GetCapabilities.url``</span> request. The full request is reproduced below, with line breaks added for clarity::
+
+        http://localhost:8080/geoserver/wms?
+          service=wms&amp;
+          version=1.1.1&amp;
+          request=GetCapabilities
+
+      The server endpoint, <span class="s">``service``</span>, and <span class="s">``version``</span> are all the same as we have seen before. The only difference is the <span class="s">``request``</span>, which is <span class="s">``GetCapabilities``</span>. There are no other parameters needed.
+
+   <span class="m">#.</span> Click <span class="na">:guilabel:</span><span class="nv">`Submit`</span>.
 </pre></div>
 </div>
 </div>
@@ -1342,32 +1433,94 @@ Slide content
 <p class="admonition-title">Challenge</p>
 <p>Go beyond the workbook with experimentation and research.</p>
 </div>
+<p>Use combination of <cite>admonition</cite> to state type of exercise, and a topic sentence to introduce the step-by-step instructions:</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Examine the styles of our newly imported layers, and compare two layers with the same geometries:</p>
+<ol class="arabic simple">
+<li><p>Click <span class="guilabel">Layer Preview</span>.</p></li>
+</ol>
 </div>
-<div class="section" id="manage-long-exercises-in-separate-txt-file">
-<h3>Manage long exercises in separate txt file<a class="headerlink" href="#manage-long-exercises-in-separate-txt-file" title="Permalink to this headline">¶</a></h3>
-<p>Manage long pages as a <cite>txt</cite> file using <cite>include</cite> directive.</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> wms_getcapabilities_exercise.txt
-   <span class="nc">:language:</span> rst
+</div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Exercise
+
+   Examine the styles of our newly imported layers, and compare two layers with the same geometries:
+
+   <span class="m">#.</span> Click <span class="na">:guilabel:</span><span class="nv">`Layer Preview`</span>.
 </pre></div>
 </div>
-<p>Exercises are written using <cite>txt</cite> extension to avoid being processed by <strong class="command">sphinx-build</strong> until included.</p>
 </div>
 <div class="section" id="step-by-step-instructions">
 <h3>Step-by-step instructions<a class="headerlink" href="#step-by-step-instructions" title="Permalink to this headline">¶</a></h3>
-<p>Writing step-by-step insteuctions:</p>
+<p>Writing step-by-step instructions:</p>
 <ul class="simple">
-<li><p>Step should clearly state what is being performed</p></li>
-<li><p>Include a screen snap attendee can use to check their work before hitting <span class="guilabel">OK</span>.</p></li>
+<li><p>Step clearly state what is being performed</p></li>
+<li><p>Any data entry or form input captured as <code class="docutils literal notranslate"><span class="pre">list-table</span></code> directive for cut-and-paste into application</p></li>
+<li><p>Include screen snap attendee can use to check their work (before hitting <span class="guilabel">OK</span>)</p></li>
 <li><p>Show the result of the action as a new numbered step with a screen snap.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">figure</span></code> directive for screen snap, with caption naming what is on screen, adjusting size with <code class="docutils literal notranslate"><span class="pre">figwidth</span></code> as needed</p></li>
 </ul>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="m">#.</span> Log in as the GeoServer administrator.
+
+<span class="p">   ..</span> <span class="ow">list-table</span><span class="p">::</span>
+      <span class="nc">:widths:</span> 30 70
+      <span class="nc">:width:</span> 100%
+      <span class="nc">:stub-columns:</span> 1
+
+      <span class="m">*</span> - User:
+        <span class="m">-</span> <span class="na">:kbd:</span><span class="nv">`admin`</span>
+      <span class="m">*</span> - Password:
+        <span class="m">-</span> <span class="na">:kbd:</span><span class="nv">`geoserver`</span>
+      <span class="m">*</span> - Remember me
+        <span class="m">-</span> Unchecked
+
+<span class="p">   ..</span> <span class="ow">figure</span><span class="p">::</span> img/server_geoserver_login.png
+
+      GeoServer Welcome page
+</pre></div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<ol class="arabic">
+<li><p>Log in as the GeoServer administrator.</p>
+<table class="colwidths-given docutils align-default" style="width: 100%">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>User:</p></th>
+<td><p><kbd class="kbd docutils literal notranslate">admin</kbd></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Password:</p></th>
+<td><p><kbd class="kbd docutils literal notranslate">geoserver</kbd></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Remember me</p></th>
+<td><p>Unchecked</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default" id="id5">
+<img alt="../_images/server_geoserver_login.png" src="../_images/server_geoserver_login.png" />
+<p class="caption"><span class="caption-text">GeoServer Welcome page</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
 <p>Sphinx rst tips for step-by-step instructions:</p>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">#.</span></code> to number steps, so new steps can be added over time.</p></li>
 <li><p>Use directives <code class="docutils literal notranslate"><span class="pre">kbd</span></code>, <code class="docutils literal notranslate"><span class="pre">gui-label</span></code>, <code class="docutils literal notranslate"><span class="pre">command</span></code>, <code class="docutils literal notranslate"><span class="pre">menu-selection</span></code> consistently to allow theme designer to improve workbook appearance over time.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">figure</span></code> directive to provide caption for each screen snap</p></li>
-<li></li>
 </ul>
 <p>Do not complicate step-by-step instructions with description or discussion. Or introduce new concepts, these should be covered in the presentation content.</p>
+<ul class="simple">
+<li><p>Discussion, alternatives and decisions are off-topic and confusing if attendee is stressed</p></li>
+<li><p>Do not use &quot;simple&quot; or &quot;easy&quot; as this is discouraging if attendee is frustrated
+(Common response is to blame themselves or blame the software and walk away).</p></li>
+</ul>
 <p>If you really need to take a break for discussion, perhaps in an instructor demo. Make a clearly numbered step that is just discussion.</p>
 <span class="slide-outro"></span></div>
 </div>
@@ -1385,7 +1538,7 @@ Slide content
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, GeoCat BV
+        &copy; Copyright 2021, GeoCat BV
 
     </p>
   </div> 
