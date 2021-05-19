@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Workbook &mdash; GeoCat Theme Example 2021.01.14 documentation</title>
+  <title>Workbook &mdash; GeoCat Theme Example 2021.05.19 documentation</title>
   
 
   
@@ -100,7 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#figure-folder">figure folder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#files-folder">files folder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#img-folder">img folder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#section-index-rst">Section index.rst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#page-index-rst">Page index.rst</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#workbook-writing">Workbook Writing</a><ul>
@@ -1143,8 +1143,8 @@ gray_preview.png
 </pre></div>
 </div>
 </div>
-<div class="section" id="section-index-rst">
-<h3>Section index.rst<a class="headerlink" href="#section-index-rst" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="page-index-rst">
+<h3>Page index.rst<a class="headerlink" href="#page-index-rst" title="Permalink to this headline">¶</a></h3>
 <p>Use straight forward writing with three levels of headings:</p>
 <ul class="simple">
 <li><p>Consistency is required as content is generted into both slides and workbooks</p></li>
@@ -1160,13 +1160,14 @@ gray_preview.png
 <span class="gh">-------</span>
 
 Content
+
+<span class="gh">Exercise</span>
+<span class="gh">^^^^^^^^</span>
+
+Step-by-step instructions.
 </pre></div>
 </div>
-<p>We are gradually shifting to numbering <cite>toctree</cite> and providing a heading for exercises to help attendees locate the right section to work on.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exercise
-^^^^^^^^
-</pre></div>
-</div>
+<p>We are shifting to numbering <code class="docutils literal notranslate"><span class="pre">toctree</span></code> directives and providing a heading for exercises to help attendees quickly locate the right section to work on.</p>
 </div>
 </div>
 <div class="section" id="workbook-writing">
@@ -1180,7 +1181,7 @@ Content
 </ul>
 <div class="section" id="headings">
 <h3>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h3>
-<p>Use straight forward writing with three levels of headings:</p>
+<p>Pages use straight forward writing with three levels of headings:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Page</span>
 <span class="gh">****</span>
 
@@ -1193,7 +1194,7 @@ Content
 Slide content
 </pre></div>
 </div>
-<p>We are experimenting with forth level of headings for exercises:</p>
+<p>A forth level of headings is used for exercises:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Exercise: WMS GetCapabilities</span>
 <span class="gh">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
 
@@ -1287,12 +1288,12 @@ Slide content
 <p class="caption"><span class="caption-text">Use of <cite>slide-outro</cite> to end presentation.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<p>Note <cite>doc</cite> link to return to top-level:</p>
+<p>Note <cite>ref</cite> link to return to top-level <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">_contents:</span></code> anchor:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Questions and Review
   <span class="nc">:level:</span> 2
   <span class="nc">:class:</span> slide-outro
 
-  <span class="na">:doc:</span><span class="nv">`^ &lt;/index&gt;`</span>
+  <span class="na">:ref:</span><span class="nv">`^ &lt;/contents&gt;`</span>
 </pre></div>
 </div>
 <div class="admonition-example admonition">
@@ -1393,7 +1394,7 @@ Slide content
 <span class="p">   ..</span> <span class="ow">include</span><span class="p">::</span> wms_getcapabilities_exercise.txt
 </pre></div>
 </div>
-<p>Exercises are written using <cite>txt</cite> extension to avoid being processed by <strong class="command">sphinx-build</strong> until included.</p>
+<p>Exercises are written using <code class="file docutils literal notranslate"><span class="pre">txt</span></code> extension to avoid being processed by <strong class="command">sphinx-build</strong> until included.</p>
 <p><code class="file docutils literal notranslate"><span class="pre">wms_getcapabilities_exercise.txt</span></code>:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Exercise
 

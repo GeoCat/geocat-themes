@@ -5,7 +5,7 @@ Setting up a half-day training workbook.
 
 .. ifslides::
 
-   :ref:`^<Contents>`
+   :ref:`^<contents>`
 
 .. ifnotslides::
    
@@ -214,8 +214,8 @@ Screen snaps are used with the `figure` directive, so we can provide a caption.
 
        Coverage parameters
 
-Section index.rst
------------------
+Page index.rst
+--------------
 
 Use straight forward writing with three levels of headings:
 
@@ -234,13 +234,13 @@ Use straight forward writing with three levels of headings:
    -------
 
    Content
-   
-We are gradually shifting to numbering `toctree` and providing a heading for exercises to help attendees locate the right section to work on.
-
-.. code-block::
 
    Exercise
    ^^^^^^^^
+   
+   Step-by-step instructions.
+   
+We are shifting to numbering ``toctree`` directives and providing a heading for exercises to help attendees quickly locate the right section to work on.
 
 Workbook Writing
 ================
@@ -256,7 +256,7 @@ Workbooks are built with `autoslides`:
 Headings
 --------
 
-Use straight forward writing with three levels of headings:
+Pages use straight forward writing with three levels of headings:
 
 .. code-block:: rst
    
@@ -273,7 +273,7 @@ Use straight forward writing with three levels of headings:
 
 .. nextslide::
 
-We are experimenting with forth level of headings for exercises:
+A forth level of headings is used for exercises:
 
 .. code-block:: rst
    
@@ -396,7 +396,7 @@ Theme `slide-outro` is a nice way to end a presentation:
  
      Use of `slide-outro` to end presentation.
 
-Note `doc` link to return to top-level:
+Note `ref` link to return to top-level ``.. _contents:`` anchor:
 
 .. code-block:: rst
 
@@ -404,7 +404,7 @@ Note `doc` link to return to top-level:
      :level: 2
      :class: slide-outro
 
-     :doc:`^ </index>`
+     :ref:`^ </contents>`
 
 .. nextslide:: Slide directive inline-contents
 
@@ -493,7 +493,7 @@ Use `admonition` and `ifnotslides` directive to avoid including the full exercis
 
 .. nextslide:: 
 
-Exercises are written using `txt` extension to avoid being processed by :command:`sphinx-build` until included.
+Exercises are written using :file:`txt` extension to avoid being processed by :command:`sphinx-build` until included.
 
 :file:`wms_getcapabilities_exercise.txt`:
 
