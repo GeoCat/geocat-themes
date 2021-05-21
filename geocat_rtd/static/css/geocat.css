@@ -308,6 +308,11 @@ a.reference.external:after {
 	}
 }
 
+/* footer */
+footer p {
+	padding-bottom: 15px;
+}
+
 /* content */
 .wy-nav-content {
 	margin: 0 auto;
