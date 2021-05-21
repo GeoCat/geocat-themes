@@ -30,7 +30,7 @@
     &#9888; Pre-release
   </div>
 {% endif %}
-  
+
   <ul class="wy-breadcrumbs">
     {% block breadcrumbs %}
       <!-- link to GeoCat docs home -->
@@ -44,7 +44,7 @@
         </li>
       {% if title != project %}
           {% for doc in parents %}
-            <li><a title="{{ doc.title }}" href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+            <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
           {% endfor %}
           <li>{{ title }}</li>
       {% endif %}
