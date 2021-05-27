@@ -33,19 +33,19 @@ code {
 }
 .slides > article {
   font-family: 'Open Sans', Arial, sans-serif;
-	color: #333;
-	font-size: 1em;
+  color: #333;
+  font-size: 1em;
   line-height: 1.4em;
   box-shadow: none;
   border-radius: 4px;
   border: none;
-	letter-spacing: normal;
+  letter-spacing: normal;
 }
 .slides.table > article {
   box-shadow: none;
   border-radius: 4px;
   border: none;
-	letter-spacing: normal;
+  letter-spacing: normal;
 }
 
 /* general reference */
@@ -275,6 +275,12 @@ section.slides > p .doc:after {
   -moz-transform: translate(-400px) !important;
   -webkit-transform: translate3d(-400px, 0, 0) !important;
 }
+.slides.table p {
+  margin-top: 10px;
+}
+.slides.table ul {
+  margin-top: 20px;
+}
 .slides.table > article.past h1, .slides.table > article.next h1 {
   margin-top: 10px !important;
   font-size: 1em;
@@ -349,4 +355,55 @@ section.slides > p .doc:after {
 }
 .presenter_notes p {
   margin: 10px 0;
+}
+
+/* messages/text blocks */
+.admonition {
+  padding: .5rem 0.755rem !important;
+  border-left-width: .25em;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: #e7f2fa;
+  color: #2c3e50;
+  border-color: #6ab0de;
+}
+.admonition-title {
+  font-weight: 600;
+  padding: 0 0 5px 0 !important;
+  background: transparent !important;
+  margin: 0 !important;
+  color: #2c3e50;
+  line-height: 1.7em;
+  text-transform: uppercase;
+}
+.admonition-title:before {
+  margin: 0;
+  content: "";
+}
+.admonition.hint, .admonition.important, .admonition.tip {
+  background-color: #f6f8fa;
+  border-color: #42b983;
+}
+.admonition.attention, .admonition.caution, .admonition.warning {
+  background-color: rgba(255,229,100,.3);
+  border-color: #e7c000;
+  color: #6b5900;
+}
+.admonition.attention .admonition-title, .admonition.caution .admonition-title, .admonition.warning .admonition-title {
+  color: #b29400;
+}
+.admonition.danger, .admonition.error {
+  background-color: #ffe6e6;
+  border-color: #c00;
+  color: #4d0000;
+}
+.admonition.danger  .admonition-title, .admonition.error  .admonition-title {
+  color: #900;
+}
+.admonition.note {
+  border-color: #6ab0de;
+}
+.admonition.hint .admonition-title, .admonition.important .admonition-title,
+.admonition.tip .admonition-title, .admonition.note .admonition-title {
+  color: #2c3e50;
 }

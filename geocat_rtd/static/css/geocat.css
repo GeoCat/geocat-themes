@@ -443,6 +443,7 @@ footer p {
 	border-left-width: .25em;
 	border-left-style: solid;
 	margin: 1rem 0;
+	border-color: #6ab0de;
 }
 .rst-content .admonition-title {
 	font-weight: 600;
