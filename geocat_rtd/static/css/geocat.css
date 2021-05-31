@@ -613,6 +613,9 @@ a.copybtn:hover > img {
 		background-color: #272822;
 		border-color: #41433C;
 	}
+	.wy-side-nav-search a {
+		background-color: #999;
+	}
 	#rtd-search-form {
 		border-color: #41433C;
 		background-color: #333;
@@ -672,6 +675,7 @@ a.copybtn:hover > img {
 	.rst-content pre.literal-block, .rst-content div[class^='highlight'] {
 		background-color: #41433C;
 	}
+
 	.rst-content .highlight .go {
 		color: #F8F8F2;
 	}
@@ -718,6 +722,9 @@ a.copybtn:hover > img {
 	/* messages */
 	.rst-content .admonition, .rst-content .admonition-todo, .rst-content .attention, .rst-content .caution, .rst-content .hint, .rst-content .important, .rst-content .note, .rst-content .seealso, .rst-content .tip, .rst-content .warning, .wy-alert {
 		background: #3a3a3a;
+	}
+	.rst-content .admonition table td, .rst-content .admonition table th {
+		background: #41433c !important;
 	}
 	.admonition.danger, .admonition.error {
 		background-color: #e46060;
