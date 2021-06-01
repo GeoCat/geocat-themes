@@ -282,7 +282,9 @@ A forth level of headings is used for exercises:
    
    .. ifslides::
       
-      * Exercise
+      .. admonition:: Exercise
+      
+         Show the WMS GetCapabilities
    
    .. ifnotslides::
    
@@ -290,9 +292,9 @@ A forth level of headings is used for exercises:
 
 Distinct numbered heading helps class members locate exercise quickly.
 
-.. nextslide:: Autoslides Presentations
+.. nextslide:: Section include
 
-Manage long pages using `include` directive.
+Manage long pages using `include` directive for sections:
 
 .. code-block:: rst
    
@@ -305,6 +307,33 @@ Manage long pages using `include` directive.
    .. include:: layer.txt
    .. include:: group.txt
    .. include:: style.txt
+
+.. nextslide:: Section break
+
+Slide breaks are available for sections:
+
+.. code-block:: rst
+   
+   .. rst-class:: slide-geoserver
+
+   GeoServer Enterprise
+   ====================
+   
+   .. ifnotslides::
+      
+      GeoServer Enterprise is a commercial distribution of GeoServer for GeoCat customers.
+
+.. nextslide::
+
+List of section-breaks provided by *geocat_slides* theme:
+
+* ``slide-geocat`` - geonetwork enterprise branding
+* ``slide-geoserver`` - geoserver enterprise branding
+* ``slide-bridge``
+* ``slide-service``
+* ``slide-bennekom``
+* ``slide-victoria``
+* ``slide-outro``
 
 ifslides and ifnotslides directives
 -----------------------------------
@@ -359,7 +388,7 @@ Use `slide` directive for additional slides.
 .. code-block:: rst
 
    .. slide:: GeoCat Introduction
-      :level: 1
+      :level: 2
       :class: slide-intro
 
       .. figure:: /img/geocat_logo_text.*
@@ -407,6 +436,10 @@ Note `ref` link to return to top-level ``.. _contents:`` anchor:
      :ref:`^ </contents>`
 
 .. nextslide:: Slide directive inline-contents
+
+.. ifnotslides::
+   
+   Slide directive inline-contents
 
 .. admonition:: Example
 
@@ -468,24 +501,28 @@ Use `admonition` and `ifnotslides` directive to avoid including the full exercis
 
 .. admonition:: Example
    
-   **Exercise WMS 1.3.0 GetCapabilities request**
+   **WMS 1.3.0 GetCapabilities request**
   
-   * Exercise
+   .. admonition:: Exercise
+      
+      Show the WMS GetCapabilities
    
 .. admonition:: Example
    
-   **Exercise WMS 1.3.0 GetCapabilities request**
+   **WMS 1.3.0 GetCapabilities request**
    
    .. include:: wms_getcapabilities_exercise.txt
 
 .. code-block:: rst
 
-   Exercise: WMS GetCapabilities
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   WMS 1.3.0 GetCapabilities request
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    
    .. ifslides::
       
-      * Exercise
+      .. admonition:: Exercise
+         
+         Show the WMS GetCapabilities
    
    .. ifnotslides::
    

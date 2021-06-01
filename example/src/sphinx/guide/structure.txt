@@ -1,0 +1,140 @@
+Document Structure
+==================
+
+Table of contents, Pages and Headings
+-------------------------------------
+
+Headings are tricky to manage as they need to be consistent across pages, and form a table of contents structure for the document as a whole.
+
+:file:`index.rst`:
+
+.. code-block:: rst
+   
+   ########
+   Document 
+   ########
+   
+   .. toctree::
+      :maxdepth: 2
+      :caption: Contents:
+  
+      section/index
+
+:file:`chapter/index.rst`:
+
+.. code-block:: rst
+
+   *******   
+   Chapter
+   *******
+   
+   .. toctree::
+      :maxdepth: 2
+      :caption: Contents:
+  
+      page
+
+:file:`chapter/section.txt`:
+
+.. code-block:: rst
+
+   Section
+   =======
+   
+   Heading
+   -------
+   
+   Subheading
+   ^^^^^^^^^^
+   
+   subsubheading
+   """""""""""""
+
+.. note:: Technically RST defines heading levels based on the order they appear within a page, however sphinx use of multiple pages to form a larger document and tabel of contents structure dictates consistent use of headings as shown above.
+
+   Reference:
+   
+   * `Headings <https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings>`_ (readthedocs.io)
+
+Lists
+-----
+
+There are two types of lists, bulleted lists and numbered lists.
+
+Bulleted list
+^^^^^^^^^^^^^
+
+Bullet lists are useful for a small number of items, where no order is implied:
+   
+   Applicable standards:
+   
+   * iso19139: describing information or resources that have geographic extent
+   * iso19110: classification of feature types into a feature catalogue 
+
+.. code-block:: rst
+
+   Applicable standards:
+   
+   * iso19139: describing information or resources that have geographic extent
+   * iso19110: classification of feature types into a feature catalogue 
+
+.. note:: Example Bullet  lists should all be of a consistent style, either short sentence fragments, or full sentences. 
+   
+   Switch to numbered lists when presenting more than five ideas.
+
+Numbered list
+^^^^^^^^^^^^^
+
+Numbered lists used to define step-by-step instructions or present a larger number of ideas.
+
+   #. Reproject ``roads`` from WGS84 to Web Mercator:
+   
+      .. code-block:: sql
+         
+         ALTER TABLE roads
+           ALTER COLUMN geom TYPE geometry(MULTILINESTRING, 4326)
+           USING ST_SetSRID(geom,4326);
+   
+   #. Efficient use of PostGIS depends on having up to date statistics of table contents for the query planner, and cleaning up unused space after table inserts and deletes:
+      
+      .. code-block:: sql
+         
+         VACUUM ANALYZE roads;
+   
+This is accomplished with the following code:
+
+.. code-block:: rst
+
+   #. Reproject ``roads`` from WGS84 to Web Mercator:
+   
+      .. code-block:: sql
+         
+         ALTER TABLE roads
+           ALTER COLUMN geom TYPE geometry(MULTILINESTRING, 4326)
+           USING ST_SetSRID(geom,4326);
+   
+   #. Efficient use of PostGIS depends on having up to date statistics of table contents for the query planner, and cleaning up unused space after table inserts and deletes:
+      
+      .. code-block:: sql
+         
+         VACUUM ANALYZE roads;
+
+.. warning:: Use of `#.` to automatically number steps make it easy to add/remove steps and notice if an indentation mistaken accidentally restarts numbering. Numbering lists using `1.` `2.` and `3.` is not recommended. 
+
+Nested lists
+^^^^^^^^^^^^
+
+Numbered and bulleted lists may be nested:
+
+   #. Choice of spatial reference system for ``SRID``:
+      
+      * ``4326``: WGS84 popular with geographic professionals and the scientific community used for GPS data.
+      * ``3857``: Web mercator using a simplified, spherical, model of the world for performance.
+
+.. code-block::
+
+   #. Choice of spatial reference system for ``SRID``:
+      
+      * ``4326``: WGS84 popular with geographic professionals and the scientific community used for GPS data.
+      * ``3857``: Web mercator using a simplified, spherical, model of the world for performance.
+

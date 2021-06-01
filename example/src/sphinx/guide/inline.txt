@@ -1,0 +1,276 @@
+Inline directives
+=================
+
+.. note:: Avoid basic markup
+   
+   .. list-table::
+      :widths: 30 40 30
+
+      * - **Format**
+        - **Syntax**
+        - **Output**
+      * - Emphasis, single asterisk
+        - :kbd:`*italics*`
+        - *italics*
+      * - Strong Emphasis, double asterisk
+        - :kbd:`**bold**`
+        - **bold**
+      * - Inline literal, double back quote
+        - :kbd:`\`\`monspace\`\``
+        - ``monspace``
+
+   Use of basic markup for **bold**, *italic*, and ``monospace`` is not not recommended. Please resist the temptation, and make use of the inline directives described below.
+
+Keyboard input
+--------------
+
+Keyboard input, intended to be typed, using the :command:`kbd` directive:
+
+  Select all text using :kbd:`Control-a`.
+
+.. code-block:: rst
+   
+   Select all text using :kbd:`Control-a`.
+
+
+Buttons, links or controls used for interaction
+-----------------------------------------------
+
+Use :command:`guilabel` to describe user interface elements such as buttons or links requiring interaction. 
+
+   Press :guilabel:`OK` to change the security settings.
+  
+   Click :guilabel:`more details` to view settings.
+
+   Use :guilabel:`Legal restrictions` to select ``Creative Commons Level 0`` from the list of licenses.
+
+   Use the :guilabel:`Name` field to input :kbd:`Population`.
+   
+.. code-block::
+
+   Press :guilabel:`OK` to change the security settings.
+  
+   Click :guilabel:`more details` to view settings.
+   
+   Use :guilabel:`Legal restrictions` to select ``Creative Commons Level 0`` from the list of licenses.
+   
+   Use the :guilabel:`Name` field to input :kbd:`Population`.
+
+.. note:: Consistently use the words press for button interaction, and click for link interaction.
+   
+   Where possible start with the action to be performed and complete the sentence to describe the consequence. This is an example of directive language, rather than passive language, making instructions easier to follow.
+
+Menu or page navigation
+-----------------------
+
+Use :command:`menuselection:` to describe navigating a menubar, toolbar, context menu, tree control, or web application pages.
+   
+   Select :menuselection:`Start --> Control Panel --> System` to open :command:`Windows System configuration` control panel. Click on :guilabel:`Advanced system settings` to open the :guilabel:`System Properties` dialog.
+   
+   Navigate to the :menuselection:`Data --> Layer Groups` page showing published basemaps.
+
+   In the :command:`pgAdmin` object browser select :menuselection:`Server Groups --> PostGIS --> Databases`. Use the context menu to select :menuselection:`Databases --> New Database` opening the :guilabel:`New Database` dialog.
+   
+.. code-block:: rst
+
+   Select :menuselection:`Start --> Control Panel --> System` to open :command:`Windows System configuration` control panel. Click on :guilabel:`Advanced system settings` to open the :guilabel:`System Properties` dialog.
+   
+   Navigate to the :menuselection:`Data --> Layer Groups` page showing published basemaps.
+   
+   In the :command:`pgAdmin` object browser select :menuselection:`Server Groups --> PostGIS --> Databases`. Use the context menu to select :menuselection:`Databases --> New Database` opening the :guilabel:`New Database` dialog.
+   
+.. note:: Use the word :kbd:`select` or :kbd:`selection` in conjunction with menu, tree, or page navigation.
+
+   To make instructions easier to understand start with the navigation performed and describe the window, dialog or screen shown.
+
+Naming tables, columns, and list items
+--------------------------------------
+
+Use inline literals to reference names of tables, columns and list items.
+
+   Locate the ``admin_1_states_provinces`` layer and click the :guilabel:`OpenLayers` link to open a map preview in a new window.
+   
+   Use :guilabel:`Legal restrictions` to select ``Creative Commons Level 0`` from the list of licenses.
+
+.. code-block:: rst
+
+   Locate the ``admin_1_states_provinces`` layer and click the :guilabel:`OpenLayers` link to open a map preview in a new window.
+   
+   Use :guilabel:`Legal restrictions` to select ``Creative Commons Level 0`` from the list of licenses.
+
+Naming terms and standards
+--------------------------
+
+Avoid repeatedly defining terms such as metadata or WFS, a :command:`glossary` can be used if needed:
+
+  :command:`GeoServer` is a popular web service implementing the :term:`WFS` standard used to publish features using GML and :term:`json <GeoJSON>`.
+  
+  The OGC :term:`Web Feature Service <WFS>` standard is an example of a open web service making use of `GetCapabilities` to describe published data products and operations.
+
+.. code-block:: rst
+
+  :command:`GeoServer` is a popular web service implementing the :term:`WFS` standard used to publish features using :term:`GML` and :term:`json <GeoJSON>`.
+  
+  The OGC :term:`Web Feature Service` standard is an example of a open web service making use of `GetCapabilities` operation to describe published data products and operations to web and desktop clients.
+
+:file:`config.py`:
+
+:file:`index.rst`:
+
+.. code-block:: rst
+   
+   ########
+   Document 
+   ########
+   
+   .. toctree::
+      :maxdepth: 2
+      :caption: Contents:
+  
+      chapter/index
+
+   .. toctree::
+      :maxdepth: 1
+      :caption: Reference
+  
+      glossary
+
+:file:`glossary.rst`:
+
+.. code-block:: rst
+   
+   ********
+   Glossary
+   ********
+   
+   .. glossary::
+      
+      GeoJSON
+        GeoJSON is used as a JSON interchange format for spatial features. Intially a community led development GeoJSON is now formally recognized as a W3C standard.
+      
+      WFS : OGC
+      Web Feature Service : OGC
+        Web Feature Services is a web service standard used to publish features. WFS is defined by the Open Geospatial Consortium as an Open Document standard for publishing FeatureTypes. FeatureType content is accessed using operations such as `GetFeature` and `DescribeFeatureType`.
+
+Applications, commands and executables
+--------------------------------------
+
+Use :command:`command` directive to reference running executables such as GeoServer, Tomcat, and psql.
+
+  Use :command:`psql` to connect to the ``ne`` database:
+
+  .. code-block:: bat
+
+     psql -U postgres ne
+
+.. code-block:: rst
+
+   Use :command:`psql` to connect to the ``ne`` database:
+
+   .. code-block:: bat
+
+      psql -U postgres ne
+
+Filenames, file extensions and paths
+------------------------------------
+
+Use the :command:`file` directive when working with filenames, file extensions or paths.
+
+  Check the configuration :file:`geoserver.xml` configuration file.
+
+  Open the :file:`pdf` file.
+  
+  Setting used to check `GEOSERVER_DATA_DIR` location :file:`C:\\ProgramData\\GeoServer\\Data` directory for :file:`global.xml`.
+  
+  This setting is saved in your workspace :file:`workspaces/{workspace}/namespace.xml` configuration file.
+
+.. code-block:: rst
+
+   Check the configuration :file:`geoserver.xml` configuration file.
+
+   Open the :file:`pdf` file.
+ 
+   Setting used to check `GEOSERVER_DATA_DIR` location :file:`C:\\ProgramData\\GeoServer\\Data` directory for :file:`global.xml`.
+
+   This setting is saved in your workspace :file:`workspaces/{workspace}/namespace.xml` configuration file.
+   
+.. note:: Take special care to use :kbd:`\\` as a seperator when documenting windows paths.
+
+   It is tricky to describe user supplied locations in a path, consider using ``{`` and ``}`` characters as shown above.
+
+URL and External links
+----------------------
+
+URLs links are included in generated output, links can also be added to text by reference, anonymous reference, or as an external link defined in :file:`config.py`.
+   
+   The running application is now available at http://localhost:8080/geonetwork .
+   
+   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`_ website.
+   
+   The optional GeoServer :geoserver:`WPS Extension <services/wps/index.html>` can be used to process your published layers, providing additional flexibility for web client applications.
+   
+   For more information on `SLD Standard`_ vist the OGC website.
+   
+   .. _SLD Standard: https://www.ogc.org/standards/sld
+
+
+.. code-block:: rst
+
+   The running application is now available at http://localhost:8080/geonetwork .
+   
+   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`_ website.
+   
+   The optional GeoServer :geoserver:`WPS Extension <services/wps/index.html>` can be used to process your published layers, providing additional flexibility for web client applications.
+   
+   For more information on `SLD Standard`_ vist the OGC website.
+   
+   .. _SLD Standard: https://www.ogc.org/standards/sld
+
+
+:file:`config.py`:
+
+.. code-block:: python
+   
+   extensions = [
+     'sphinx.ext.extlinks',
+   ]
+
+   extlinks = { 
+       'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
+   }
+
+.. _references_and_links:
+
+References and internal links
+-----------------------------
+
+Linking to individual pages, headings and anchors:
+
+  See details on :ref:`references_and_links`, on page :doc:`index`.
+  
+  Return to :doc:`home page </index>`.
+  
+.. code-block:: rst
+
+   See details on :ref:`references_and_links`, on page :doc:`index`.
+ 
+   Return to :doc:`home page </index>`.
+  
+:file:`index.rst`:
+
+.. code-block:: rst
+   
+   Writing Guide
+   =============
+   
+   Page heading above is as text shown for internal :command:`doc` links.
+   
+   .. _references_and_links::
+   
+   References and internal links
+   -----------------------------
+   
+   Heading text is shown as label for internal command:`ref` links.
+
+.. note:: GeoNetwork and GeoServer manuals use references extensively to link to headings even if the content changes location within the manual over time.
+

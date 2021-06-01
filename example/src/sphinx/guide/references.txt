@@ -1,0 +1,113 @@
+.. _reference:
+
+References
+==========
+
+Targets 
+-------
+
+.. _example:
+
+This paragraph is pointed to by the explicit "example" target.
+
+.. code-block:: rst
+
+   Targets references
+   ^^^^^^^^^^^^^^^^^^
+   
+   _example::
+   
+   This paragraph is pointed to by the explicit "example" target.
+
+To use target reference:
+
+.. admonition:: Example
+
+   Reference paragraph, using `example`_ target preceding the text, use :command:`ref` directive to :ref:`supply a label <example>`.
+
+.. code-block:: rst
+   
+   Reference paragraph, using `example`_ target preceding the text, use :command:`ref` directive to :ref:`supply a label <example>`.
+
+This approach is frequently used to provide a target for headings.
+
+.. admonition:: Example
+   
+   **References**
+   
+   Reference heading, using :ref:`reference` target preceding header, can also be used :ref:`to provide a label <reference>`.
+
+.. code-block:: rst
+   
+   .. _reference:
+   
+   References
+   ==========
+   
+   ...
+   
+   Reference heading, using :ref:`reference` target preceding header, can also be used :ref:`to provide a label <reference>`.
+
+.. note:: GeoNetwork and GeoServer documents use this approach consistently as the resulting references work even of the section of text is moved to a different file.
+
+Section headers are implicit targets, referred to by name.
+
+.. admonition:: Example
+   
+   Reference any heading on the page, example `Footnotes`_, however this does not work across files.
+
+.. code-block:: rst
+   
+   Reference any heading on the page, example `Footnotes`_, however this does not work across files.
+
+Explicit external targets are interpolated into references such as "GeoCat_".
+
+.. admonition:: Example
+   
+   Vist the `GeoCat`_ website
+
+.. _GeoCat: https://www.geocat.net/
+
+.. code-block:: rst
+
+   Vist the `GeoCat`_ website
+
+   .. _GeoCat: https://www.geocat.net/
+
+Footnotes
+---------
+
+.. [1] A footnote contains body elements, consistently indented by at
+   least 3 spaces.
+
+   This is the footnote's second paragraph.
+
+.. [#label] Footnotes may be numbered, either manually (as in [1]_) or
+   automatically using a "#"-prefixed label.  This footnote has a
+   label so it can be referred to from multiple places, both as a
+   footnote reference ([#label]_) and as a hyperlink reference
+   (label_).
+
+.. [#] This footnote is numbered automatically and anonymously using a
+   label of "#" only.
+
+.. [*] Footnotes may also use symbols, specified with a "*" label.
+   Here's a reference to the next footnote: [*]_.
+
+.. [*] This footnote shows the next symbol in the sequence.
+
+Citations
+---------
+
+.. [11] This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.
+
+.. [12] This citation has some ``code blocks`` in it, maybe some **bold** and
+       *italics* too. Heck, lets put a link to a meta citation [13]_ too.
+
+.. [13] This citation will have two backlinks.
+
+
+Here's a reference to the above, [11]_, [12]_ and [13]_ citations.
+
+Here is another type of citation: `citation`
+
