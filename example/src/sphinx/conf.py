@@ -114,9 +114,13 @@ pygments_style = None
 smartquotes = False
 
 # -- Extension External Links ------------------------------------------------
+if 'host' in build_properties :
+   host = build_properties['host']
+else:
+   host = 'http://localhost:8080/'
 
 extlinks = {
-    'host': (build_properties['host']+'/%s',build_properties['host']),
+    'host': (host+'/%s',host),
     'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
     'sphinx': ('https://www.sphinx-doc.org/en/master/%s','')
 }

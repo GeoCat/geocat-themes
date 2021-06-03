@@ -140,12 +140,15 @@ ant script to run sphinx-build:
   </target>
   
   <target name="_postprocess">
-    <condition property="override.provided">
-       <not><equals arg1="http://localhost:8080/" arg2="${host}"/></not>
+    <condition property="host.provided">
+       <and>
+         <isset property="host"/>
+         <not><equals arg1="http://localhost:8080/" arg2="${host}"/></not>
+       </and>
     </condition>
     
-    <echo level="info" if:set="override.provided">Postprocess ${outputdir}: ${host}</echo>
-    <replace if:set="override.provided"
+    <echo level="info" if:set="host.provided">Postprocess ${outputdir}: ${host}</echo>
+    <replace if:set="host.provided"
              dir="${outputdir}">
       <include name="**/*.html"/>
       <include name="**/*.json"/>
