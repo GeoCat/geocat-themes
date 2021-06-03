@@ -47,3 +47,32 @@ git add ../docs
 git commit -m "update docs"
 git push
 ```
+
+## update sphinx_rtd_theme
+
+Grab the latest tag:
+```
+cd sphinx_rtd_theme
+rm -rf *
+git checkout LICENSE
+wget https://github.com/readthedocs/sphinx_rtd_theme/archive/refs/tags/0.5.2.zip
+unzip 0.5.2.zip 'sphinx_rtd_theme-0.5.2/sphinx_rtd_theme/*' -d .
+mv sphinx_rtd_theme-0.5.2/sphinx_rtd_theme/* .
+rm -r *.zip sphinx_rtd_theme* 
+```
+
+Have a look at the changed files using `git status`, and double check if any fixes need to be applied to `geocat_rtd` theme.
+
+Updated:
+```
+cd ../
+git add .
+git commit -m "Update sphinx_rtd_theme to 0.5.2"
+```
+
+Test using `example`:
+```
+cd ../example
+ant clean
+ant
+```
