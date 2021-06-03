@@ -46,14 +46,46 @@ To list ant build targets intended for use (those that have a desription):
 
       % ant -p
       Buildfile: example/build.xml
-      Ant script to run sphinx-build.
+      GeoCat Theme Example Writing guidelines
+      ant script to run sphinx-build:
+        ant clean
+        ant workbook
+        ant workbook -Dopen=true
+        
       Main targets:
 
+       build       build documentation (requires sphinx-build)
+       bundle      Package instructor workbook and slides
        clean       clean up build directory
        instructor  instructor notes
+       package     Package workbook for attendees
        slides      instructor slides
        workbook    attendee workbook
       Default target: build
+
+.. nextslide:: post-processing
+
+Examples are written using `http://localhost:8080...`, to override:
+
+.. code-block:: bash
+
+   ant clean build -Dhost=https://training.geocat.live/
+
+An override perform a search and replace the generated output.
+
+.. nextslide:: postprocessing
+
+Postprocessing is used to handle localhost:8080 `links <http://localhost:8080/index.html>`__ in sample data and generated html:
+
+   .. literalinclude:: files/example.json
+     :language: json
+     :linenos:
+
+.. code-block:: rst
+
+   .. literalinclude:: files/example.json
+      :language: json
+      :linenos:
 
 README.md
 ---------

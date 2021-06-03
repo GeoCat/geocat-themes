@@ -45,6 +45,9 @@ ant script to run sphinx-build:
       <param name="outputdir" value="${build}/workbook"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
+    <antcall target="_postprocess">
+        <param name="outputdir" value="${build}/workbook"/>
+    </antcall>
     <antcall target="_check">
         <param name="file" value="${build}/workbook/index.html"/>
     </antcall>
@@ -56,6 +59,9 @@ ant script to run sphinx-build:
       <param name="outputdir" value="${build}/instructor"/>
       <param name="doctrees" value="${build}/doctrees"/>
     </antcall>
+    <antcall target="_postprocess">
+        <param name="outputdir" value="${build}/instructor"/>
+    </antcall>
     <antcall target="_check">
         <param name="file" value="${build}/instructor/index.html"/>
     </antcall>
@@ -66,6 +72,9 @@ ant script to run sphinx-build:
       <param name="builder" value="slides"/>
       <param name="outputdir" value="${build}/instructor/_slides"/>
       <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+    <antcall target="_postprocess">
+        <param name="outputdir" value="${build}/instructor/_slides"/>
     </antcall>
     <antcall target="_check">
         <param name="file" value="${build}/instructor/_slides/index.html"/>
@@ -82,6 +91,9 @@ ant script to run sphinx-build:
       <param name="builder" value="slides"/>
       <param name="outputdir" value="${build}/instructor/_slides"/>
       <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+    <antcall target="_postprocess">
+        <param name="outputdir" value="${build}/instructor"/>
     </antcall>
     <antcall target="_check">
         <param name="file" value="${build}/instructor/index.html"/>
@@ -126,6 +138,24 @@ ant script to run sphinx-build:
       <arg path="${outputdir}"/>
     </exec>
   </target>
+  
+  <target name="_postprocess">
+    <condition property="override.provided">
+       <not><equals arg1="http://localhost:8080/" arg2="${host}"/></not>
+    </condition>
+    
+    <echo level="info" if:set="override.provided">Postprocess ${outputdir}: ${host}</echo>
+    <replace if:set="override.provided"
+             dir="${outputdir}">
+      <include name="**/*.html"/>
+      <include name="**/*.json"/>
+      <include name="**/*.txt"/>
+      <include name="**/*.js"/>
+      <include name="**/*.xml"/>
+      <replacefilter token="http://localhost:8080/"
+                     value="${host}"/>
+    </replace>
+  </target>    
   
   <target name="_check">
     <!-- check if file created -->

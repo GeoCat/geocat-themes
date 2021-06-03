@@ -115,7 +115,8 @@ smartquotes = False
 
 # -- Extension External Links ------------------------------------------------
 
-extlinks = { 
+extlinks = {
+    'host': (build_properties['host']+'/%s',build_properties['host']),
     'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
     'sphinx': ('https://www.sphinx-doc.org/en/master/%s','')
 }

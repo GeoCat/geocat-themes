@@ -1,0 +1,6 @@
+{
+    "version": 8,
+    "name": "Example",
+    "sprite": "http://localhost:8080/geoserver/styles/sprite",
+    "glyphs": "http://localhost:8080/geoserver/styles/{fontstack}/{range}.pbf"
+}

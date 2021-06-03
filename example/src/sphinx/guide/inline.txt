@@ -203,29 +203,31 @@ URL and External links
 
 URLs links are included in generated output, links can also be added to text by reference, anonymous reference, or as an external link defined in :file:`config.py`.
    
-   The running application is now available at http://localhost:8080/geonetwork .
+   The running application is now available at :host:`geonetwork`.
    
-   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`_ website.
+   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`__ website.
    
    The optional GeoServer :geoserver:`WPS Extension <services/wps/index.html>` can be used to process your published layers, providing additional flexibility for web client applications.
    
-   For more information on `SLD Standard`_ vist the OGC website.
+   For more information on `SLD Standard`_ vist the OGC website, for more information on GeoJSON visit https://www.geopackage.org/ .
    
    .. _SLD Standard: https://www.ogc.org/standards/sld
 
+.. nextslide::
 
 .. code-block:: rst
 
-   The running application is now available at http://localhost:8080/geonetwork .
+   The running application is now available at :host:`geonetwork`.
    
-   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`_ website.
+   For more information visit the `GeoNetwork <https://geonetwork-opensource.org>`__ website.
    
    The optional GeoServer :geoserver:`WPS Extension <services/wps/index.html>` can be used to process your published layers, providing additional flexibility for web client applications.
    
-   For more information on `SLD Standard`_ vist the OGC website.
+   For more information on `SLD Standard`_ vist the OGC website, for more information on GeoJSON visit https://www.geopackage.org/ . 
    
    .. _SLD Standard: https://www.ogc.org/standards/sld
 
+.. nextslide::
 
 :file:`config.py`:
 
@@ -235,7 +237,8 @@ URLs links are included in generated output, links can also be added to text by 
      'sphinx.ext.extlinks',
    ]
 
-   extlinks = { 
+   extlinks = {
+       'host': (build_properties['theme_path']+'/%s',build_properties['theme_path']),
        'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
    }
 
