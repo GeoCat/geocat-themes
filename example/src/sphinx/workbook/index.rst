@@ -87,6 +87,16 @@ Postprocessing is used to handle localhost:8080 `links <http://localhost:8080/in
       :language: json
       :linenos:
 
+.. nextslide:: dynamic processed
+
+Testing:
+
+* https://$PARAMETER/geoserver
+* `welcome page <https://$PARAMETER/geoserver>`__
+* https://localhost:8080/geoserver
+* https://localhost:8080/geoserver/wms
+* `welcome page <https://localhost:8080/geoserver>`__
+
 README.md
 ---------
 
