@@ -65,9 +65,11 @@ release = now.strftime('%Y.%m.%d')
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+  'sphinx.ext.todo',
   'sphinx.ext.ifconfig',
   'sphinx.ext.extlinks',
-  'hieroglyph'
+  'hieroglyph',
+  'sphinx_copybutton'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
