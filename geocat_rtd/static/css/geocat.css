@@ -44,6 +44,9 @@ a:hover, a:focus, a:visited {
 	color: #0366d6;
 	text-decoration: underline;
 }
+a.reference {
+	word-break: break-word;
+}
 a.reference.external:after {
 	font-family: FontAwesome;
 	display: inline-block;
