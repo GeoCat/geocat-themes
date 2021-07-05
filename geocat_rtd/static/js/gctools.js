@@ -55,12 +55,18 @@ var Documentation = {
             $("body a").each(function() {
                 var hrefToReplace = $(this).attr('href');
                 var strToReplace = "$PARAMETER";
-                var newHref = hrefToReplace.replaceAll(strToReplace, terms[0]);
 
-                // replace string
-                $(this).text(newHref);
-                // replace attribute
-                $(this).attr('href', newHref);
+                if (hrefToReplace.indexOf(strToReplace) > -1) {
+                    var newHref = hrefToReplace.replaceAll(strToReplace, terms[0]);
+
+                    console.log(hrefToReplace,newHref);
+
+                    // replace string
+                    $(this).text(newHref);
+                    // replace attribute
+                    $(this).attr('href', newHref);
+                }
+
             });
 
         }
