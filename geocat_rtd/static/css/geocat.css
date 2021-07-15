@@ -119,26 +119,28 @@ a.reference.external:after {
 	border-right: 1px solid #e1e4e5;
 }
 /* version */
-.wy-side-nav-search > div.version {
-	color: #373737;
+.wy-side-nav-search > div.version:before {
+	content: "v";
 	font-weight: normal;
 	text-align: left;
-	margin: 0 0 15px 70px;
 	text-transform: uppercase;
 	font-size: 14px;
 }
-.wy-side-nav-search > div.version span {
+.wy-side-nav-search > div.version {
 	font-weight: bold;
 	background-color: #373737;
 	color: #fff;
 	padding: 4px 8px;
 	border-radius: 3px;
+	display: inline-block;
+	margin-left: 70px;
 }
 /* search */
 .wy-side-nav-search {
 	background-color: #fff;
 	border-right: 1px solid #e1e4e5;
 	padding: 0;
+	text-align: left;
 }
 @media screen and (max-width: 768px) {
 	.wy-side-nav-search {
@@ -345,6 +347,9 @@ footer p {
 .rst-content .toctree-wrapper ul li ul, .wy-plain-list-disc li p:last-child, .wy-plain-list-disc li ul, article ul li p:last-child,article ul li ul {
 	margin-bottom: 5px;
 	margin-top: 5px;
+}
+.rst-content dl ol, .rst-content dl p, .rst-content dl table, .rst-content dl ul {
+	margin-bottom: 5px;
 }
 
 /* ui & menu */
@@ -563,6 +568,10 @@ a.copybtn:hover > img {
 .rst-content .footnote-reference, .rst-content .citation-reference {
 	top: auto;
 }
+.rst-content .footnote-reference, .rst-content .citation-reference, .footnote .brackets .fn-backref {
+	color: #F92672;
+	text-decoration: underline;
+}
 /* images and figures */
 .rst-content div.figure p.caption {
 	font-style: normal;
@@ -613,11 +622,7 @@ a.copybtn:hover > img {
 	}
 	/* search */
 	.wy-side-nav-search {
-		background-color: #272822;
 		border-color: #41433C;
-	}
-	.wy-side-nav-search a {
-		background-color: #999;
 	}
 	#rtd-search-form {
 		border-color: #41433C;
