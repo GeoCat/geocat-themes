@@ -68,6 +68,9 @@ a.reference.external:after {
 	background: #ffd400;
 	color: #F8F8F2;
 }
+::marker {
+	font-weight: bold;
+}
 
 /* index page */
 .genindex-jumpbox {
@@ -353,7 +356,7 @@ footer p {
 }
 .rst-content ul {
 	margin-bottom: 15px;
-	padding-left: 1em;
+	padding-left: 2em;
 }
 .rst-content li {
 	list-style: disc;
@@ -507,6 +510,10 @@ footer p {
 .admonition-exercise .guilabel {
 	color: #fff;
 	background: #6ab0de;
+}
+.admonition .note {
+	border-left: 0;
+	background: #d0e8f8;
 }
 
 /* blocks */
