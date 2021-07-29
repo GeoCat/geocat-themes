@@ -35,7 +35,7 @@ h4 {
 	text-decoration: underline;
 }
 p {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 a {
 	color: #0366d6;
@@ -351,6 +351,17 @@ footer p {
 .rst-content dl ol, .rst-content dl p, .rst-content dl table, .rst-content dl ul {
 	margin-bottom: 5px;
 }
+.rst-content ul {
+	margin-bottom: 15px;
+	padding-left: 1em;
+}
+.rst-content li {
+	list-style: disc;
+}
+.rst-content li p {
+	margin-bottom: 0;
+	padding: 5px 0;
+}
 
 /* ui & menu */
 .rst-content .guilabel {
@@ -493,6 +504,10 @@ footer p {
 .admonition.tip .admonition-title, .admonition.note .admonition-title {
 	color: #2c3e50;
 }
+.admonition-exercise .guilabel {
+	color: #fff;
+	background: #6ab0de;
+}
 
 /* blocks */
 .rst-content blockquote, .line-block {
@@ -527,31 +542,20 @@ code, .rst-content tt, .rst-content code {
 	border-radius: 3px;
 }
 /* copy button */
-a.copybtn {
-	top: 5px !important;
-	right: 5px !important;
-	width: 34px !important;
-	height: 34px !important;
-	padding: 7px !important;
-	border-radius: 17px !important;
+
+/* different styling for button in a table cell - needed for html_codeblock_linenos_style = 'table' setting */
+button.copybtn {
+	font-size: 1em;
+	padding: .2em .5em;
 }
-a.copybtn:hover {
-	background-color: #0366d6 !important;
-	color: #fff !important;
+td.code button.copybtn {
+	right: auto;
+	left: 0.3em;
 }
-a.copybtn > img {
-	content: url(../img/ic_content_copy_24px.svg);
-	position: relative !important;
-	width: 20px !important;
-  height: 20px !important;
+td.code .o-tooltip--left:after {
+	left: 5em;
 }
-a.copybtn:hover > img {
-	content: url(../img/ic_content_copy_24px_hover.svg);
-}
-.o-tooltip--left:after {
-	background-color: #333 !important;
-	padding: 5px 10px !important;
-}
+
 /* glossary */
 .glossary {
 	padding: 12px;
@@ -573,7 +577,10 @@ a.copybtn:hover > img {
 	text-decoration: underline;
 }
 /* images and figures */
-.rst-content div.figure p.caption {
+.rst-content figure {
+	margin-bottom: 25px;
+}
+.rst-content div.figure p.caption, .rst-content .caption-text {
 	font-style: normal;
 	font-size: 12px;
 	color: #525252;
