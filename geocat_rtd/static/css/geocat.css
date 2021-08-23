@@ -597,6 +597,17 @@ td.code .o-tooltip--left:after {
 	font-size: 12px;
 	color: #525252;
 }
+.rst-content figcaption .headerlink {
+	visibility: hidden;
+	font-size: 14px;
+}
+.rst-content figcaption .headerlink:after {
+	content: "\f0c1";
+	font-family: FontAwesome;
+}
+.rst-content figcaption:hover .headerlink:after {
+	visibility: visible;
+}
 
 /* dark theme */
 @media (prefers-color-scheme: dark) {
