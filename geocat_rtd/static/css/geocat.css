@@ -266,8 +266,9 @@ a.reference.external:after {
 .wy-breadcrumbs {
 	float: left;
 	margin-top: -4px;
-	margin-bottom: 15px;
+	margin-bottom: 15px !important;
 	width: calc(100% - 120px);
+	padding-left: 0 !important;
 }
 .wy-breadcrumbs .project-name {
 	line-height: 25px;
@@ -294,6 +295,10 @@ a.reference.external:after {
 /* geocat logo */
 .gc-menu {
 	float: right;
+	padding-left: 0 !important;
+}
+.gc-menu li {
+	list-style: none !important;
 }
 .gc-logo {
 	width: auto;
