@@ -522,7 +522,7 @@ footer p {
 }
 
 /* blocks */
-.rst-content blockquote, .line-block {
+.rst-content blockquote {
 	padding: 0 1em;
 	color: #6a737d;
 	border-left: .25em solid #dfe2e5;
@@ -540,10 +540,6 @@ footer p {
 }
 .rst-content .code-block-caption {
 	text-align: left;
-}
-blockquote .line-block, .line-block .line-block {
-	border: 0;
-	padding: 0;
 }
 code, .rst-content tt, .rst-content code {
 	border: 0;
@@ -589,6 +585,9 @@ td.code .o-tooltip--left:after {
 	text-decoration: underline;
 }
 /* images and figures */
+.rst-content img {
+	margin-bottom: 15px;
+}
 .rst-content figure {
 	margin-bottom: 25px;
 }
@@ -695,7 +694,7 @@ td.code .o-tooltip--left:after {
 	.rst-content .wy-breadcrumbs a {
 		text-decoration: none;
 	}
-	.rst-content blockquote, .line-block {
+	.rst-content blockquote {
 		border-left-color: #41433C;
 		color: #91969c;
 	}
