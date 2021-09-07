@@ -262,6 +262,10 @@ a.reference.external:after {
 .header hr {
 	clear: both;
 }
+/* hide pre-release */
+#gc_prerelease {
+	display: none;
+}
 /* breadcrumbs */
 .wy-breadcrumbs {
 	float: left;
@@ -361,7 +365,7 @@ footer p {
 }
 .rst-content ul {
 	margin-bottom: 15px;
-	padding-left: 2em;
+	padding-left: 1em;
 }
 .rst-content li {
 	list-style: disc;
