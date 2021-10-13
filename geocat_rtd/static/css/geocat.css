@@ -377,18 +377,20 @@ footer p {
 
 /* ui & menu */
 .rst-content .guilabel {
-	font-size: 85%;
-	padding: 2px 4px;
-	color: #000;
-	font-weight: normal;
-	border-radius: 0;
+	border: 0;
+	background: none;
+	font-size: 100%;
+	padding: 0;
+	color: #333;
+	font-weight: bold;
+	border-radius: 30;
 }
 .rst-content .menuselection {
-	border: 1px solid #ccc;
-	background-color: #f7f7f7;
-	color: #000;
+	background-color: #e1e1e1;
+	color: #333;
 	font-size: 85%;
-	padding: 2px 4px;
+	padding: 4px 5px;
+	border-radius: 3px;
 }
 
 /* buttons */
@@ -527,9 +529,9 @@ footer p {
 
 /* blocks */
 .rst-content blockquote {
-	padding: 0 1em;
-	color: #6a737d;
-	border-left: .25em solid #dfe2e5;
+	/*padding: 0 1em;*/
+	/*color: #6a737d;*/
+	/*border-left: .25em solid #dfe2e5;*/
 	margin-left: 0;
 }
 .rst-content pre.literal-block, .rst-content div[class^='highlight'] {
@@ -699,7 +701,7 @@ td.code .o-tooltip--left:after {
 		text-decoration: none;
 	}
 	.rst-content blockquote {
-		border-left-color: #41433C;
+		/*border-left-color: #41433C;*/
 		color: #91969c;
 	}
 	.rst-content table.docutils.footnote, html.writer-html4 .rst-content table.docutils.citation, html.writer-html5 .rst-content dl.footnote {
