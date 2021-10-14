@@ -597,7 +597,7 @@ td.code .o-tooltip--left:after {
 .rst-content figure {
 	margin-bottom: 25px;
 }
-.rst-content div.figure p.caption, .rst-content .caption-text {
+.rst-content div.figure p.caption, .rst-content div.figure .caption-text {
 	font-style: normal;
 	font-size: 12px;
 	color: #525252;
