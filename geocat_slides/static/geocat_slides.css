@@ -191,6 +191,10 @@ section.slides > p .doc:after {
   background-color: #00AD9F !important;
   text-align: center;
 }
+.slide-geonetwork {
+  background-color: #009BD2 !important;
+  text-align: center;
+}
 .slide-service {
   background-color: #1F1249 !important;
   text-align: center;
@@ -202,20 +206,20 @@ section.slides > p .doc:after {
   margin-bottom: 160px !important;
 }
 /* ----- titles */
-.slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geoserver h1, .slide-service h1,
-.slide-geocat h2, .slide-bridge h2, .slide-live h2, .slide-geoserver h2, .slide-service h2 {
+.slide-geocat h1, .slide-bridge h1, .slide-live h1, .slide-geonetwork h1, .slide-geoserver h1, .slide-service h1,
+.slide-geocat h2, .slide-bridge h2, .slide-live h2, .slide-geonetwork h2, .slide-geoserver h2, .slide-service h2 {
   color: #fff !important;
   font-size: 2em !important;
   margin-top: 225px !important;
 }
 .slides.table .slide-geocat h1, .slides.table .slide-bridge h1, .slides.table .slide-live h1, 
-.slides.table .slide-geoserver h1, .slides.table .slide-service h1,
+.slides.table .slide-geonetwork h1, .slides.table .slide-geoserver h1, .slides.table .slide-service h1,
 .slides.table .slide-geocat h2, .slides.table .slide-bridge h2, .slides.table .slide-live h2, 
-.slides.table .slide-geoserver h2, .slides.table .slide-service h2 {
+.slides.table .slide-geonetwork h2, .slides.table .slide-geoserver h2, .slides.table .slide-service h2 {
   color: #fff !important;
   margin-top: 115px !important;
 }
-.slide-geocat p, .slide-bridge p, .slide-live p, .slide-geoserver p, .slide-service p {
+.slide-geocat p, .slide-bridge p, .slide-live p, .slide-geonetwork p, .slide-geoserver p, .slide-service p {
   font-size: 1.5em !important;
   color: #fff !important;
 }
@@ -297,9 +301,9 @@ section.slides > p .doc:after {
   font-size: 0.75em;
 }
 .slides.table .slide-geocat.past h1, .slides.table .slide-bridge.past h1, .slides.table .slide-live.past h1, 
-.slides.table .slide-geoserver.past h1, .slides.table .slide-service.past h1,
+.slides.table .slide-geonetwork.past h1, .slides.table .slide-geoserver.past h1, .slides.table .slide-service.past h1,
 .slides.table .slide-geocat.next h1, .slides.table .slide-bridge.next h1, .slides.table .slide-live.next h1, 
-.slides.table .slide-geoserver.next h1, .slides.table .slide-service.next h1 {
+.slides.table .slide-geonetwork.next h1, .slides.table .slide-geoserver.next h1, .slides.table .slide-service.next h1 {
   margin-top: 90px !important;
 }
 .slides.table .slide-intro.past .figure, .slides.table .slide-intro.next .figure {
