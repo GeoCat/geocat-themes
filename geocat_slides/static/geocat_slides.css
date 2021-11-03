@@ -7,8 +7,11 @@ h1, h2, h3 {
   letter-spacing: normal;
   padding-right: 0;
 }
-p, ul, ul li, ol, ol li {
+p {
   font-size: 22px !important;
+}
+ul, ul li, ol, ol li {
+  font-size: 30px !important;
 }
 li {
   line-height: 1.5em;
