@@ -50,6 +50,7 @@
 	--gc-ext-link-color: var(--gc-gray-500);
 	--gc-menuselection-background: var(--gc-gray-400);
 	--gc-block-background: var(--gc-gray-200);
+	--gc-block-in-table-background: var(--gc-gray-200);
 	--gc-code-background: #333;
 	--gc-table-background: var(--gc-gray-100);
 	--gc-card-hover-shadow: 0 0 0 1px rgba(50, 50, 93, 0.01), 0 7px 14px 0 rgba(50, 50, 93, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.02);
@@ -77,6 +78,7 @@
 		--gc-message-note-link-color: #0366d6;
 		--gc-menuselection-background: var(--gc-gray);
 		--gc-block-background: var(--gc-gray-800);
+		--gc-block-in-table-background: var(--gc-gray-900);
 		--gc-code-background: var(--gc-gray-800);
 		--gc-table-background: var(--gc-gray-800);
 	}
@@ -141,10 +143,11 @@ a.reference.external:after {
 	line-height: 1;
 	text-decoration: inherit;
 	content: "\f08e";
-	font-size: 90%;
+	font-size: 90% !important;
+	vertical-align: initial !important;
 	margin-left: 3px;
 	margin-right: 3px;
-	color: var(--gc-ext-link-color);
+	color: var(--gc-ext-link-color) !important;
 }
 hr {
 	border-top: 1px solid var(--gc-border-color);
@@ -691,6 +694,9 @@ code, .rst-content tt, .rst-content code {
 .rst-content code.download {
 	color: var(--gc-link-color);
 }
+table code, .rst-content table tt, .rst-content table code {
+	background-color: var(--gc-block-in-table-background);
+}
 /* copy button */
 
 /* different styling for button in a table cell - needed for html_codeblock_linenos_style = 'table' setting */
@@ -752,13 +758,13 @@ td.code .o-tooltip--left:after {
 
 /* codeblock colors */
 .rst-content div[class^='highlight'] {
-	color: var(--gc-light);
+	color: var(--gc-gray-400);
 }
 .rst-content table.docutils.footnote, html.writer-html4 .rst-content table.docutils.citation, html.writer-html5 .rst-content dl.footnote {
 	color: var(--gc-gray-500);
 }
 .rst-content .highlight .go {
-	color: var(--gc-light);
+	color: var(--gc-gray-400);
 }
 .rst-content .highlight .c {
 	color: var(--gc-orange);
@@ -780,6 +786,9 @@ td.code .o-tooltip--left:after {
 }
 .rst-content .highlight .cp {
 	color: var(--gc-red);
+}
+.rst-content .highlight .p, .rst-content .highlight .nn, .rst-content .highlight .l, .rst-content .highlight .nv {
+	color: var(--gc-gray-400);
 }
 .rst-content div.figure img {
 	background-color: var(--gc-white);
