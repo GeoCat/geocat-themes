@@ -102,6 +102,10 @@ Level 2 CSS Code
    :level: 1
    :class: slide-geocat
 
+.. slide:: GeoNetwork
+   :level: 1
+   :class: slide-geonetwork
+   
 .. slide:: GeoServer
    :level: 1
    :class: slide-geoserver
