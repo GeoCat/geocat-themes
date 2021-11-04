@@ -29,8 +29,9 @@ A list of the current special slides
 | Introduction | Standard GeoCat introduction (Logo + Text). Title is not used. | `:class: slide-intro` | |
 | Author | Page for the Author | `:class: slide-author` | |
 | Heart | Adds the t-shirt slogan: Put your Heart in everything you do! | `:class: slide-heart` | |
-| GeoCat | Adds the lighter blue background, to be used for a GeoNetwork Enterprise title page, the 'title' is centered, do not use with additional text | `:class: slide-geocat` | Background color: #009BD2 |
-| GeoServer | To be used for a GeoNetwork Enterprise title page, the 'title' is centered, do not use with additional text | `:class: slide-geoserver` | Background color: #00AD9F |
+| GeoCat | Adds the lighter blue background, to be used for a title page, the 'title' is centered, do not use with additional text | `:class: slide-geocat` | Background color: #009BD2 |
+| GeoNetwork | To be used for a GeoNetwork Enterprise title page, the 'title' is centered, do not use with additional text | `:class: slide-geonetwork` | Background color: #0099CC |
+| GeoServer | To be used for a GeoServer Enterprise title page, the 'title' is centered, do not use with additional text | `:class: slide-geoserver` | Background color: #00AD9F |
 | Bridge | Adds the yellow background, to be used for a Bridge title page, the 'title' is centered, do not use with additional text | `:class: slide-bridge` | Background color: #FFD200 |
 | Live | Adds the orange background, to be used for a Live title page, the 'title' is centered, do not use with additional text | `:class: slide-live` | Background color: #FF9900 |
 | Service | Adds the dark blue background, to be used for a GeoCat Services title page, the 'title' is centered, do not use with additional text | `:class: slide-service` | Background color: #1F1249 |
