@@ -116,7 +116,20 @@
 {%- block extrahead %} {% endblock %}
   </head>
   <body>
-{%- block header %}{% endblock %}
+  
+{% block header %}
+    <section id="controls">
+    {%- if prev %}
+    {%- if pathto('index') != prev.link -%}
+    <a id="prev" href="{{ prev.link|e }}">{{ prev.title|striptags|e }}</a>
+    {%- endif -%}
+    <a id="up" href="{{ pathto('index') }}#contents">{{ docstitle|e }}</a>
+    {%- endif %}
+    {%- if next %}
+    <a id="next" href="{{ next.link|e }}">{{ next.title|striptags|e }}</a>
+    {%- endif %}
+    </section>
+{% endblock %}
 
 <section
    id="slide_container"
