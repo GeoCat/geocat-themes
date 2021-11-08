@@ -29,7 +29,7 @@
 	--gc-primary: var(--gc-blue);
 	--gc-secondary: var(--gc-gray-600);
 	--gc-success: var(--gc-green);
-	--gc-info: var(--gc-cyan);
+	--gc-info: #d1f2f9;
 	--gc-warning: var(--gc-yellow);
 	--gc-danger: var(--gc-red);
 	--gc-light: var(--gc-gray-100);
