@@ -46,6 +46,7 @@
 	/* card/block/message styles */
 	--gc-message-color: #F8F8F2;
 	--gc-message-link-color: #69adf9;
+	--gc-message-note-color: var(--gc-gray-900);
 	--gc-message-note-link-color: var(--gc-link-color);
 	--gc-ext-link-color: var(--gc-gray-500);
 	--gc-menuselection-background: var(--gc-gray-400);
@@ -152,14 +153,6 @@ a.reference.external:after {
 hr {
 	border-top: 1px solid var(--gc-border-color);
 }
-::-moz-selection {
-	background: var(--gc-yellow);
-	color: var(--gc-light);
-}
-::selection {
-	background: var(--gc-yellow);
-	color: var(--gc-light);
-}
 ::marker {
 	font-weight: bold;
 }
@@ -264,6 +257,13 @@ hr {
 }
 .wy-side-nav-search input[type=text]:focus {
 	border-color: var(--gc-border-color);
+}
+/* search terms */
+.rst-content .highlighted {
+	background: var(--gc-warning);
+	box-shadow: 0 0 0 2px var(--gc-warning);
+	display: inline;
+	font-weight: 700;
 }
 /* navigation */
 .wy-menu-vertical a {
@@ -586,6 +586,11 @@ footer hr {
 	margin: 0;
 	line-height: 24px;
 }
+.rst-content table.docutils td>p, .rst-content table.docutils th>p {
+	line-height: 1.2rem !important;
+	margin-bottom: 0;
+	font-size: 1rem !important;
+}
 .rst-content table.docutils {
 	border: 1px solid var(--gc-border-color) !important;
 	background-color: var(--gc-table-background) !important;
@@ -628,7 +633,7 @@ html.writer-html5 .rst-content table.docutils th {
 	color: var(--gc-message-link-color);
 }
 .admonition a.reference.external:after {
-	color: var(--gc-message-link-color);
+	color: var(--gc-message-link-color) !important;
 }
 .rst-content .admonition-title {
 	font-weight: 600;
@@ -652,11 +657,15 @@ html.writer-html5 .rst-content table.docutils th {
 .admonition.danger, .admonition.error {
 	background-color: var(--gc-danger);
 }
-.admonition.note {
-	background-color: var(--gc-info);
+.admonition.note, .admonition-note {
+	background-color: var(--gc-info) !important;
+	color: var(--gc-message-note-color);
 }
-.admonition.note a, .admonition.note a.reference.external:after{
-	color: var(--gc-message-note-link-color);
+.admonition.note .admonition-title, .admonition-note .admonition-title {
+	color: var(--gc-message-note-color);
+}
+.admonition.note a, .admonition.note a.reference.external:after, .admonition-note a, .admonition-note a.reference.external:after {
+	color: var(--gc-message-note-link-color) !important;
 }
 .admonition-exercise .guilabel {
 	color: var(--gc-dark);
