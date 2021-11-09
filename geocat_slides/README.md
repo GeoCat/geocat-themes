@@ -147,9 +147,16 @@ Example with a `role` and class (`blue`):
 ```rst
 .. role:: green
 
-.. slide:: Colouring text
+.. slide:: Re-ordering elements
   :level: 2
   :inline-contents: False
+  :class: box
 
-  Depending on the view configuration, :green:`editors can` reorder elements using up and down controls.
+  .. Slide with text on the left and graphic on the right side
+
+  .. container:: col-container
+
+     .. container:: col-12 col-middle blue
+
+        Depending on the view configuration, :green:`editors can` reorder elements using up and down controls.
 ```
