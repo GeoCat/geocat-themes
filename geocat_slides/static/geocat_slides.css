@@ -8,7 +8,7 @@ h1, h2, h3 {
   padding-right: 0;
 }
 p {
-  font-size: 22px !important;
+  font-size: 30px !important;
 }
 ul, ul li, ol, ol li {
   font-size: 30px !important;
@@ -90,22 +90,20 @@ section.slides > p .doc:after {
 /* utilities */
 
 /* text */
-.text-50 {
-  font-size: 50%;
+.text-50 p, .text-50 ul li, .text-50 ol li {
+  font-size: 50% !important;
 }
-.text-80 {
-  font-size: 80%;
+.text-80 p, .text-80 ul li, .text-80 ol li {
+  font-size: 80% !important;
 }
-.text-90 {
-  font-size: 90%;
+.text-90 p, .text-90 ul li, .text-90 ol li {
+  font-size: 90% !important;
 }
 
 /* flexbox */
 .box {
-  /*display: flex !important;*/
   flex-flow: column wrap;
 }
-
 
 /* grid */
 .col-container {
@@ -205,6 +203,9 @@ section.slides > p .doc:after {
 }
 .slide-intro h1 {
   display: none;
+}
+.slide-intro h2 {
+  margin-bottom: 175px !important;
 }
 .slide-intro p {
   color: #fff;
