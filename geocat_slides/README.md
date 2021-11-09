@@ -38,3 +38,94 @@ A list of the current special slides
 | Bennekom | Adds a photo of Bennekom as background, do not use with additional text | `:class: slide-bennekom` | |
 | Victoria | Adds a photo of Victoria as background, do not use with additional text | `:class: slide-victoria` | |
 | Outro | Slide to end your workshop/presentation, the content is positioned at the bottom, designed for a maximum of 2 lines of text | `:class: slide-outro` | |
+
+## Special utilities
+
+### Text size
+
+By adding a class the text of a slide, or just a block can be changed. The available classes are: `text-50`, `text-80` and `text-90`
+
+Usage:
+```
+.. slide:: GeoCat Slides Example
+   :level: 1
+   :class: text-50
+```  
+
+### Containers
+
+Containers in `rst` will be translated to a HTML `<div>`. The text after the `::` will be the class names(s) of the `<div>`, so adding more than 1 term will end up in more than 1 class.
+
+A container can be used to manipulate text size for a small part of the slide for example. However, the text size of the title element is left as-is.
+
+Usage:
+```rst
+.. slide:: Container example
+  :level: 2
+  :inline-contents: False
+
+  .. Slide with text on the left and graphic on the right side
+
+  .. container:: col-container
+
+```
+
+### Grids
+
+When you want to display your contents in 2 (or 3) columns you have to use nested containers. The first container gets the class `col-container` and the children get class `col-6` for example. 
+Everything is based on a 12 column grid, so the columns should total 12. So you can use 2 columns of `col-6`, or a column of `col-4` and `col-8`.
+
+The following column options are available:
+
+* `col-4` (for 2 or 3 column layouts)
+* `col-6`
+* `col-8`
+* `col-12` (special case for vertically centering texts)
+* `col-middle` (alias: `col-center`) - vertically center text/content
+* `col-bottom` (alias: `col-end`) - align text/content to the bottom
+* `col-left` - align content to the left of the column
+* `col-right`  - align content to the right of the column
+
+Usage:
+```
+.. slide:: Exampe with Grid
+  :level: 2
+
+  .. Slide with text on the left and graphic on the right side
+
+  .. container:: col-container
+
+    .. container:: col-6 col-middle text-80
+
+       Depending on the view configuration, editors can reorder elements using up and down controls.
+
+    .. container:: col-6
+
+       .. figure:: img/editor-control-updown.png
+```
+
+### Vertically aligned text (or content)
+
+Some extra configuration is needed to vertically align text, it's a combination of css flexbox and grid.
+
+The slide itself needs a class `box`, the content needs a container with class `col-container` and a child with the classes `col-12` and `col-middle` or `col-bottom`
+
+Available classes:
+
+* `col-middle` (alias: `col-center`) - vertically center text/content
+* `col-bottom` (alias: `col-end`) - align text/content to the bottom
+
+Usage:
+```
+.. slide:: Vertical text example
+  :level: 2
+  :class: box
+
+  .. Slide with text on the left and graphic on the right side
+
+  .. container:: col-container
+
+     .. container:: col-12 col-middle blue
+
+        Depending on the view configuration, editors can reorder elements using up and down controls.
+```
