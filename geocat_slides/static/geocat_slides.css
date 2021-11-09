@@ -53,6 +53,8 @@ code {
   border-radius: 4px;
   border: none;
   letter-spacing: normal;
+  /* 52px is the footer height + padding */
+  padding: 40px 60px 52px 60px;
 }
 .slides.table > article {
   box-shadow: none;
@@ -85,9 +87,69 @@ section.slides > p .doc:after {
   border-radius: 3px;
 }
 
+/* utilities */
+
+/* text */
+.text-50 {
+  font-size: 50%;
+}
+.text-80 {
+  font-size: 80%;
+}
+.text-90 {
+  font-size: 90%;
+}
+
+/* flexbox */
+.box {
+  /*display: flex !important;*/
+  flex-flow: column wrap;
+}
+
+
+/* grid */
+.col-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.box .col-container {
+  margin: 0;
+  flex: 1 1 auto;
+}
+.col-4 {
+  grid-column: auto/span 4;
+}
+.col-6 {
+  grid-column: auto/span 6;
+}
+.col-8 {
+  grid-column: auto/span 8;
+}
+.col-12 {
+  grid-column: auto/span 12;
+}
+.col-center, .col-middle {
+  align-self: center;
+}
+.col-bottom, .col-end {
+  align-self: end;
+}
+.col-left {
+  justify-self: left;
+}
+.col-right {
+  justify-self: right;
+}
+.col-container .figure {
+  padding: 0;
+  margin: 0;
+}
+
+
 /* title page */
 .slides > article.level-1 {
-	color: #333;
+  color: #333;
 }
 .slides > article.level-1 h1 {
   margin-top: 75px;
@@ -100,10 +162,10 @@ section.slides > p .doc:after {
   color: #333;
 }
 .slides > article.level-2 h2 {
-	margin-top: 75px;
+  margin-top: 75px;
 }
 .slides > article.level-2 p {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 .slides.table > article.level-2 h2 {
   margin-top: 40px;
@@ -130,6 +192,11 @@ section.slides > p .doc:after {
   bottom: auto;
   float: right;
   right: auto;
+}
+
+/* slides */
+.slides > article.box.current, .slides > article.box.past, .slides > article.box.next {
+  display: flex;
 }
 
 /* special slides */
@@ -225,9 +292,9 @@ section.slides > p .doc:after {
   font-size: 2em !important;
   margin-top: 225px !important;
 }
-.slides.table .slide-geocat h1, .slides.table .slide-bridge h1, .slides.table .slide-live h1, 
+.slides.table .slide-geocat h1, .slides.table .slide-bridge h1, .slides.table .slide-live h1,
 .slides.table .slide-geonetwork h1, .slides.table .slide-geoserver h1, .slides.table .slide-service h1,
-.slides.table .slide-geocat h2, .slides.table .slide-bridge h2, .slides.table .slide-live h2, 
+.slides.table .slide-geocat h2, .slides.table .slide-bridge h2, .slides.table .slide-live h2,
 .slides.table .slide-geonetwork h2, .slides.table .slide-geoserver h2, .slides.table .slide-service h2 {
   color: #fff !important;
   margin-top: 115px !important;
@@ -313,9 +380,9 @@ section.slides > p .doc:after {
   margin-top: 15px !important;
   font-size: 0.75em;
 }
-.slides.table .slide-geocat.past h1, .slides.table .slide-bridge.past h1, .slides.table .slide-live.past h1, 
+.slides.table .slide-geocat.past h1, .slides.table .slide-bridge.past h1, .slides.table .slide-live.past h1,
 .slides.table .slide-geonetwork.past h1, .slides.table .slide-geoserver.past h1, .slides.table .slide-service.past h1,
-.slides.table .slide-geocat.next h1, .slides.table .slide-bridge.next h1, .slides.table .slide-live.next h1, 
+.slides.table .slide-geocat.next h1, .slides.table .slide-bridge.next h1, .slides.table .slide-live.next h1,
 .slides.table .slide-geonetwork.next h1, .slides.table .slide-geoserver.next h1, .slides.table .slide-service.next h1 {
   margin-top: 90px !important;
 }
@@ -339,15 +406,15 @@ section.slides > p .doc:after {
 
 /* ----- controls */
 #controls {
-    left: 0;
-    top: 0;
-    position: absolute;
-    z-index: 2;
-    text-align: center;
-    width: 100%;
-    margin: 2px;
-    font-size: 1.5em;
-    font-family: sans-serif;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  margin: 2px;
+  font-size: 1.5em;
+  font-family: sans-serif;
 }
 #controls #prev, #controls #next, #controls #up {
   display: inline-block;
