@@ -46,7 +46,7 @@ A list of the current special slides
 By adding a class the text of a slide, or just a block can be changed. The available classes are: `text-50`, `text-80` and `text-90`
 
 Usage:
-```
+```rst
 .. slide:: GeoCat Slides Example
    :level: 1
    :class: text-50
@@ -87,7 +87,7 @@ The following column options are available:
 * `col-right`  - align content to the right of the column
 
 Usage:
-```
+```rst
 .. slide:: Exampe with Grid
   :level: 2
 
@@ -116,7 +116,7 @@ Available classes:
 * `col-bottom` (alias: `col-end`) - align text/content to the bottom
 
 Usage:
-```
+```rst
 .. slide:: Vertical text example
   :level: 2
   :class: box
