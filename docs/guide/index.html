@@ -3,22 +3,28 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Writing Guide &mdash; GeoCat Theme Example 2021.05.19 documentation</title>
+  <title>Writing Guide &mdash; GeoCat Theme Example 2021.11.09 documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/geocat.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/geocat.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
 
   
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -28,10 +34,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -124,21 +132,20 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#code-block">Code Block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#block-quote">Block quote</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#block-quotes-indentation">Block Quotes (Indentation)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#code-blocks">Code Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-block">Code Block</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#emphasized-lines-with-line-numbers">Emphasized lines with line numbers</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#block-quote">Block quote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-quotes-indentation">Block Quotes (Indentation)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sidebar">Sidebar</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#references">References</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#footnotes">Footnotes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#citations">Citations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#targets">Targets</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#targets">Targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#citations">Citations</a></li>
 </ul>
 </li>
 </ul>
@@ -194,7 +201,7 @@
     &#9888; Pre-release
   </div>
 
-  
+
   <ul class="wy-breadcrumbs">
     
       <!-- link to GeoCat docs home -->
@@ -285,8 +292,9 @@
     </li>
   </ul>
 
-  
   <hr/>
+
+  
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
@@ -333,9 +341,9 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
    section/index
 </pre></div>
 </div>
-<p><code class="file docutils literal notranslate"><span class="pre">section/index.rst</span></code>:</p>
+<p><code class="file docutils literal notranslate"><span class="pre">chapter/index.rst</span></code>:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">*******</span>
-<span class="gh">Section</span>
+<span class="gh">Chapter</span>
 <span class="gh">*******</span>
 
 <span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
@@ -345,9 +353,9 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
    page
 </pre></div>
 </div>
-<p><code class="file docutils literal notranslate"><span class="pre">section/page</span></code>:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Page</span>
-<span class="gh">====</span>
+<p><code class="file docutils literal notranslate"><span class="pre">chapter/section.txt</span></code>:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Section</span>
+<span class="gh">=======</span>
 
 <span class="gh">Heading</span>
 <span class="gh">-------</span>
@@ -491,7 +499,7 @@ Page heading above is as text shown for internal <span class="na">:command:</spa
 <h3>Keyboard input<a class="headerlink" href="#keyboard-input" title="Permalink to this headline">¶</a></h3>
 <p>Keyboard input, intended to be typed, using the <strong class="command">kbd</strong> directive:</p>
 <blockquote>
-<div><p>Select all text using <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">a</kbd></kbd>.</p>
+<div><p>Select all text using <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">a</kbd></kbd>.</p>
 </div></blockquote>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Select all text using <span class="na">:kbd:</span><span class="nv">`Control-a`</span>.
 </pre></div>
@@ -577,7 +585,7 @@ The OGC <span class="na">:term:</span><span class="nv">`Web Feature Service`</sp
    <span class="nc">:maxdepth:</span> 2
    <span class="nc">:caption:</span> Contents:
 
-   section/index
+   chapter/index
 
 <span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
    <span class="nc">:maxdepth:</span> 1
@@ -647,18 +655,18 @@ This setting is saved in your workspace <span class="na">:file:</span><span clas
 <h3>URL and External links<a class="headerlink" href="#url-and-external-links" title="Permalink to this headline">¶</a></h3>
 <p>URLs links are included in generated output, links can also be added to text by reference, anonymous reference, or as an external link defined in <code class="file docutils literal notranslate"><span class="pre">config.py</span></code>.</p>
 <blockquote>
-<div><p>The running application is now available at <a class="reference external" href="http://localhost:8080/geonetwork">http://localhost:8080/geonetwork</a> .</p>
+<div><p>The running application is now available at <a class="reference external" href="http://localhost:8080//geonetwork">http://localhost:8080/geonetwork</a>.</p>
 <p>For more information visit the <a class="reference external" href="https://geonetwork-opensource.org">GeoNetwork</a> website.</p>
 <p>The optional GeoServer <a class="reference external" href="http://docs.geoserver.org/latest/en/user/services/wps/index.html">WPS Extension</a> can be used to process your published layers, providing additional flexibility for web client applications.</p>
-<p>For more information on <a class="reference external" href="https://www.ogc.org/standards/sld">SLD Standard</a> vist the OGC website.</p>
+<p>For more information on <a class="reference external" href="https://www.ogc.org/standards/sld">SLD Standard</a> vist the OGC website, for more information on GeoJSON visit <a class="reference external" href="https://www.geopackage.org/">https://www.geopackage.org/</a> .</p>
 </div></blockquote>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>The running application is now available at http://localhost:8080/geonetwork .
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>The running application is now available at <span class="na">:host:</span><span class="nv">`geonetwork`</span>.
 
-For more information visit the <span class="s">`GeoNetwork </span><span class="si">&lt;https://geonetwork-opensource.org&gt;</span><span class="s">`_</span> website.
+For more information visit the <span class="s">`GeoNetwork </span><span class="si">&lt;https://geonetwork-opensource.org&gt;</span><span class="s">`__</span> website.
 
 The optional GeoServer <span class="na">:geoserver:</span><span class="nv">`WPS Extension &lt;services/wps/index.html&gt;`</span> can be used to process your published layers, providing additional flexibility for web client applications.
 
-For more information on <span class="s">`SLD Standard`_</span> vist the OGC website.
+For more information on <span class="s">`SLD Standard`_</span> vist the OGC website, for more information on GeoJSON visit https://www.geopackage.org/ .
 
 <span class="p">..</span> <span class="nt">_SLD Standard:</span> https://www.ogc.org/standards/sld
 </pre></div>
@@ -669,6 +677,7 @@ For more information on <span class="s">`SLD Standard`_</span> vist the OGC webs
 <span class="p">]</span>
 
 <span class="n">extlinks</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">build_properties</span><span class="p">[</span><span class="s1">&#39;theme_path&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">build_properties</span><span class="p">[</span><span class="s1">&#39;theme_path&#39;</span><span class="p">]),</span>
     <span class="s1">&#39;geoserver&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;http://docs.geoserver.org/latest/en/user/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">),</span>
 <span class="p">}</span>
 </pre></div>
@@ -957,6 +966,80 @@ Output::
 </pre></div>
 </div>
 </div>
+<p>Parsed literal:</p>
+<pre class="literal-block"># parsed-literal test
+curl -O <a class="reference external" href="http://someurl/release">http://someurl/release</a>-1.0-SNAPSHOT.tar-gz</pre>
+<p>Captions:</p>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Code Blocks can have captions.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="nt">&quot;panes&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nt">&quot;shell_command&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;echo &#39;did you know&#39;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;echo &#39;you can inline&#39;&quot;</span>
+        <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="nt">&quot;shell_command&quot;</span><span class="p">:</span> <span class="s2">&quot;echo &#39;single commands&#39;&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;echo &#39;for panes&#39;&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;window_name&quot;</span><span class="p">:</span> <span class="s2">&quot;long form&quot;</span>
+    <span class="p">}</span>
+<span class="p">],</span>
+<span class="nt">&quot;session_name&quot;</span><span class="p">:</span> <span class="s2">&quot;shorthands&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>CSS code also looks good</p>
+<div class="highlight-CSS notranslate"><div class="highlight"><pre><span></span><span class="c">/* sidebar in content */</span>
+<span class="p">.</span><span class="nc">rst-content</span> <span class="p">.</span><span class="nc">sidebar</span> <span class="p">.</span><span class="nc">sidebar-title</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;Roboto&#39;</span><span class="p">,</span> <span class="s1">&#39;Helvetica Neue&#39;</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">700</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="mh">#f6f8fa</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">24</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">-24</span><span class="kt">px</span> <span class="mi">-24</span><span class="kt">px</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">rst-content</span> <span class="p">.</span><span class="nc">sidebar</span> <span class="p">{</span>
+  <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">40</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">24</span><span class="kt">px</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="mh">#f6f8fa</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="emphasized-lines-with-line-numbers">
+<h4>Emphasized lines with line numbers<a class="headerlink" href="#emphasized-lines-with-line-numbers" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
+<span class="linenos">2</span>    <span class="n">interesting</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="hll"><span class="linenos">3</span>    <span class="nb">print</span> <span class="s1">&#39;This line is highlighted.&#39;</span>
+</span><span class="linenos">4</span>    <span class="nb">print</span> <span class="s1">&#39;This one is not...&#39;</span>
+<span class="hll"><span class="linenos">5</span>    <span class="nb">print</span> <span class="s1">&#39;...but this one is.&#39;</span>
+</span></pre></div>
+</div>
+<p>This is done with the following code:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.. code-block:: python
+   :linenos:
+   :emphasize-lines: 3,5
+
+   def some_function():
+      interesting = False
+      print &#39;This line is highlighted.&#39;
+      print &#39;This one is not...&#39;
+      print &#39;...but this one is.&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="block-quote">
 <h3>Block quote<a class="headerlink" href="#block-quote" title="Permalink to this headline">¶</a></h3>
@@ -1022,86 +1105,7 @@ far end.  That is my theory, it is mine, and belongs to me and I
 own it, and what it is too.</p>
 <p class="attribution">—Anne Elk (Miss)</p>
 </div></blockquote>
-<p>Accidentially getting indentation wrong and</p>
-<div class="section" id="code-blocks">
-<h4>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h4>
-<pre class="literal-block"># parsed-literal test
-curl -O <a class="reference external" href="http://someurl/release">http://someurl/release</a>-1.0-SNAPSHOT.tar-gz</pre>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">Code Blocks can have captions.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="nt">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-    <span class="nt">&quot;panes&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-        <span class="nt">&quot;shell_command&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;echo &#39;did you know&#39;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;echo &#39;you can inline&#39;&quot;</span>
-        <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-        <span class="nt">&quot;shell_command&quot;</span><span class="p">:</span> <span class="s2">&quot;echo &#39;single commands&#39;&quot;</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;echo &#39;for panes&#39;&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;window_name&quot;</span><span class="p">:</span> <span class="s2">&quot;long form&quot;</span>
-    <span class="p">}</span>
-<span class="p">],</span>
-<span class="nt">&quot;session_name&quot;</span><span class="p">:</span> <span class="s2">&quot;shorthands&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>CSS code also looks good</p>
-<div class="highlight-CSS notranslate"><div class="highlight"><pre><span></span><span class="c">/* sidebar in content */</span>
-<span class="p">.</span><span class="nc">rst-content</span> <span class="p">.</span><span class="nc">sidebar</span> <span class="p">.</span><span class="nc">sidebar-title</span> <span class="p">{</span>
-  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
-  <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;Roboto&#39;</span><span class="p">,</span> <span class="s1">&#39;Helvetica Neue&#39;</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
-  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">700</span><span class="p">;</span>
-  <span class="k">background</span><span class="p">:</span> <span class="mh">#f6f8fa</span><span class="p">;</span>
-  <span class="k">padding</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">24</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">margin</span><span class="p">:</span> <span class="mi">-24</span><span class="kt">px</span> <span class="mi">-24</span><span class="kt">px</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">rst-content</span> <span class="p">.</span><span class="nc">sidebar</span> <span class="p">{</span>
-  <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
-  <span class="k">width</span><span class="p">:</span> <span class="mi">40</span><span class="kt">%</span><span class="p">;</span>
-  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
-  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">24</span><span class="kt">px</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">padding</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
-  <span class="k">background</span><span class="p">:</span> <span class="mh">#f6f8fa</span><span class="p">;</span>
-  <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="emphasized-lines-with-line-numbers">
-<h4>Emphasized lines with line numbers<a class="headerlink" href="#emphasized-lines-with-line-numbers" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
-    <span class="n">interesting</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="hll">    <span class="nb">print</span> <span class="s1">&#39;This line is highlighted.&#39;</span>
-</span>    <span class="nb">print</span> <span class="s1">&#39;This one is not...&#39;</span>
-<span class="hll">    <span class="nb">print</span> <span class="s1">&#39;...but this one is.&#39;</span>
-</span></pre></div>
-</td></tr></table></div>
-<p>This is done with the following code:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.. code-block:: python
-   :linenos:
-   :emphasize-lines: 3,5
-
-   def some_function():
-      interesting = False
-      print &#39;This line is highlighted.&#39;
-      print &#39;This one is not...&#39;
-      print &#39;...but this one is.&#39;
-</pre></div>
-</div>
-</div>
+<p>Accidentially getting indentation wrong is a common mistake.</p>
 </div>
 <div class="section" id="sidebar">
 <h3>Sidebar<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h3>
@@ -1121,10 +1125,69 @@ on the universe and of its action on the world of men. In relation to the univer
 creative action of the Deity. In relation to the human world, it denotes the creative action of the holy man or sage,
 of the ruler or leader of men, who through his power awakens and develops their higher nature.</p>
 </div>
+</div>
 <div class="section" id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<span id="reference"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="targets">
+<h3>Targets<a class="headerlink" href="#targets" title="Permalink to this headline">¶</a></h3>
+<p id="example">This paragraph is pointed to by the explicit &quot;example&quot; target.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Targets references</span>
+<span class="gh">^^^^^^^^^^^^^^^^^^</span>
+
+_example::
+
+This paragraph is pointed to by the explicit &quot;example&quot; target.
+</pre></div>
+</div>
+<p>To use target reference:</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Reference paragraph, using <a class="reference internal" href="#example">example</a> target preceding the text, use <strong class="command">ref</strong> directive to <a class="reference internal" href="#example"><span class="std std-ref">supply a label</span></a>.</p>
+</div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Reference paragraph, using <span class="s">`example`_</span> target preceding the text, use <span class="na">:command:</span><span class="nv">`ref`</span> directive to <span class="na">:ref:</span><span class="nv">`supply a label &lt;example&gt;`</span>.
+</pre></div>
+</div>
+<p>This approach is frequently used to provide a target for headings.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><strong>References</strong></p>
+<p>Reference heading, using <a class="reference internal" href="#reference"><span class="std std-ref">References</span></a> target preceding header, can also be used <a class="reference internal" href="#reference"><span class="std std-ref">to provide a label</span></a>.</p>
+</div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_reference:</span>
+
+<span class="gh">References</span>
+<span class="gh">==========</span>
+
+<span class="cp">...</span>
+
+Reference heading, using <span class="na">:ref:</span><span class="nv">`reference`</span> target preceding header, can also be used <span class="na">:ref:</span><span class="nv">`to provide a label &lt;reference&gt;`</span>.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GeoNetwork and GeoServer documents use this approach consistently as the resulting references work even of the section of text is moved to a different file.</p>
+</div>
+<p>Section headers are implicit targets, referred to by name.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Reference any heading on the page, example <a class="reference internal" href="#footnotes">Footnotes</a>, however this does not work across files.</p>
+</div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Reference any heading on the page, example <span class="s">`Footnotes`_</span>, however this does not work across files.
+</pre></div>
+</div>
+<p>Explicit external targets are interpolated into references such as &quot;<a class="reference external" href="https://www.geocat.net/">GeoCat</a>&quot;.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Vist the <a class="reference external" href="https://www.geocat.net/">GeoCat</a> website</p>
+</div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Vist the <span class="s">`GeoCat`_</span> website
+
+<span class="p">..</span> <span class="nt">_GeoCat:</span> https://www.geocat.net/
+</pre></div>
+</div>
+</div>
 <div class="section" id="footnotes">
-<h4>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h4>
+<h3>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h3>
 <dl class="footnote brackets">
 <dt class="label" id="id1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>A footnote contains body elements, consistently indented by at
@@ -1152,7 +1215,7 @@ Here's a reference to the next footnote: <a class="footnote-reference brackets" 
 </dl>
 </div>
 <div class="section" id="citations">
-<h4>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h4>
+<h3>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h3>
 <dl class="footnote brackets">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id12">11</a></span></dt>
 <dd><p>This is the citation I made, let's make this extremely long so that we can tell that it doesn't follow the normal responsive table stuff.</p>
@@ -1168,20 +1231,6 @@ Here's a reference to the next footnote: <a class="footnote-reference brackets" 
 <p>Here's a reference to the above, <a class="footnote-reference brackets" href="#id8" id="id12">11</a>, <a class="footnote-reference brackets" href="#id9" id="id13">12</a> and <a class="footnote-reference brackets" href="#id11" id="id14">13</a> citations.</p>
 <p>Here is another type of citation: <cite>citation</cite></p>
 </div>
-<div class="section" id="targets">
-<h4>Targets<a class="headerlink" href="#targets" title="Permalink to this headline">¶</a></h4>
-<p id="example">This paragraph is pointed to by the explicit &quot;example&quot; target.
-A reference can be found under Inline Markup, above. Inline
-hyperlink targets are also possible.</p>
-<p>Section headers are implicit targets, referred to by name. See
-<a class="reference internal" href="#targets">Targets</a>, which is a subsection of Body Elements.</p>
-<p>Explicit external targets are interpolated into references such as &quot;<a class="reference external" href="http://www.python.org/">Python</a>&quot;.</p>
-<p>Targets may be indirect and anonymous.  Thus this phrase may also
-refer to the <a class="reference internal" href="#targets">Targets</a> section.</p>
-<p>Targets</p>
-<p>Here's a hyperlink reference without a target, which generates an error.</p>
-</div>
-</div>
 </div>
 </div>
 
@@ -1190,20 +1239,21 @@ refer to the <a class="reference internal" href="#targets">Targets</a> section.<
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../workbook/index.html" class="btn btn-neutral float-right" title="Workbook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="GeoCat Documentation Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2021, GeoCat BV
+        &#169; Copyright 2021, GeoCat BV.
 
     </p>
   </div> 
 
 </footer>
-
         </div>
       </div>
 

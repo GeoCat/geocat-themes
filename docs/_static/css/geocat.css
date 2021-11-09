@@ -35,7 +35,7 @@ h4 {
 	text-decoration: underline;
 }
 p {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 a {
 	color: #0366d6;
@@ -43,6 +43,9 @@ a {
 a:hover, a:focus, a:visited {
 	color: #0366d6;
 	text-decoration: underline;
+}
+a.reference {
+	word-break: break-word;
 }
 a.reference.external:after {
 	font-family: FontAwesome;
@@ -64,6 +67,9 @@ a.reference.external:after {
 ::selection {
 	background: #ffd400;
 	color: #F8F8F2;
+}
+::marker {
+	font-weight: bold;
 }
 
 /* index page */
@@ -116,26 +122,28 @@ a.reference.external:after {
 	border-right: 1px solid #e1e4e5;
 }
 /* version */
-.wy-side-nav-search > div.version {
-	color: #373737;
+.wy-side-nav-search > div.version:before {
+	content: "v";
 	font-weight: normal;
 	text-align: left;
-	margin: 0 0 15px 70px;
 	text-transform: uppercase;
 	font-size: 14px;
 }
-.wy-side-nav-search > div.version span {
+.wy-side-nav-search > div.version {
 	font-weight: bold;
 	background-color: #373737;
 	color: #fff;
 	padding: 4px 8px;
 	border-radius: 3px;
+	display: inline-block;
+	margin-left: 70px;
 }
 /* search */
 .wy-side-nav-search {
 	background-color: #fff;
 	border-right: 1px solid #e1e4e5;
 	padding: 0;
+	text-align: left;
 }
 @media screen and (max-width: 768px) {
 	.wy-side-nav-search {
@@ -254,12 +262,17 @@ a.reference.external:after {
 .header hr {
 	clear: both;
 }
+/* hide pre-release */
+#gc_prerelease {
+	display: none;
+}
 /* breadcrumbs */
 .wy-breadcrumbs {
 	float: left;
 	margin-top: -4px;
-	margin-bottom: 15px;
+	margin-bottom: 15px !important;
 	width: calc(100% - 120px);
+	padding-left: 0 !important;
 }
 .wy-breadcrumbs .project-name {
 	line-height: 25px;
@@ -286,6 +299,10 @@ a.reference.external:after {
 /* geocat logo */
 .gc-menu {
 	float: right;
+	padding-left: 0 !important;
+}
+.gc-menu li {
+	list-style: none !important;
 }
 .gc-logo {
 	width: auto;
@@ -306,6 +323,11 @@ a.reference.external:after {
 	.gc-logo {
 		display: none;
 	}
+}
+
+/* footer */
+footer p {
+	padding-bottom: 15px;
 }
 
 /* content */
@@ -338,21 +360,37 @@ a.reference.external:after {
 	margin-bottom: 5px;
 	margin-top: 5px;
 }
+.rst-content dl ol, .rst-content dl p, .rst-content dl table, .rst-content dl ul {
+	margin-bottom: 5px;
+}
+.rst-content ul {
+	margin-bottom: 15px;
+	padding-left: 1em;
+}
+.rst-content li {
+	list-style: disc;
+}
+.rst-content li p {
+	margin-bottom: 0;
+	padding: 5px 0;
+}
 
 /* ui & menu */
 .rst-content .guilabel {
-	font-size: 85%;
-	padding: 2px 4px;
-	color: #000;
-	font-weight: normal;
-	border-radius: 0;
+	border: 0;
+	background: none;
+	font-size: 100%;
+	padding: 0;
+	color: #333;
+	font-weight: bold;
+	border-radius: 30;
 }
 .rst-content .menuselection {
-	border: 1px solid #ccc;
-	background-color: #f7f7f7;
-	color: #000;
+	background-color: #e1e1e1;
+	color: #333;
 	font-size: 85%;
-	padding: 2px 4px;
+	padding: 4px 5px;
+	border-radius: 3px;
 }
 
 /* buttons */
@@ -406,7 +444,11 @@ a.reference.external:after {
 	content: "\f105";
 	content: "\f178";
 }
-.rst-footer-buttons .btn {
+.rst-breadcrumbs-buttons {
+	margin-top: -15px;
+	margin-bottom: 20px;
+}
+.rst-footer-buttons .btn, .rst-breadcrumbs-buttons .btn {
 	font-size: 16px;
 	border: 0;
 	background: none !important;
@@ -438,6 +480,7 @@ a.reference.external:after {
 	border-left-width: .25em;
 	border-left-style: solid;
 	margin: 1rem 0;
+	border-color: #6ab0de;
 }
 .rst-content .admonition-title {
 	font-weight: 600;
@@ -479,12 +522,20 @@ a.reference.external:after {
 .admonition.tip .admonition-title, .admonition.note .admonition-title {
 	color: #2c3e50;
 }
+.admonition-exercise .guilabel {
+	color: #fff;
+	background: #6ab0de;
+}
+.admonition .note {
+	border-left: 0;
+	background: #d0e8f8;
+}
 
 /* blocks */
-.rst-content blockquote, .line-block {
-	padding: 0 1em;
-	color: #6a737d;
-	border-left: .25em solid #dfe2e5;
+.rst-content blockquote {
+	/*padding: 0 1em;*/
+	/*color: #6a737d;*/
+	/*border-left: .25em solid #dfe2e5;*/
 	margin-left: 0;
 }
 .rst-content pre.literal-block, .rst-content div[class^='highlight'] {
@@ -500,10 +551,6 @@ a.reference.external:after {
 .rst-content .code-block-caption {
 	text-align: left;
 }
-blockquote .line-block, .line-block .line-block {
-	border: 0;
-	padding: 0;
-}
 code, .rst-content tt, .rst-content code {
 	border: 0;
 	padding: .2em .4em;
@@ -513,31 +560,20 @@ code, .rst-content tt, .rst-content code {
 	border-radius: 3px;
 }
 /* copy button */
-a.copybtn {
-	top: 5px !important;
-	right: 5px !important;
-	width: 34px !important;
-	height: 34px !important;
-	padding: 7px !important;
-	border-radius: 17px !important;
+
+/* different styling for button in a table cell - needed for html_codeblock_linenos_style = 'table' setting */
+button.copybtn {
+	font-size: 1em;
+	padding: .2em .5em;
 }
-a.copybtn:hover {
-	background-color: #0366d6 !important;
-	color: #fff !important;
+td.code button.copybtn {
+	right: auto;
+	left: 0.3em;
 }
-a.copybtn > img {
-	content: url(../img/ic_content_copy_24px.svg);
-	position: relative !important;
-	width: 20px !important;
-  height: 20px !important;
+td.code .o-tooltip--left:after {
+	left: 5em;
 }
-a.copybtn:hover > img {
-	content: url(../img/ic_content_copy_24px_hover.svg);
-}
-.o-tooltip--left:after {
-	background-color: #333 !important;
-	padding: 5px 10px !important;
-}
+
 /* glossary */
 .glossary {
 	padding: 12px;
@@ -554,11 +590,32 @@ a.copybtn:hover > img {
 .rst-content .footnote-reference, .rst-content .citation-reference {
 	top: auto;
 }
+.rst-content .footnote-reference, .rst-content .citation-reference, .footnote .brackets .fn-backref {
+	color: #F92672;
+	text-decoration: underline;
+}
 /* images and figures */
-.rst-content div.figure p.caption {
+.rst-content img {
+	margin-bottom: 15px;
+}
+.rst-content figure {
+	margin-bottom: 25px;
+}
+.rst-content div.figure p.caption, .rst-content div.figure .caption-text {
 	font-style: normal;
 	font-size: 12px;
 	color: #525252;
+}
+.rst-content figcaption .headerlink {
+	visibility: hidden;
+	font-size: 14px;
+}
+.rst-content figcaption .headerlink:after {
+	content: "\f0c1";
+	font-family: FontAwesome;
+}
+.rst-content figcaption:hover .headerlink:after {
+	visibility: visible;
 }
 
 /* dark theme */
@@ -604,7 +661,6 @@ a.copybtn:hover > img {
 	}
 	/* search */
 	.wy-side-nav-search {
-		background-color: #272822;
 		border-color: #41433C;
 	}
 	#rtd-search-form {
@@ -648,8 +704,8 @@ a.copybtn:hover > img {
 	.rst-content .wy-breadcrumbs a {
 		text-decoration: none;
 	}
-	.rst-content blockquote, .line-block {
-		border-left-color: #41433C;
+	.rst-content blockquote {
+		/*border-left-color: #41433C;*/
 		color: #91969c;
 	}
 	.rst-content table.docutils.footnote, html.writer-html4 .rst-content table.docutils.citation, html.writer-html5 .rst-content dl.footnote {
@@ -666,6 +722,7 @@ a.copybtn:hover > img {
 	.rst-content pre.literal-block, .rst-content div[class^='highlight'] {
 		background-color: #41433C;
 	}
+
 	.rst-content .highlight .go {
 		color: #F8F8F2;
 	}
@@ -712,6 +769,9 @@ a.copybtn:hover > img {
 	/* messages */
 	.rst-content .admonition, .rst-content .admonition-todo, .rst-content .attention, .rst-content .caution, .rst-content .hint, .rst-content .important, .rst-content .note, .rst-content .seealso, .rst-content .tip, .rst-content .warning, .wy-alert {
 		background: #3a3a3a;
+	}
+	.rst-content .admonition table td, .rst-content .admonition table th {
+		background: #41433c !important;
 	}
 	.admonition.danger, .admonition.error {
 		background-color: #e46060;
