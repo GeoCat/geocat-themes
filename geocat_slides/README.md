@@ -1,6 +1,6 @@
 # GeoCat Slides Theme for Sphinx Hieroglyph
 
-Based on the default Hieroglyph theme and GeoCat styles.
+Based on the default [Hieroglyph](https://hieroglyph.readthedocs.io/en/latest/index.html) theme and GeoCat styles.
 
 This slideshow contains all kinds of extra, custom slides. These can be used as (title) pages for an Introduction, Location, Author and as a start for a GeoCat Product overview.
 
@@ -16,7 +16,7 @@ Hieroglyph needs Python 3
 
 Custom slides are defined by their class, for example:
 
-```
+```rst
 .. slide:: GeoCat Slides Example
    :level: 1
    :class: slide-intro
@@ -128,4 +128,28 @@ Usage:
      .. container:: col-12 col-middle blue
 
         Depending on the view configuration, editors can reorder elements using up and down controls.
+```
+
+### Custom colours
+
+The base styles have some colouring options, you can use the class directly, or [declare a role](https://docutils.sourceforge.io/docs/ref/rst/directives.html#custom-interpreted-text-roles) and use it inline. The role has to be declared on the same level as a slide.
+
+Available classes (roles):
+
+* `blue`
+* `yellow`
+* `green`
+* `red`
+* `black`
+* `white`
+
+Example with a `role` and class (`blue`):
+```rst
+.. role:: green
+
+.. slide:: Colouring text
+  :level: 2
+  :inline-contents: False
+
+  Depending on the view configuration, :green:`editors can` reorder elements using up and down controls.
 ```
