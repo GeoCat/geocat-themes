@@ -626,21 +626,26 @@ html.writer-html5 .rst-content table.docutils th {
 	margin: 1rem 0;
 	/* left border trick: semi transparent black left border so it turns out a bit darker without setting an actual color */
 	box-shadow: inset 5px 0px 0px 0px #00000061;
-	color: var(--gc-message-color);
+	background-color: var(--gc-info) !important;
+	color: var(--gc-message-note-color);
+}
+.admonition .admonition {
+	box-shadow: none;
+	padding: 0 !important;
 }
 .admonition a {
 	font-weight: bold;
-	color: var(--gc-message-link-color);
+	color: var(--gc-message-note-link-color);
 }
 .admonition a.reference.external:after {
-	color: var(--gc-message-link-color) !important;
+	color: var(--gc-message-note-link-color) !important;
 }
 .rst-content .admonition-title {
 	font-weight: 600;
 	padding: 0 0 5px 0 !important;
 	background: transparent !important;
 	margin: 0 !important;
-	color: var(--gc-message-color);
+	color: var(--gc-black);
 	line-height: 1.7em;
 	text-transform: uppercase;
 }
@@ -678,6 +683,7 @@ html.writer-html5 .rst-content table.docutils th {
 
 /* blocks */
 .rst-content blockquote {
+	margin: 0;
 	margin-bottom: var(--gc-spacing-default);
 }
 .rst-content pre.literal-block, .rst-content div[class^='highlight'] {
@@ -779,7 +785,7 @@ td.code .o-tooltip--left:after {
 .rst-content .highlight .go {
 	color: var(--gc-gray-400);
 }
-.rst-content .highlight .c {
+.rst-content .highlight .c, .rst-content .highlight .c1 {
 	color: var(--gc-orange);
 }
 .rst-content .highlight .gh {
@@ -800,7 +806,11 @@ td.code .o-tooltip--left:after {
 .rst-content .highlight .cp {
 	color: var(--gc-red);
 }
-.rst-content .highlight .p, .rst-content .highlight .nn, .rst-content .highlight .l, .rst-content .highlight .nv {
+.rst-content .highlight .ge {
+	color: var(--gc-gray-600);
+}
+.rst-content .highlight .p, .rst-content .highlight .nn, .rst-content .highlight .l,
+.rst-content .highlight .nv, .rst-content .highlight .nc, .rst-content .highlight .n {
 	color: var(--gc-gray-400);
 }
 .rst-content div.figure img {
