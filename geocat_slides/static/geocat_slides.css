@@ -205,7 +205,11 @@ section.slides > p .doc:after {
   background: linear-gradient(to bottom, #fff 0%,#fff 40%,#009BD2 40%,#009BD2 60%,#009BD2 100%);
 }
 .slide-intro h1 {
-  display: none;
+  margin-bottom: 190px !important;
+  margin-top: 30px !important;
+}
+.slide-intro h2 {
+  margin-bottom: 200px !important;
 }
 .slide-intro h2 {
   margin-bottom: 175px !important;
@@ -368,6 +372,10 @@ section.slides > p .doc:after {
 }
 .slides.table ul {
   margin-top: 20px;
+}
+.slides.table img {
+  height: 50% !important;
+  width: 50% !important;
 }
 .slides.table > article.past h1, .slides.table > article.next h1 {
   margin-top: 10px !important;
