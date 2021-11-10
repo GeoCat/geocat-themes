@@ -93,12 +93,6 @@ section.slides > p .doc:after {
 .text-50 p, .text-50 ul li, .text-50 ol li {
   font-size: 50% !important;
 }
-.text-60 p, .text-60 ul li, .text-60 ol li {
-  font-size: 60% !important;
-}
-.text-70 p, .text-70 ul li, .text-70 ol li {
-  font-size: 70% !important;
-}
 .text-80 p, .text-80 ul li, .text-80 ol li {
   font-size: 80% !important;
 }
