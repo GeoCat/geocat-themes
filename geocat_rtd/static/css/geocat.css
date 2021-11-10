@@ -65,6 +65,7 @@
 	:root {
 		/* default colors */
 		--gc-pink: #ff69b3; /* a little bit lighter */
+		--gc-info: var(--gc-cyan);
 		/* GeoCat colors */
 		--gc-color: #F8F8F2;
 		--gc-link-color: #3ab1fd;
@@ -261,7 +262,8 @@ hr {
 /* search terms */
 .rst-content .highlighted {
 	background: var(--gc-warning);
-	box-shadow: 0 0 0 2px var(--gc-warning);
+	color: var(--gc-gray-900);
+	box-shadow: 0 0 0 0.25em var(--gc-warning);
 	display: inline;
 	font-weight: 700;
 }
@@ -803,7 +805,7 @@ td.code .o-tooltip--left:after {
 .rst-content .highlight .mf, .rst-content .highlight .mi {
 	color: var(--gc-teal);
 }
-.rst-content .highlight .cp {
+.rst-content .highlight .cp, .rst-content .highlight .ne {
 	color: var(--gc-red);
 }
 .rst-content .highlight .ge {

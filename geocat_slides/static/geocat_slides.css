@@ -93,6 +93,12 @@ section.slides > p .doc:after {
 .text-50 p, .text-50 ul li, .text-50 ol li {
   font-size: 50% !important;
 }
+.text-60 p, .text-60 ul li, .text-60 ol li {
+  font-size: 60% !important;
+}
+.text-70 p, .text-70 ul li, .text-70 ol li {
+  font-size: 70% !important;
+}
 .text-80 p, .text-80 ul li, .text-80 ol li {
   font-size: 80% !important;
 }
@@ -205,10 +211,11 @@ section.slides > p .doc:after {
   background: linear-gradient(to bottom, #fff 0%,#fff 40%,#009BD2 40%,#009BD2 60%,#009BD2 100%);
 }
 .slide-intro h1 {
-  display: none;
+  margin-bottom: 190px !important;
+  margin-top: 30px !important;
 }
 .slide-intro h2 {
-  margin-bottom: 175px !important;
+  margin-bottom: 200px !important;
 }
 .slide-intro p {
   color: #fff;
@@ -368,6 +375,10 @@ section.slides > p .doc:after {
 }
 .slides.table ul {
   margin-top: 20px;
+}
+.slides.table img {
+  height: 50% !important;
+  width: 50% !important;
 }
 .slides.table > article.past h1, .slides.table > article.next h1 {
   margin-top: 10px !important;
