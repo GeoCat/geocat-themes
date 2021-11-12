@@ -574,7 +574,7 @@ Special Markup
 Text size
 +++++++++
 
-By adding a class the text of a slide, or just a block can be changed. The available classes are: ``text-50``, ``text-80`` and ``text-90``
+By adding a class the text of a slide, or just a block can be changed. The available classes are: ``text-50``, ``text-60``, ``text-70``, ``text-80`` and ``text-90``
 
 Usage:
 
