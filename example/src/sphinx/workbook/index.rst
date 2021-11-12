@@ -261,7 +261,7 @@ Page index.rst
 
 Use straight forward writing with three levels of headings:
 
-* Consistency is required as content is generted into both slides and workbooks
+* Consistency is required as content is generated into both slides and workbooks
 * Consistent structure and writing is both profesional and functional helping comprehension and ability to scan and review material.
 
 .. code-block:: rst
