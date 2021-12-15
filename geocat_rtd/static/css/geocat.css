@@ -702,6 +702,16 @@ html.writer-html5 .rst-content table.docutils th {
 .admonition-challenge .admonition-title, .admonition-example .admonition-title {
 	color: var(--gc-demo-color) !important;
 }
+@media screen and (prefers-color-scheme: dark) {
+	.admonition-exercise a, .admonition-demo a, .admonition-explore a,
+	.admonition-challenge a, .admonition-example a {
+		color: var(--gc-link-color) !important;
+	}
+	.admonition-exercise a.reference.external:after, .admonition-demo a.reference.external:after, .admonition-explore a.reference.external:after,
+	.admonition-challenge a.reference.external:after, .admonition-example a.reference.external:after {
+		color: var(--gc-link-color) !important;
+	}
+}
 .admonition-exercise .guilabel {
 	color: var(--gc-dark);
 	background: var(--gc-info);
