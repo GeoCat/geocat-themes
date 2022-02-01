@@ -871,9 +871,6 @@ td.code .o-tooltip--left:after {
 .highlight .hll {
 	background-color: #c7c795;
 }
-.glossary {
-	background-color: var(--gc-gray-600);
-}
 
 /* helper */
 .clearfix:before, .clearfix:after {
