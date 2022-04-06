@@ -1,111 +1,8 @@
 @import url(theme.css);
 
-:root {
-	/* default colors */
-	--gc-blue: #0d6efd;
-	--gc-indigo: #6610f2;
-	--gc-purple: #6f42c1;
-	--gc-pink: #d63384;
-	--gc-red: #dc3545;
-	--gc-orange: #fd7e14;
-	--gc-yellow: #ffc107;
-	--gc-green: #198754;
-	--gc-teal: #20c997;
-	--gc-cyan: #0dcaf0;
-	--gc-gray-100: #f8f9fa;
-	--gc-gray-200: #e9ecef;
-	--gc-gray-300: #dee2e6;
-	--gc-gray-400: #ced4da;
-	--gc-gray-500: #adb5bd;
-	--gc-gray-600: #6c757d;
-	--gc-gray-700: #495057;
-	--gc-gray-800: #343a40;
-	--gc-gray-900: #212529;
-	--gc-black: #000;
-	--gc-white: #fff;
-	--gc-gray: var(--gc-gray-600);
-	--gc-gray-dark: var(--gc-gray-800);
-	/* colors for admonition */
-	--gc-primary: var(--gc-blue);
-	--gc-secondary: var(--gc-gray-600);
-	--gc-success: var(--gc-green);
-	--gc-info: #d1f2f9;
-	--gc-warning: var(--gc-yellow);
-	--gc-danger: var(--gc-red);
-	--gc-light: var(--gc-gray-100);
-	--gc-dark: var(--gc-gray-900);
-	/* GeoCat colors */
-	--gc-color: #2c3e50;
-	--gc-link-color: #0366d6;
-	--gc-color-sidebar: var(--gc-color);
-	--gc-link-color-sidebar: var(--gc-gray-700);
-	--gc-border-color: #e1e4e5;
-	--gc-background-color-default: var(--gc-gray-100);
-	--gc-background-color-body: var(--gc-white);
-	--gc-background-color-sidebar: var(--gc-white);
-	/* card/block/message styles */
-	--gc-message-color: #F8F8F2;
-	--gc-message-link-color: #69adf9;
-	--gc-message-note-color: var(--gc-gray-900);
-	--gc-message-note-link-color: var(--gc-link-color);
-	--gc-ext-link-color: var(--gc-gray-500);
-	--gc-menuselection-background: var(--gc-gray-400);
-	--gc-block-background: var(--gc-gray-200);
-	--gc-block-in-table-background: var(--gc-gray-200);
-	--gc-code-background: #333;
-	--gc-demo-background: var(--gc-info);
-	--gc-demo-color: var(--gc-message-note-color);
-	--gc-table-background: var(--gc-gray-100);
-	--gc-demo-table-background: var(--gc-gray-100);
-	--gc-card-hover-shadow: 0 0 0 1px rgba(50, 50, 93, 0.01), 0 7px 14px 0 rgba(50, 50, 93, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.02);
-  /* miscellaneous	*/
-	--gc-spacing-default: 15px;
-	--gc-hover-brightness: 0.8;
-	--gc-border-radius: 3px;
-}
+@import url(https://cdn.geocat.net/css/geocat.base.css);
 
-@media screen and (prefers-color-scheme: dark) {
-	:root {
-		/* default colors */
-		--gc-pink: #ff69b3; /* a little bit lighter */
-		--gc-info: var(--gc-cyan);
-		/* GeoCat colors */
-		--gc-color: #F8F8F2;
-		--gc-link-color: #3ab1fd;
-		--gc-color-sidebar: var(--gc-gray-100);
-		--gc-link-color-sidebar: var(--gc-gray-300);
-		--gc-border-color: var(--gc-gray-600);
-		--gc-background-color-default: var(--gc-gray-700);
-		--gc-background-color-body: var(--gc-background-color-default);
-		--gc-background-color-sidebar: var(--gc-gray-800);
-		/* card/block/message styles */
-		--gc-message-link-color: var(--gc-link-color);
-		--gc-message-note-link-color: #0366d6;
-		--gc-menuselection-background: var(--gc-gray);
-		--gc-block-background: var(--gc-gray-800);
-		--gc-block-in-table-background: var(--gc-gray-900);
-		--gc-code-background: var(--gc-gray-800);
-		--gc-demo-background: var(--gc-gray-600);
-		--gc-demo-color: var(--gc-light);
-		--gc-table-background: var(--gc-gray-800);
-		--gc-demo-table-background: var(--gc-gray-800);
-	}
-	.gc-logo .gc-title-dark, .gc-logo .gc-g {
-		fill: var(--gc-white);
-	}
-}
-
-/* roboto-regular - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../font/roboto-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../font/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-body, html, h1, h2, h3, h4, h5, .rst-content .toctree-wrapper p.caption {
+.rst-content .toctree-wrapper p.caption {
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
@@ -117,52 +14,6 @@ body, html, h1, h2, h3, h4, h5, .rst-content .toctree-wrapper p.caption {
 	background: var(--gc-background-color-body) !important;
 }
 
-/* general */
-h1 {
-	font-size: 32px;
-}
-h2 {
-	padding-bottom: .3rem;
-	border-bottom: 1px solid var(--gc-border-color);
-}
-h4 {
-	font-size: 110%;
-	text-decoration: underline;
-}
-p {
-	margin-bottom: var(--gc-spacing-default);
-}
-a {
-	color: var(--gc-link-color);
-	text-decoration: underline;
-}
-a:hover, a:focus, a:visited {
-	color: var(--gc-link-color);
-	filter: brightness(var(--gc-hover-brightness));
-}
-a.reference {
-	word-break: break-word;
-}
-a.reference.external:after {
-	font-family: FontAwesome;
-	display: inline-block;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 1;
-	text-decoration: inherit;
-	content: "\f08e";
-	font-size: 90% !important;
-	vertical-align: initial !important;
-	margin-left: 3px;
-	margin-right: 3px;
-	color: var(--gc-ext-link-color) !important;
-}
-hr {
-	border-top: 1px solid var(--gc-border-color);
-}
-::marker {
-	font-weight: bold;
-}
 
 /* index page */
 .genindex-jumpbox {
@@ -182,7 +33,7 @@ hr {
 }
 .wy-nav-side {
 	position: fixed;
-	padding-top: 155px;
+	padding-top: 200px;
 }
 .wy-side-nav-search {
 	position: fixed;
@@ -212,6 +63,7 @@ hr {
 	background: var(--gc-background-color-sidebar);
 	text-shadow: none;
 	border-right: 1px solid var(--gc-border-color);
+	width: var(--gc-sidebar-width);
 }
 /* version */
 .wy-side-nav-search > div.version:before {
@@ -317,14 +169,14 @@ hr {
 }
 .wy-menu-vertical li.toctree-l1.current>a {
 	border: 0;
-	padding-top: 10px;
+	padding-top: var(--gc-spacing-small);
 	padding-bottom: 10px;
 }
 .wy-menu-vertical li.toctree-l2.current>a {
 	background: none;
 	text-shadow: none;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: var(--gc-spacing-small);
+	padding-bottom: var(--gc-spacing-small);
 	font-weight: 600;
 }
 .wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l2.current>a{
