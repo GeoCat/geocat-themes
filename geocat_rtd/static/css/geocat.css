@@ -1,6 +1,6 @@
 @import url(theme.css);
 
-@import url(https://cdn.geocat.net/css/geocat.base.css);
+@import url(https://cdn.geocat.net/css/geocat.base.min.css);
 
 .rst-content .toctree-wrapper p.caption {
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
