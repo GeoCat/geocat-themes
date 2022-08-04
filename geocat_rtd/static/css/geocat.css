@@ -291,6 +291,30 @@
 		display: none;
 	}
 }
+/* default logo styles */
+.gc-logo-light {
+	fill: var(--gc-logo-light);
+	stroke: var(--gc-logo-stroke);
+	stroke-miterlimit: 10;
+	stroke-width: var(--gc-logo-stroke-width);
+}
+.gc-logo-dark {
+	fill: var(--gc-logo-dark);
+}
+.gc-logo-bg {
+	fill: var(--gc-white);
+}
+/* styling for logo only (GC) without text (GEOCAT) with a background */
+.gc-logo-only-bg .gc-logo-light {
+	fill: var(--gc-brand-light);
+}
+.gc-logo-only-bg .gc-logo-dark {
+	fill: var(--gc-brand-dark);
+}
+/* styling for logo only (GC) without text (GEOCAT) and without a background */
+.gc-logo-only-no-bg .gc-logo-bg {
+	fill: none;
+}
 
 /* footer */
 footer {
