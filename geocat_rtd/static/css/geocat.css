@@ -7,7 +7,7 @@
 	--gc-logo-height: 150px;
 }
 
-.rst-content .toctree-wrapper p.caption {
+.rst-content .toctree-wrapper p.caption, .btn {
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
