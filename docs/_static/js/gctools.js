@@ -41,7 +41,7 @@ jQuery.getQueryParameters = function(s) {
 /**
  * Small JavaScript module for the documentation.
  */
-var Documentation = {
+var gcDocumentation = {
 
     init : function() {
         this.rewriteLiveUrls();
@@ -71,5 +71,5 @@ var Documentation = {
 };
 
 $(document).ready(function() {
-    Documentation.init();
+    gcDocumentation.init();
 });

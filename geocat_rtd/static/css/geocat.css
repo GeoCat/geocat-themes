@@ -1,13 +1,17 @@
 @import url(theme.css);
-
 @import url(https://cdn.geocat.net/css/geocat.base.min.css);
+@import url(https://cdn.geocat.net/css/geocat.logo.min.css);
+
+:root {
+	--gc-logo-height-gc: 30px; /* can't be a percentage */
+}
 
 /* override logo height for training */
 .gc-training {
-	--gc-logo-height: 150px;
+	--gc-logo-height: 25px;
 }
 
-.rst-content .toctree-wrapper p.caption {
+.rst-content .toctree-wrapper p.caption, .btn {
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
@@ -262,33 +266,43 @@
 	content: "";
 }
 
-/* geocat logo */
+/* logo */
 .gc-menu {
 	float: right;
 	padding-left: 0 !important;
+	margin-bottom: var(--gc-spacing-default) !important;
 }
 .gc-menu li {
 	list-style: none !important;
 	margin-left: 0 !important;
 }
-.gc-logo {
-	width: auto;
-	height: 30px;
+.gc-menu .gc-logo {
+	height: var(--gc-logo-height-gc);
+	width: calc(var(--gc-logo-height-gc) * (25 / 6));
 }
-.gc-logo-small {
-	display: none;
+.gc-logo-base64 {
+	background-image: var(--gc-logo-base64-full);
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
-.gc-subtitle {
-	display: none;
+@media screen and (prefers-color-scheme: dark) {
+	.gc-logo-base64 {
+		background-image: var(--gc-logo-base64-full-bw);
+	}
 }
 @media (max-width: 425px) {
-	.gc-logo-small {
-		display: block;
-		width: auto;
-		height: 20px;
+	.gc-menu .gc-logo {
+		height: var(--gc-logo-height-gc);
+		width: var(--gc-logo-height-gc);
+		background-size: cover;
 	}
-	.gc-logo {
-		display: none;
+	.gc-logo-base64 {
+		background-image: var(--gc-logo-base64-notext);
+	}
+	@media screen and (prefers-color-scheme: dark) {
+		.gc-logo-base64 {
+			background-image: var(--gc-logo-base64-notext-bg);
+		}
 	}
 }
 
