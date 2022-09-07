@@ -595,6 +595,12 @@ html.writer-html5 .rst-content table.docutils th {
 .admonition-instructor-notes .admonition-title  {
 	 color: var(--gc-dark);
  }
+.admonition-instructor-notes .note {
+	background-color: var(--gc-yellow) !important;
+	border-top: 1px solid var(--gc-dark);
+	border-bottom: 1px solid var(--gc-dark);
+	padding: var(--gc-spacing-small) 0 !important;
+}
 
 /* blocks */
 .rst-content blockquote {
@@ -775,4 +781,33 @@ td.code .o-tooltip--left:after {
 }
 .rst-content .section .gc-list-blocks ul li a:hover {
 	text-decoration: none;
+}
+
+/* print styles */
+@media print {
+	@page {
+		size: auto;
+		margin: 10mm;
+	}
+	html, body {
+		font-size: 12px;
+		background: #FFF;
+		overflow: visible;
+	}
+	body {
+		padding-top:15mm;
+	}
+	h1 {
+		page-break-before: always;
+	}
+	h1:first-child {
+		page-break-before: unset;
+	}
+	img {
+		page-break-inside: avoid;
+	}
+	table { page-break-inside:auto }
+	tr    { page-break-inside:avoid; page-break-after:auto }
+	thead { display:table-header-group; }
+	tfoot { display:table-footer-group; }
 }
