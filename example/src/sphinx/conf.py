@@ -94,7 +94,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -122,9 +122,9 @@ else:
    host = 'http://localhost:8080/'
 
 extlinks = {
-    'host': (host+'/%s',host),
-    'geoserver': ('http://docs.geoserver.org/latest/en/user/%s',''),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/%s','')
+    'host': (host+'/%s','%s'),
+    'geoserver': ('http://docs.geoserver.org/latest/en/user/%s','%s'),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/%s','%s')
 }
 
 # -- Options for HTML output -------------------------------------------------
