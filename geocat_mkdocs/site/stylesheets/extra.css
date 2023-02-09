@@ -1,0 +1,17 @@
+/* less margin between logo and title */
+[dir=ltr] .md-header__title {
+  margin-left: 0.4rem;
+}
+/* styling for the heart in the footer */
+.heart {
+  color: #e91e63;
+}
+/* flowchart classes */
+.gc-graph-success {
+  fill: #8BC34A;
+  stroke: #4CAF50;
+}
+.gc-graph-warning {
+  fill: #FFC107;
+  stroke: #FF9800;
+}

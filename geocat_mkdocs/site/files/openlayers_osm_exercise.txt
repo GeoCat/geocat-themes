@@ -1,0 +1,19 @@
+.. admonition:: Exercise
+   
+   To use :command:`OpenLayers` to connect to OpenStreetMap:
+
+   #. To download :file:`openlayers_osm.html`, right click on :download:`openlayers_osm.html <files/openlayers_osm.html>` and select :menuselection:`Save As`.
+      
+       Save this files to your :file:`Desktop` for easy access.
+   
+   #. Use :command:`Firefox` to open :file:`openlayers_osm.html`
+      
+      .. figure:: img/openlayers_osm.png
+         
+         OpenLayers OpenStreetMap
+         
+   #. Using an editor, :command:`Notepad++` recommended on windows, to review :file:`openlayers_osm.html`.
+      
+      .. literalinclude:: files/openlayers_osm.html
+         :language: html
+         :emphasize-lines: 23-27
