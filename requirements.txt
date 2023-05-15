@@ -1,0 +1,7 @@
+sphinx
+sphinx-autobuild
+hieroglyph
+Pillow
+python-levenshtein
+recommonmark
+sphinx-copybutton

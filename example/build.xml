@@ -7,9 +7,14 @@
   <description>${project} ${subtitle}
 ant script to run sphinx-build:
   ant clean
-  ant workbook
-  ant workbook -Dopen=true
+  ant workbook (-Dopen=true)
+  ant instructor (-Dopen=true)
   
+or to run sphinx-autobuild (which opens a browser for live review):
+  ant instructor-site
+
+Use -Dhost=https//&lt;domain&gt;.geocat.live/mapping to postprocess examples.
+
 </description>
 
   <!-- defines DSTAMP -->
@@ -24,12 +29,25 @@ ant script to run sphinx-build:
   <property name="sourcedir" value="${src}/sphinx"/>
   <property name="outputdir" value="${build}/${builder}"/>
   <property name="sphinx_build_options" value="-q -N -W --keep-going -n -j auto"/>
+  <property name="sphinx_auobuild_options" value="-q -N -W -n -j auto"/>
   
   <property environment="env" />
   
-  <available file="sphinx-build"  
-             filepath="${env.PATH}"  
-             property="sphinx.available"/>
+  <condition property="sphinx.available">
+    <or>
+      <available file="sphinx-build" filepath="${env.PATH}"/>
+      <available file="sphinx-build.exe" filepath="${env.Path}"/>
+      <available file="sphinx-build.exe" filepath="${env.PATH}"/>
+    </or>
+  </condition>
+
+  <condition property="autobuild.available">
+    <or>
+      <available file="sphinx-autobuild" filepath="${env.PATH}"/>
+      <available file="sphinx-autobuild.exe" filepath="${env.Path}"/>
+      <available file="sphinx-autobuild.exe" filepath="${env.PATH}"/>
+    </or>
+  </condition>
 
   <target name="_init">
     <mkdir dir="${build}"/>
@@ -67,6 +85,15 @@ ant script to run sphinx-build:
     </antcall>
   </target>
   
+  <target name="instructor-site" description="instructor notes interactive editing">
+    <antcall target="_autobuild">
+      <param name="tags" value="-t instructor"/>
+      <param name="outputdir" value="${build}/instructor"/>
+      <param name="doctrees" value="${build}/doctrees"/>
+    </antcall>
+  </target>
+
+  
   <target name="slides" description="instructor slides">
     <antcall target="_sphinx">
       <param name="builder" value="slides"/>
@@ -81,7 +108,7 @@ ant script to run sphinx-build:
     </antcall>
   </target>
   
-  <target name="build" description="build documentation (requires sphinx-build)">
+  <target name="build" description="build instructor notes and slides">
     <antcall target="_sphinx">
       <param name="tags" value="-t instructor"/>
       <param name="outputdir" value="${build}/instructor"/>
@@ -139,11 +166,36 @@ ant script to run sphinx-build:
     </exec>
   </target>
   
+  <target name="_autobuild" if="autobuild.available">
+    <mkdir dir="${outputdir}"/>
+    <exec executable="sphinx-autobuild" failonerror="true">
+      <arg line="${tags}" if:set="tags"/>
+      <arg line="${sphinx_auobuild_options}"/>
+      <arg line="-b html"/>
+      <arg line="-Dhtml_theme=${theme}" if:set="theme"/>
+      <arg line="${theme_options}" if:set="theme_options"/>
+      <arg line="${config_settings}" if:set="config_settings"/>
+      <arg line="-d ${doctrees}" if:set="doctrees"/>
+      <arg line="-D release=${release}" if:set="release"/>
+      <arg line="-D version=${version}" if:set="version"/>
+      <arg path="${sourcedir}"/>
+      <arg path="${outputdir}"/>
+    </exec>
+    
+    <property name="argLine" value="-D release=${project.version} -q -W -b html -d &quot;${build.directory}/${id}/doctrees&quot; . &quot;${build.directory}/${id}/html&quot;"/>
+    <echo message="Running sphinx-autobuild ${argLine}"/> 
+    <exec executable="sphinx-autobuild" failonerror="true" dir="${basedir}/${id}/source">
+      <env key="project.version" value="${project.version}"/>
+      <arg line="${argLine} --open-browser"/>
+    </exec>
+  </target>
+  
+  
   <target name="_postprocess">
     <condition property="host.provided">
        <and>
          <isset property="host"/>
-         <not><equals arg1="http://localhost:8080/" arg2="${host}"/></not>
+         <not><equals arg1="http://localhost:8080/geoserver" arg2="${host}"/></not>
        </and>
     </condition>
     

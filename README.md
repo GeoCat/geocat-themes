@@ -24,14 +24,13 @@ Tested with:
 macOS:
 ```
 brew install python
-brew install sphinx-doc
-pip install hieroglyph recommonmark sphinx-copybutton
+pip3 install -r requirements.txt
 ```
 
 windows:
 ```
 pip install -U sphinx
-pip install hieroglyph recommonmark sphinx-copybutton
+pip3 install -r requirements.txt
 ```
 
 jenkins:
@@ -55,9 +54,9 @@ Grab the latest tag:
 cd sphinx_rtd_theme
 rm -rf *
 git checkout LICENSE
-wget https://github.com/readthedocs/sphinx_rtd_theme/archive/refs/tags/0.5.2.zip
-unzip 0.5.2.zip 'sphinx_rtd_theme-0.5.2/sphinx_rtd_theme/*' -d .
-mv sphinx_rtd_theme-0.5.2/sphinx_rtd_theme/* .
+wget https://github.com/readthedocs/sphinx_rtd_theme/archive/refs/tags/1.2.0.zip
+unzip 1.2.0.zip 'sphinx_rtd_theme-1.2.0/sphinx_rtd_theme/*' -d .
+mv sphinx_rtd_theme-1.2.0/sphinx_rtd_theme/* .
 rm -r *.zip sphinx_rtd_theme* 
 ```
 
@@ -67,7 +66,7 @@ Updated:
 ```
 cd ../
 git add .
-git commit -m "Update sphinx_rtd_theme to 0.5.2"
+git commit -m "Update sphinx_rtd_theme to 1.2.0"
 ```
 
 Test using `example`:
