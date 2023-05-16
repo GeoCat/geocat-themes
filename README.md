@@ -62,7 +62,7 @@ With each ``sphinx_rtd_theme`` update some testing may be required. Have a look 
 
 Test using `example`:
 ```
-cd ../example
+cd example
 ant clean
 ant
 ```
