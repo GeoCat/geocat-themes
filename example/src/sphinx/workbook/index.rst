@@ -100,7 +100,7 @@ Testing:
 README.md
 ---------
 
-Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflicting with sphinx-build.
+Shown when browsing content in GitHub and GitLab.
 
 .. if notslides::
    
@@ -108,6 +108,8 @@ Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflic
       :language: markdown
       :linenos:
 
+Note :command:`sphinx-build` can process markdown files, however an ``exclude_pattern`` has been configured to avoid processing :file:`README.md` file.
+ 
 conf.py
 -------
 

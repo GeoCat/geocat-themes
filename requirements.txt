@@ -3,5 +3,6 @@ sphinx-autobuild
 hieroglyph
 Pillow
 python-levenshtein
-recommonmark
+myst-parser
 sphinx-copybutton
+sphinx_rtd_theme
