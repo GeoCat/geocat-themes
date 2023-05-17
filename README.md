@@ -12,14 +12,14 @@ example_slides: slide example testing `geocat_slides` theme
 
 ## sphinx-build environment
 
-Tested with:
+Tested with the following managed by ``requirements.txt``:
 
-* [python](https://www.python.org) 3.9.0
+* [python](https://www.python.org) 3.11.2
 * [sphinx-build](https://www.sphinx-doc.org/)
 * [hieroglyph](https://github.com/nyergler/hieroglyph) 2.1
-* [recommonmark](https://github.com/readthedocs/recommonmark)
+* [myst-parser](https://github.com/executablebooks/MyST-Parser)
 * [sphinx-copybutton](https://pypi.org/project//)
-* [sphinx-rtd-theme](https://sphinx-rtd-theme.readthedocs.io/) - included in repository
+* [sphinx-rtd-theme](https://sphinx-rtd-theme.readthedocs.io/)
 
 macOS:
 ```
@@ -29,7 +29,6 @@ pip3 install -r requirements.txt
 
 windows:
 ```
-pip install -U sphinx
 pip3 install -r requirements.txt
 ```
 
@@ -49,29 +48,21 @@ git push
 
 ## update sphinx_rtd_theme
 
-Grab the latest tag:
-```
-cd sphinx_rtd_theme
-rm -rf *
-git checkout LICENSE
-wget https://github.com/readthedocs/sphinx_rtd_theme/archive/refs/tags/1.2.0.zip
-unzip 1.2.0.zip 'sphinx_rtd_theme-1.2.0/sphinx_rtd_theme/*' -d .
-mv sphinx_rtd_theme-1.2.0/sphinx_rtd_theme/* .
-rm -r *.zip sphinx_rtd_theme* 
-```
+The ``geocat_rtd`` theme extends ``sphinx_rtd_theme``.
 
-Have a look at the changed files using `git status`, and double check if any fixes need to be applied to `geocat_rtd` theme.
+With each ``sphinx_rtd_theme`` update some testing may be required. Have a look at the [changelog](https://sphinx-rtd-theme.readthedocs.io/en/stable/changelog.html), and double check if any fixes need to be applied to `geocat_rtd` theme. Comparing files changed between [tags](https://github.com/readthedocs/sphinx_rtd_theme/tags) helps:
 
-Updated:
-```
-cd ../
-git add .
-git commit -m "Update sphinx_rtd_theme to 1.2.0"
-```
+* [breadcrumbs.html](https://github.com/readthedocs/sphinx_rtd_theme/blob/master/sphinx_rtd_theme/breadcrumbs.html)
+  
+  The GeoCat theme is a copy with ``<!-- link to GeoCat docs home -->`` section added
+  
+* [footer.html](https://github.com/readthedocs/sphinx_rtd_theme/blob/master/sphinx_rtd_theme/footer.html)
+  
+  GeoCat theme is a clean extension forcing show_sphinx false.
 
 Test using `example`:
 ```
-cd ../example
+cd example
 ant clean
 ant
 ```

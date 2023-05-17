@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/geocat_slides.css" type="text/css" />
+    
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     
@@ -21,18 +21,20 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2021.11.09',
+        VERSION:     '2023.05.16',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
     <script type="text/javascript" src="../_static/clipboard.min.js"></script>
     <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <script type="text/javascript" src="../_static/js/gctools.js"></script>
     <script type="text/javascript" src="../_static/common.js"></script>
     
     <script type="text/javascript" src="../_static/slides.js"></script>
@@ -41,18 +43,17 @@
     <script type="text/javascript" src="../_static/init.js"></script>
     
     
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="GeoCat Theme Example" href="../index.html" />
-    <link rel="next" title="Glossary" href="../glossary.html" />
+    <link rel="next" title="Dynamic Examples" href="../example.html" />
     <link rel="prev" title="Writing Guide" href="../guide/index.html" /> 
   </head>
   <body>
   
 
     <section id="controls"><a id="prev" href="../guide/index.html">Writing Guide</a><a id="up" href="../index.html#contents">GeoCat Theme Example</a>
-    <a id="next" href="../glossary.html">Glossary</a>
+    <a id="next" href="../example.html">Dynamic Examples</a>
     </section>
 
 
@@ -75,7 +76,7 @@
 <div class="slide-no">1</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -101,7 +102,7 @@
 <div class="slide-no">2</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -118,17 +119,17 @@
 <div class="slide-no">3</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
 </article>
-<article class="slide level-3" id="id6">
+<article class="slide level-3" id="id7">
 
-<h3>build.xml<a class="headerlink" href="../../workbook/index.html#id6" title="View HTML">§</a></h3>
+<h3>build.xml<a class="headerlink" href="../../workbook/index.html#id7" title="View HTML">§</a></h3>
 
 <p>To list ant build targets intended for use (those that have a desription):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ant -p
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ant<span class="w"> </span>-p
 </pre></div>
 </div>
 
@@ -138,17 +139,17 @@
 <div class="slide-no">4</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
 </article>
-<article class="slide level-3" id="id7">
+<article class="slide level-3" id="id8">
 
-<h3>post-processing<a class="headerlink" href="../../workbook/index.html#id7" title="View HTML">§</a></h3>
+<h3>post-processing<a class="headerlink" href="../../workbook/index.html#id8" title="View HTML">§</a></h3>
 
 <p>Examples are written using <cite>http://localhost:8080...</cite>, to override:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ant clean build -Dhost<span class="o">=</span>https://training.geocat.live/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ant<span class="w"> </span>clean<span class="w"> </span>build<span class="w"> </span>-Dhost<span class="o">=</span>https://training.geocat.live/
 </pre></div>
 </div>
 <p>An override perform a search and replace the generated output.</p>
@@ -159,22 +160,22 @@
 <div class="slide-no">5</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
 </article>
-<article class="slide level-3" id="id8">
+<article class="slide level-3" id="id9">
 
-<h3>postprocessing<a class="headerlink" href="../../workbook/index.html#id8" title="View HTML">§</a></h3>
+<h3>postprocessing<a class="headerlink" href="../../workbook/index.html#id9" title="View HTML">§</a></h3>
 
-<p>Postprocessing is used to handle localhost:8080 <a class="reference external" href="http://localhost:8080/index.html">links</a> in sample data and generated html:</p>
+<p>Postprocessing is used to handle <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/geoserver</span></code> links in sample data and generated html:</p>
 <blockquote>
 <div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
-<span class="linenos">2</span>    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-<span class="linenos">3</span>    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example&quot;</span><span class="p">,</span>
-<span class="linenos">4</span>    <span class="nt">&quot;sprite&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:8080/geoserver/styles/sprite&quot;</span><span class="p">,</span>
-<span class="linenos">5</span>    <span class="nt">&quot;glyphs&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:8080/geoserver/styles/{fontstack}/{range}.pbf&quot;</span>
+<span class="linenos">2</span><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example&quot;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">    </span><span class="nt">&quot;sprite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/styles/sprite&quot;</span><span class="p">,</span>
+<span class="linenos">5</span><span class="w">    </span><span class="nt">&quot;glyphs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/styles/{fontstack}/{range}.pbf&quot;</span>
 <span class="linenos">6</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -184,6 +185,7 @@
    <span class="nc">:linenos:</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="../example.html"><span class="doc">Dynamic Examples</span></a> .</p>
 
 
 <footer>
@@ -191,31 +193,7 @@
 <div class="slide-no">6</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
-
-</footer>
-
-</article>
-<article class="slide level-3" id="id9">
-
-<h3>dynamic processed<a class="headerlink" href="../../workbook/index.html#id9" title="View HTML">§</a></h3>
-
-<p>Testing:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://$PARAMETER/geoserver">https://$PARAMETER/geoserver</a></li>
-<li><a class="reference external" href="https://$PARAMETER/geoserver">welcome page</a></li>
-<li><a class="reference external" href="https://localhost:8080/geoserver">https://localhost:8080/geoserver</a></li>
-<li><a class="reference external" href="https://localhost:8080/geoserver/wms">https://localhost:8080/geoserver/wms</a></li>
-<li><a class="reference external" href="https://localhost:8080/geoserver">welcome page</a></li>
-</ul>
-
-
-<footer>
-
-<div class="slide-no">7</div>
-
-
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -224,15 +202,16 @@
 
 <h3>README.md<a class="headerlink" href="../../workbook/index.html#readme-md" title="View HTML">§</a></h3>
 
-<p>Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflicting with sphinx-build.</p>
+<p>Shown when browsing content in GitHub and GitLab.</p>
+<p>Note <strong class="command">sphinx-build</strong> can process markdown files, however an <code class="docutils literal notranslate"><span class="pre">exclude_pattern</span></code> has been configured to avoid processing <code class="file docutils literal notranslate"><span class="pre">README.md</span></code> file.</p>
 
 
 <footer>
 
-<div class="slide-no">8</div>
+<div class="slide-no">7</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -255,10 +234,10 @@
 
 <footer>
 
-<div class="slide-no">9</div>
+<div class="slide-no">8</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -280,10 +259,10 @@
 
 <footer>
 
-<div class="slide-no">10</div>
+<div class="slide-no">9</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -307,10 +286,10 @@
 
 <footer>
 
-<div class="slide-no">11</div>
+<div class="slide-no">10</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -330,10 +309,10 @@
 
 <footer>
 
-<div class="slide-no">12</div>
+<div class="slide-no">11</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -353,10 +332,10 @@
 
 <footer>
 
-<div class="slide-no">13</div>
+<div class="slide-no">12</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -389,17 +368,17 @@ geoserver_data_directory.png
 
 <footer>
 
-<div class="slide-no">14</div>
+<div class="slide-no">13</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
 </article>
 <article class="slide level-3" id="files-folder">
 
-<h3>files folder<a class="headerlink" href="../../workbook/index.html#files-folder" title="View HTML">§</a></h3>
+<h3>Files folder<a class="headerlink" href="../../workbook/index.html#files-folder" title="View HTML">§</a></h3>
 
 <p>Used for scripts, configuration files, and sample data such as icons:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>elevation.sld
@@ -413,49 +392,49 @@ place.svg
 <div><ol class="arabic">
 <li><p class="first">Here is an improved <a class="reference download internal" download="" href="../_downloads/10d73596e93f0150e923b0bf41504382/elevation.sld"><code class="xref download docutils literal notranslate"><span class="pre">elevation.sld</span></code></a> SLD showing the elevations:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
-<span class="nt">&lt;StyledLayerDescriptor</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span>
-  <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd&quot;</span>
-  <span class="na">xmlns=</span><span class="s">&quot;http://www.opengis.net/sld&quot;</span> <span class="na">xmlns:ogc=</span><span class="s">&quot;http://www.opengis.net/ogc&quot;</span>
-  <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;NamedLayer&gt;</span>
-    <span class="nt">&lt;Name&gt;</span>elevation_points<span class="nt">&lt;/Name&gt;</span>
-    <span class="nt">&lt;UserStyle&gt;</span>
-      <span class="nt">&lt;Title&gt;</span>Elevation Points<span class="nt">&lt;/Title&gt;</span>
-      <span class="nt">&lt;FeatureTypeStyle&gt;</span>
-        <span class="nt">&lt;Rule&gt;</span>
-          <span class="nt">&lt;Title&gt;</span>azure point<span class="nt">&lt;/Title&gt;</span>
-          <span class="nt">&lt;PointSymbolizer&gt;</span>
-            <span class="nt">&lt;Graphic&gt;</span>
-              <span class="nt">&lt;Mark&gt;</span>
-                <span class="nt">&lt;WellKnownName&gt;</span>cross<span class="nt">&lt;/WellKnownName&gt;</span>
-                <span class="nt">&lt;Fill&gt;</span>
-                  <span class="nt">&lt;CssParameter</span> <span class="na">name=</span><span class="s">&quot;fill&quot;</span><span class="nt">&gt;</span>#333333<span class="nt">&lt;/CssParameter&gt;</span>
-                <span class="nt">&lt;/Fill&gt;</span>
-              <span class="nt">&lt;/Mark&gt;</span>
-              <span class="nt">&lt;Size&gt;</span>3<span class="nt">&lt;/Size&gt;</span>
-            <span class="nt">&lt;/Graphic&gt;</span>
-          <span class="nt">&lt;/PointSymbolizer&gt;</span>
-          <span class="nt">&lt;TextSymbolizer&gt;</span>
-           <span class="nt">&lt;Label&gt;</span>
-             <span class="nt">&lt;ogc:PropertyName&gt;</span>elevation<span class="nt">&lt;/ogc:PropertyName&gt;</span> m
-           <span class="nt">&lt;/Label&gt;</span>
-           <span class="nt">&lt;LabelPlacement&gt;</span>
-             <span class="nt">&lt;PointPlacement&gt;</span>
-               <span class="nt">&lt;AnchorPoint&gt;</span>
-                 <span class="nt">&lt;AnchorPointX&gt;</span>0.5<span class="nt">&lt;/AnchorPointX&gt;</span>
-                 <span class="nt">&lt;AnchorPointY&gt;</span>0.0<span class="nt">&lt;/AnchorPointY&gt;</span>
-               <span class="nt">&lt;/AnchorPoint&gt;</span>
-               <span class="nt">&lt;Displacement&gt;</span>
-                 <span class="nt">&lt;DisplacementX&gt;</span>0<span class="nt">&lt;/DisplacementX&gt;</span>
-                 <span class="nt">&lt;DisplacementY&gt;</span>2<span class="nt">&lt;/DisplacementY&gt;</span>
-               <span class="nt">&lt;/Displacement&gt;</span>
-             <span class="nt">&lt;/PointPlacement&gt;</span>
-           <span class="nt">&lt;/LabelPlacement&gt;</span>
-          <span class="nt">&lt;/TextSymbolizer&gt;</span>
-        <span class="nt">&lt;/Rule&gt;</span>
-      <span class="nt">&lt;/FeatureTypeStyle&gt;</span>
-    <span class="nt">&lt;/UserStyle&gt;</span>
-  <span class="nt">&lt;/NamedLayer&gt;</span>
+<span class="nt">&lt;StyledLayerDescriptor</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span>
+<span class="w">  </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd&quot;</span>
+<span class="w">  </span><span class="na">xmlns=</span><span class="s">&quot;http://www.opengis.net/sld&quot;</span><span class="w"> </span><span class="na">xmlns:ogc=</span><span class="s">&quot;http://www.opengis.net/ogc&quot;</span>
+<span class="w">  </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;NamedLayer&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Name&gt;</span>elevation_points<span class="nt">&lt;/Name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;UserStyle&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Title&gt;</span>Elevation<span class="w"> </span>Points<span class="nt">&lt;/Title&gt;</span>
+<span class="w">      </span><span class="nt">&lt;FeatureTypeStyle&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Rule&gt;</span>
+<span class="w">          </span><span class="nt">&lt;Title&gt;</span>azure<span class="w"> </span>point<span class="nt">&lt;/Title&gt;</span>
+<span class="w">          </span><span class="nt">&lt;PointSymbolizer&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Graphic&gt;</span>
+<span class="w">              </span><span class="nt">&lt;Mark&gt;</span>
+<span class="w">                </span><span class="nt">&lt;WellKnownName&gt;</span>cross<span class="nt">&lt;/WellKnownName&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Fill&gt;</span>
+<span class="w">                  </span><span class="nt">&lt;CssParameter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fill&quot;</span><span class="nt">&gt;</span>#333333<span class="nt">&lt;/CssParameter&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Fill&gt;</span>
+<span class="w">              </span><span class="nt">&lt;/Mark&gt;</span>
+<span class="w">              </span><span class="nt">&lt;Size&gt;</span>3<span class="nt">&lt;/Size&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/Graphic&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/PointSymbolizer&gt;</span>
+<span class="w">          </span><span class="nt">&lt;TextSymbolizer&gt;</span>
+<span class="w">           </span><span class="nt">&lt;Label&gt;</span>
+<span class="w">             </span><span class="nt">&lt;ogc:PropertyName&gt;</span>elevation<span class="nt">&lt;/ogc:PropertyName&gt;</span><span class="w"> </span>m
+<span class="w">           </span><span class="nt">&lt;/Label&gt;</span>
+<span class="w">           </span><span class="nt">&lt;LabelPlacement&gt;</span>
+<span class="w">             </span><span class="nt">&lt;PointPlacement&gt;</span>
+<span class="w">               </span><span class="nt">&lt;AnchorPoint&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;AnchorPointX&gt;</span>0.5<span class="nt">&lt;/AnchorPointX&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;AnchorPointY&gt;</span>0.0<span class="nt">&lt;/AnchorPointY&gt;</span>
+<span class="w">               </span><span class="nt">&lt;/AnchorPoint&gt;</span>
+<span class="w">               </span><span class="nt">&lt;Displacement&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;DisplacementX&gt;</span>0<span class="nt">&lt;/DisplacementX&gt;</span>
+<span class="w">                 </span><span class="nt">&lt;DisplacementY&gt;</span>2<span class="nt">&lt;/DisplacementY&gt;</span>
+<span class="w">               </span><span class="nt">&lt;/Displacement&gt;</span>
+<span class="w">             </span><span class="nt">&lt;/PointPlacement&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/LabelPlacement&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/TextSymbolizer&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Rule&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/FeatureTypeStyle&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/UserStyle&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/NamedLayer&gt;</span>
 <span class="nt">&lt;/StyledLayerDescriptor&gt;</span>
 </pre></div>
 </div>
@@ -472,17 +451,17 @@ place.svg
 
 <footer>
 
-<div class="slide-no">15</div>
+<div class="slide-no">14</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
 </article>
 <article class="slide level-3" id="img-folder">
 
-<h3>img folder<a class="headerlink" href="../../workbook/index.html#img-folder" title="View HTML">§</a></h3>
+<h3>IMG folder<a class="headerlink" href="../../workbook/index.html#img-folder" title="View HTML">§</a></h3>
 
 <p>The root <code class="file docutils literal notranslate"><span class="pre">img</span></code> folder is primarily used for branding or common screens such as how to login.:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gc_geosever_logo_300x300.png
@@ -515,10 +494,10 @@ gray_preview.png
 
 <footer>
 
-<div class="slide-no">16</div>
+<div class="slide-no">15</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -529,7 +508,7 @@ gray_preview.png
 
 <p>Use straight forward writing with three levels of headings:</p>
 <ul class="simple">
-<li>Consistency is required as content is generted into both slides and workbooks</li>
+<li>Consistency is required as content is generated into both slides and workbooks</li>
 <li>Consistent structure and writing is both profesional and functional helping comprehension and ability to scan and review material.</li>
 </ul>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Page</span>
@@ -554,10 +533,10 @@ Step-by-step instructions.
 
 <footer>
 
-<div class="slide-no">17</div>
+<div class="slide-no">16</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -577,10 +556,10 @@ Step-by-step instructions.
 
 <footer>
 
-<div class="slide-no">18</div>
+<div class="slide-no">17</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -606,10 +585,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">19</div>
+<div class="slide-no">18</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -638,10 +617,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">20</div>
+<div class="slide-no">19</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -666,10 +645,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">21</div>
+<div class="slide-no">20</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -693,10 +672,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">22</div>
+<div class="slide-no">21</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -719,10 +698,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">23</div>
+<div class="slide-no">22</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -740,10 +719,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">24</div>
+<div class="slide-no">23</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -765,10 +744,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">25</div>
+<div class="slide-no">24</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -796,10 +775,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">26</div>
+<div class="slide-no">25</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -824,10 +803,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">27</div>
+<div class="slide-no">26</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -848,10 +827,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">28</div>
+<div class="slide-no">27</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -869,10 +848,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">29</div>
+<div class="slide-no">28</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -901,10 +880,10 @@ Slide content
 
 <footer>
 
-<div class="slide-no">30</div>
+<div class="slide-no">29</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -912,6 +891,116 @@ Slide content
 <article class="slide level-3" id="id20">
 
 <h3>Slide directive inline-contents<a class="headerlink" href="../../workbook/index.html#id20" title="View HTML">§</a></h3>
+
+
+
+<footer>
+
+<div class="slide-no">30</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-4" id="special-themes">
+
+<h4>Special Themes<a class="headerlink" href="../../workbook/index.html#special-themes" title="View HTML">§</a></h4>
+
+<table border="1" class="docutils align-default" id="id4">
+<caption><span class="caption-text">A list of the current special slides<a class="headerlink" href="../../workbook/index.html#id4" title="View HTML">§</a></span></caption>
+<colgroup>
+<col width="20%" />
+<col width="40%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Class</th>
+<th class="head">Extra</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Introduction</td>
+<td>Standard GeoCat introduction (Logo + Text). Title is not used.</td>
+<td><cite>:class: slide-intro</cite></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Author</td>
+<td>Page for the Author</td>
+<td><cite>:class: slide-author</cite></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Heart</td>
+<td>Adds the t-shirt slogan: Put your Heart in everything you do!</td>
+<td><cite>:class: slide-heart</cite></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>GeoCat</td>
+<td>Adds the lighter blue background, to be used for a title page, the 'title' is centered, do not use with additional text</td>
+<td><cite>:class: slide-geocat</cite></td>
+<td>Background color: #009BD2</td>
+</tr>
+<tr class="row-even"><td>GeoNetwork</td>
+<td>To be used for a GeoNetwork Enterprise title page, the 'title' is centered, do not use with additional text</td>
+<td><cite>:class: slide-geonetwork</cite></td>
+<td>Background color: #0099CC</td>
+</tr>
+<tr class="row-odd"><td>GeoServer</td>
+<td>To be used for a GeoServer Enterprise title page, the 'title' is centered, do not use with additional text</td>
+<td><cite>:class: slide-geoserver</cite></td>
+<td>Background color: #00AD9F</td>
+</tr>
+<tr class="row-even"><td>Bridge</td>
+<td>Adds the yellow background, to be used for a Bridge title page, the 'title' is centered, do not use with additional text</td>
+<td><cite>:class: slide-bridge</cite></td>
+<td>Background color: #FFD200</td>
+</tr>
+<tr class="row-odd"><td>Live</td>
+<td>Adds the orange background, to be used for a Live title page, the 'title' is centered, do not use with additional text</td>
+<td><cite>:class: slide-live</cite></td>
+<td>Background color: #FF9900</td>
+</tr>
+<tr class="row-even"><td>Service</td>
+<td>Adds the dark blue background, to be used for a GeoCat Services title page, the 'title' is centered, do not use with additional text</td>
+<td><cite>:class: slide-service</cite></td>
+<td>Background color: #1F1249</td>
+</tr>
+<tr class="row-odd"><td>Bennekom</td>
+<td>Adds a photo of Bennekom as background, do not use with additional text</td>
+<td><cite>:class: slide-bennekom</cite></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Victoria</td>
+<td>Adds a photo of Victoria as background, do not use with additional text</td>
+<td><cite>:class: slide-victoria</cite></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Outro</td>
+<td>Slide to end your workshop/presentation, the content is positioned at the bottom, designed for a maximum of 2 lines of text</td>
+<td><cite>:class: slide-outro</cite></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+
+
+<footer>
+
+<div class="slide-no">31</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-4" id="slide-directive-inline-contents">
+
+<h4>Slide directive inline-contents<a class="headerlink" href="../../workbook/index.html#slide-directive-inline-contents" title="View HTML">§</a></h4>
 
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
@@ -923,21 +1012,21 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">31</div>
+<div class="slide-no">32</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
 </article>
-<article class="slide level-3" id="id21">
+<article class="slide level-4" id="id21">
 
-<h3>Slide directive<a class="headerlink" href="../../workbook/index.html#id21" title="View HTML">§</a></h3>
+<h4>Slide directive inline-contents<a class="headerlink" href="../../workbook/index.html#id21" title="View HTML">§</a></h4>
 
 <div class="admonition-example admonition">
 <p class="first admonition-title">Example</p>
-<div class="last figure align-default" id="id4">
+<div class="last figure align-default" id="id5">
 <img alt="../_images/slide-inline-example.png" src="../_images/slide-inline-example.png" />
 <p class="caption"><span class="caption-text">Slide inline-contents example</span></p>
 </div>
@@ -946,17 +1035,17 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">32</div>
+<div class="slide-no">33</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
 </article>
-<article class="slide level-3" id="id22">
+<article class="slide level-4" id="id22">
 
-<h3>Slide directive<a class="headerlink" href="../../workbook/index.html#id22" title="View HTML">§</a></h3>
+<h4>Slide directive inline-contents<a class="headerlink" href="../../workbook/index.html#id22" title="View HTML">§</a></h4>
 
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> GeoCat Documentation Example
    <span class="nc">:level:</span> 2
@@ -969,10 +1058,195 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">33</div>
+<div class="slide-no">34</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-3" id="special-markup">
+
+<h3>Special Markup<a class="headerlink" href="../../workbook/index.html#special-markup" title="View HTML">§</a></h3>
+
+
+
+<footer>
+
+<div class="slide-no">35</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-4" id="text-size">
+
+<h4>Text size<a class="headerlink" href="../../workbook/index.html#text-size" title="View HTML">§</a></h4>
+
+<p>By adding a class the text of a slide, or just a block can be changed. The available classes are: <code class="docutils literal notranslate"><span class="pre">text-50</span></code>, <code class="docutils literal notranslate"><span class="pre">text-60</span></code>, <code class="docutils literal notranslate"><span class="pre">text-70</span></code>, <code class="docutils literal notranslate"><span class="pre">text-80</span></code> and <code class="docutils literal notranslate"><span class="pre">text-90</span></code></p>
+<p>Usage:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> GeoCat Slides Example
+<span class="linenos">2</span>   <span class="nc">:level:</span> 1
+<span class="linenos">3</span>   <span class="nc">:class:</span> text-50
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">36</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-4" id="containers">
+
+<h4>Containers<a class="headerlink" href="../../workbook/index.html#containers" title="View HTML">§</a></h4>
+
+<p>Containers in <code class="docutils literal notranslate"><span class="pre">rst</span></code> will be translated to a HTML <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>. The text after the <code class="docutils literal notranslate"><span class="pre">::</span></code> will be the class names(s) of the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, so adding more than 1 term will end up in more than 1 class.</p>
+<p>A container can be used to manipulate text size for a small part of the slide for example. However, the text size of the title element is left as-is.</p>
+<p>Usage:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Container example
+<span class="linenos">2</span>   <span class="nc">:level:</span> 2
+<span class="linenos">3</span>   <span class="nc">:inline-contents:</span> False
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="p">   ..</span> <span class="ow">container</span><span class="p">::</span> col-container
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">37</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-4" id="grids">
+
+<h4>Grids<a class="headerlink" href="../../workbook/index.html#grids" title="View HTML">§</a></h4>
+
+<p>When you want to display your contents in 2 (or 3) columns you have to use nested containers. The first container gets the class <code class="docutils literal notranslate"><span class="pre">col-container</span></code> and the children get class <code class="docutils literal notranslate"><span class="pre">col-6</span></code> for example.
+Everything is based on a 12 column grid, so the columns should total 12. So you can use 2 columns of <code class="docutils literal notranslate"><span class="pre">col-6</span></code>, or a column of <code class="docutils literal notranslate"><span class="pre">col-4</span></code> and <code class="docutils literal notranslate"><span class="pre">col-8</span></code>.</p>
+<p>The following column options are available:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">col-4</span></code> - <cite>for 2 or 3 column layouts</cite></li>
+<li><code class="docutils literal notranslate"><span class="pre">col-6</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">col-8</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">col-12</span></code> - <cite>special case for vertically centering texts</cite></li>
+<li><code class="docutils literal notranslate"><span class="pre">col-middle</span></code> (alias: <code class="docutils literal notranslate"><span class="pre">col-center</span></code>) - <cite>vertically center text/content</cite></li>
+<li><code class="docutils literal notranslate"><span class="pre">col-bottom</span></code> (alias: <code class="docutils literal notranslate"><span class="pre">col-end</span></code>) - <cite>align text/content to the bottom</cite></li>
+<li><code class="docutils literal notranslate"><span class="pre">col-left</span></code> - <cite>align content to the left of the column</cite></li>
+<li><code class="docutils literal notranslate"><span class="pre">col-right</span></code>  - <cite>align content to the right of the column</cite></li>
+</ul>
+<p>Usage:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Example with Grid
+<span class="linenos"> 2</span>   <span class="nc">:level:</span> 2
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="p">   ..</span> <span class="ow">container</span><span class="p">::</span> col-container
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="p">      ..</span> <span class="ow">container</span><span class="p">::</span> col-6 col-middle text-80
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>         Depending on the view configuration, editors can reorder elements using up and down controls.
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="p">      ..</span> <span class="ow">container</span><span class="p">::</span> col-6
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="p">         ..</span> <span class="ow">figure</span><span class="p">::</span> img/editor-control-updown.png
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">38</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-4" id="vertically-aligned-text-or-content">
+
+<h4>Vertically aligned text (or content)<a class="headerlink" href="../../workbook/index.html#vertically-aligned-text-or-content" title="View HTML">§</a></h4>
+
+<p>Some extra configuration is needed to vertically align text, it's a combination of css flexbox and grid.</p>
+<p>The slide itself needs a class <code class="docutils literal notranslate"><span class="pre">box</span></code>, the content needs a container with class <code class="docutils literal notranslate"><span class="pre">col-container</span></code> and a child with the classes <code class="docutils literal notranslate"><span class="pre">col-12</span></code> and <code class="docutils literal notranslate"><span class="pre">col-middle</span></code> or <code class="docutils literal notranslate"><span class="pre">col-bottom</span></code></p>
+<p>Available classes:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">col-middle</span></code> (alias: <code class="docutils literal notranslate"><span class="pre">col-center</span></code>) - vertically center text/content</li>
+<li><code class="docutils literal notranslate"><span class="pre">col-bottom</span></code> (alias: <code class="docutils literal notranslate"><span class="pre">col-end</span></code>) - align text/content to the bottom</li>
+</ul>
+<p>Usage:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Vertical text example
+<span class="linenos">2</span>   <span class="nc">:level:</span> 2
+<span class="linenos">3</span>   <span class="nc">:class:</span> box
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="p">   ..</span> <span class="ow">container</span><span class="p">::</span> col-container
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="p">      ..</span> <span class="ow">container</span><span class="p">::</span> col-12 col-middle blue
+<span class="linenos">8</span>
+<span class="linenos">9</span>         Depending on the view configuration, editors can reorder elements using up and down controls.
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">39</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
+
+</footer>
+
+</article>
+<article class="slide level-4" id="custom-colours">
+
+<h4>Custom colours<a class="headerlink" href="../../workbook/index.html#custom-colours" title="View HTML">§</a></h4>
+
+<p>The base styles have some colouring options, you can use the class directly, or [declare a role](<a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html#custom-interpreted-text-roles">https://docutils.sourceforge.io/docs/ref/rst/directives.html#custom-interpreted-text-roles</a>) and use it inline. The role has to be declared on the same level as a slide.</p>
+<p>Available classes (roles):</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">blue</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">yellow</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">green</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">red</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">black</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">white</span></code></li>
+</ul>
+<p>Example with a <code class="docutils literal notranslate"><span class="pre">role</span></code> and class (<code class="docutils literal notranslate"><span class="pre">blue</span></code>):</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">role</span><span class="p">::</span> green
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="p">..</span> <span class="ow">slide</span><span class="p">::</span> Re-ordering elements
+<span class="linenos"> 4</span>   <span class="nc">:level:</span> 2
+<span class="linenos"> 5</span>   <span class="nc">:inline-contents:</span> False
+<span class="linenos"> 6</span>   <span class="nc">:class:</span> box
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="p">   ..</span> <span class="ow">container</span><span class="p">::</span> col-container
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="p">      ..</span> <span class="ow">container</span><span class="p">::</span> col-12 col-middle blue
+<span class="linenos">11</span>
+<span class="linenos">12</span>         Depending on the view configuration, <span class="na">:green:</span><span class="nv">``editors can`</span>` reorder elements using up and down controls.
+</pre></div>
+</div>
+
+
+<footer>
+
+<div class="slide-no">40</div>
+
+
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -997,10 +1271,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">34</div>
+<div class="slide-no">41</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1022,10 +1296,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">35</div>
+<div class="slide-no">42</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1038,10 +1312,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">36</div>
+<div class="slide-no">43</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1100,10 +1374,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">37</div>
+<div class="slide-no">44</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1136,10 +1410,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">38</div>
+<div class="slide-no">45</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1168,10 +1442,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">39</div>
+<div class="slide-no">46</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1201,10 +1475,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">40</div>
+<div class="slide-no">47</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1244,10 +1518,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">41</div>
+<div class="slide-no">48</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1260,7 +1534,7 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 <p class="first admonition-title">Example</p>
 <ol class="last arabic">
 <li><p class="first">Log in as the GeoServer administrator.</p>
-<table border="1" class="colwidths-given docutils align-default" style="width: 100%">
+<table border="1" class="docutils align-default" style="width: 100%">
 <colgroup>
 <col width="30%" />
 <col width="70%" />
@@ -1277,7 +1551,7 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 </tr>
 </tbody>
 </table>
-<div class="figure align-default" id="id5">
+<div class="figure align-default" id="id6">
 <img alt="../_images/server_geoserver_login.png" src="../_images/server_geoserver_login.png" />
 <p class="caption"><span class="caption-text">GeoServer Welcome page</span></p>
 </div>
@@ -1288,10 +1562,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">42</div>
+<div class="slide-no">49</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1310,10 +1584,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">43</div>
+<div class="slide-no">50</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1333,10 +1607,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">44</div>
+<div class="slide-no">51</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 
@@ -1350,10 +1624,10 @@ Writing guide with cut-and-paste examples for your own documentation, user manua
 
 <footer>
 
-<div class="slide-no">45</div>
+<div class="slide-no">52</div>
 
 
-<div class="slide-footer">GeoCat 2021.11</div>
+<div class="slide-footer">GeoCat 2023.05</div>
 
 </footer>
 

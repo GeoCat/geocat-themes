@@ -30,6 +30,21 @@ ant clean
 ant build
 ```
 
+Targets for workbook:
+```
+ant workbook
+ant package
+ant workbook-site
+```
+
+Targets for instructor materials:
+``
+ant instructor
+ant slides
+ant bundle
+ant instructor-site
+``
+
 # GitHub Pages
 
 This project is deployed GitHub pages using the `docs` folder at the root of the project.
