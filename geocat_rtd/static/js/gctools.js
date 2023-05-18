@@ -57,7 +57,7 @@ var FixLocalHostExamples = {
         var live = (params.live) ? params.live[0].split(/\s+/) : [];
         var domain = (params.domain) ? params.domain[0].split(/\s+/) : [];
         var geoserverSearch = "http://localhost:8080/geoserver";
-        var geoserverReplace;
+        var geoserverReplace = "";
         var geonetworkSearch = "http://localhost:8080/geonetwork";
         var geonetworkReplace;
         
