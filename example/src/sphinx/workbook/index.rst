@@ -75,7 +75,7 @@ An override perform a search and replace the generated output.
 
 .. nextslide:: postprocessing
 
-Postprocessing is used to handle localhost:8080 `links <http://localhost:8080/index.html>`__ in sample data and generated html:
+Postprocessing is used to handle ``http://localhost:8080/geoserver`` links in sample data and generated html:
 
    .. literalinclude:: files/example.json
      :language: json
@@ -87,20 +87,12 @@ Postprocessing is used to handle localhost:8080 `links <http://localhost:8080/in
       :language: json
       :linenos:
 
-.. nextslide:: dynamic processed
-
-Testing:
-
-* https://$PARAMETER/geoserver
-* `welcome page <https://$PARAMETER/geoserver>`__
-* https://localhost:8080/geoserver
-* https://localhost:8080/geoserver/wms
-* `welcome page <https://localhost:8080/geoserver>`__
+See also :doc:`../example` .
 
 README.md
 ---------
 
-Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflicting with sphinx-build.
+Shown when browsing content in GitHub and GitLab.
 
 .. if notslides::
    
@@ -108,6 +100,8 @@ Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflic
       :language: markdown
       :linenos:
 
+Note :command:`sphinx-build` can process markdown files, however an ``exclude_pattern`` has been configured to avoid processing :file:`README.md` file.
+ 
 conf.py
 -------
 

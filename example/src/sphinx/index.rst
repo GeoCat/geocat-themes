@@ -28,6 +28,7 @@ GeoCat Documentation Example
   
       guide/index
       workbook/index
+      example
 
 .. toctree::
    :caption: Reference

@@ -1,0 +1,8 @@
+sphinx
+sphinx-autobuild
+hieroglyph
+Pillow
+python-levenshtein
+myst-parser
+sphinx-copybutton
+sphinx_rtd_theme

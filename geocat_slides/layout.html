@@ -30,9 +30,10 @@
 {%- endmacro %}
 
 {%- macro script() %}
+    <script type="text/javascript" id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '{{ url_root }}',
+        URL_ROOT:    document.getElementById("documentation_options").getAttribute('data-url_root'),
         VERSION:     '{{ release|e }}',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
@@ -58,16 +59,21 @@
 {%- macro css() %}
     <link rel="stylesheet" href="{{ pathto('_static/basic.css', 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/styles.css', 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
     {% if theme_custom_css %}
     <link rel="stylesheet" href="{{ pathto('_static/' + theme_custom_css, 1) }}" type="text/css" />
     {% endif %}
     {% block template_css %}
     {% endblock %}
+    
     {%- for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
     {%- endfor %}
+    
+    {%- for cssfile in extra_css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    {%- endfor -%}
 {%- endmacro %}
 
 <html>

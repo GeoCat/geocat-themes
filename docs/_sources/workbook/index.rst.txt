@@ -8,7 +8,7 @@ Setting up a half-day training workbook.
    :ref:`^<contents>`
 
 .. ifnotslides::
-   
+
    Workbooks are carefully constructed to be used as:
    
    * attendee notes and step-by-step exercises
@@ -75,7 +75,7 @@ An override perform a search and replace the generated output.
 
 .. nextslide:: postprocessing
 
-Postprocessing is used to handle localhost:8080 `links <http://localhost:8080/index.html>`__ in sample data and generated html:
+Postprocessing is used to handle ``http://localhost:8080/geoserver`` links in sample data and generated html:
 
    .. literalinclude:: files/example.json
      :language: json
@@ -87,20 +87,12 @@ Postprocessing is used to handle localhost:8080 `links <http://localhost:8080/in
       :language: json
       :linenos:
 
-.. nextslide:: dynamic processed
-
-Testing:
-
-* https://$PARAMETER/geoserver
-* `welcome page <https://$PARAMETER/geoserver>`__
-* https://localhost:8080/geoserver
-* https://localhost:8080/geoserver/wms
-* `welcome page <https://localhost:8080/geoserver>`__
+See also :doc:`../example` .
 
 README.md
 ---------
 
-Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflicting with sphinx-build.
+Shown when browsing content in GitHub and GitLab.
 
 .. if notslides::
    
@@ -108,6 +100,8 @@ Shown when browsing content in GitHub and GitLab. Markdown used to avoid conflic
       :language: markdown
       :linenos:
 
+Note :command:`sphinx-build` can process markdown files, however an ``exclude_pattern`` has been configured to avoid processing :file:`README.md` file.
+ 
 conf.py
 -------
 
@@ -202,7 +196,7 @@ Figures are provided with a caption describing the content (even if that ends up
 
 Recommend use of a single shared `figure` folder as shown above with (leading :file:`/` indicates path is relative to the :file:`config.py` file). This makes it easier to manage and update diagrams.
 
-files folder
+Files folder
 ------------
 
 Used for scripts, configuration files, and sample data such as icons::
@@ -227,7 +221,7 @@ Scripts and configuration files are often presented as a code example using `lit
          .. literalinclude:: files/elevation.sld
             :language: xml
 
-img folder
+IMG folder
 ----------
 
 The root :file:`img` folder is primarily used for branding or common screens such as how to login.::
@@ -261,7 +255,7 @@ Page index.rst
 
 Use straight forward writing with three levels of headings:
 
-* Consistency is required as content is generted into both slides and workbooks
+* Consistency is required as content is generated into both slides and workbooks
 * Consistent structure and writing is both profesional and functional helping comprehension and ability to scan and review material.
 
 .. code-block:: rst
@@ -479,9 +473,70 @@ Note `ref` link to return to top-level ``.. _contents:`` anchor:
 
 .. nextslide:: Slide directive inline-contents
 
+Special Themes
+++++++++++++++
+
+.. list-table:: A list of the current special slides
+   :widths: 20 40 20 20
+   :header-rows: 1
+
+   * - Type
+     - Description
+     - Class
+     - Extra
+   * - Introduction
+     - Standard GeoCat introduction (Logo + Text). Title is not used.
+     - `:class: slide-intro`
+     -
+   * - Author
+     - Page for the Author
+     - `:class: slide-author`
+     -
+   * - Heart
+     - Adds the t-shirt slogan: Put your Heart in everything you do!
+     - `:class: slide-heart`
+     -
+   * - GeoCat
+     - Adds the lighter blue background, to be used for a title page, the 'title' is centered, do not use with additional text
+     - `:class: slide-geocat`
+     - Background color: #009BD2
+   * - GeoNetwork
+     - To be used for a GeoNetwork Enterprise title page, the 'title' is centered, do not use with additional text
+     - `:class: slide-geonetwork`
+     - Background color: #0099CC
+   * - GeoServer
+     - To be used for a GeoServer Enterprise title page, the 'title' is centered, do not use with additional text
+     - `:class: slide-geoserver`
+     - Background color: #00AD9F
+   * - Bridge
+     - Adds the yellow background, to be used for a Bridge title page, the 'title' is centered, do not use with additional text
+     - `:class: slide-bridge`
+     - Background color: #FFD200
+   * - Live
+     - Adds the orange background, to be used for a Live title page, the 'title' is centered, do not use with additional text
+     - `:class: slide-live`
+     - Background color: #FF9900
+   * - Service
+     - Adds the dark blue background, to be used for a GeoCat Services title page, the 'title' is centered, do not use with additional text
+     - `:class: slide-service`
+     - Background color: #1F1249
+   * - Bennekom
+     - Adds a photo of Bennekom as background, do not use with additional text
+     - `:class: slide-bennekom`
+     -
+   * - Victoria
+     - Adds a photo of Victoria as background, do not use with additional text
+     - `:class: slide-victoria`
+     -
+   * - Outro
+     - Slide to end your workshop/presentation, the content is positioned at the bottom, designed for a maximum of 2 lines of text
+     - `:class: slide-outro`
+     -
+
 .. ifnotslides::
    
-   Slide directive inline-contents
+Slide directive inline-contents
++++++++++++++++++++++++++++++++
 
 .. admonition:: Example
 
@@ -506,6 +561,137 @@ Note `ref` link to return to top-level ``.. _contents:`` anchor:
       :inline-contents: True
   
       Writing guide with cut-and-paste examples for your own documentation, user manuals, and training materials.
+
+Special Markup
+--------------
+
+Text size
++++++++++
+
+By adding a class the text of a slide, or just a block can be changed. The available classes are: ``text-50``, ``text-60``, ``text-70``, ``text-80`` and ``text-90``
+
+Usage:
+
+.. code-block:: rst
+   :linenos:
+
+   .. slide:: GeoCat Slides Example
+      :level: 1
+      :class: text-50
+
+Containers
+++++++++++
+
+Containers in ``rst`` will be translated to a HTML ``<div>``. The text after the ``::`` will be the class names(s) of the ``<div>``, so adding more than 1 term will end up in more than 1 class.
+
+A container can be used to manipulate text size for a small part of the slide for example. However, the text size of the title element is left as-is.
+
+Usage:
+
+.. code-block:: rst
+   :linenos:
+
+   .. slide:: Container example
+      :level: 2
+      :inline-contents: False
+
+      .. container:: col-container
+
+
+Grids
++++++
+
+When you want to display your contents in 2 (or 3) columns you have to use nested containers. The first container gets the class ``col-container`` and the children get class ``col-6`` for example.
+Everything is based on a 12 column grid, so the columns should total 12. So you can use 2 columns of ``col-6``, or a column of ``col-4`` and ``col-8``.
+
+The following column options are available:
+
+* ``col-4`` - `for 2 or 3 column layouts`
+* ``col-6``
+* ``col-8``
+* ``col-12`` - `special case for vertically centering texts`
+* ``col-middle`` (alias: ``col-center``) - `vertically center text/content`
+* ``col-bottom`` (alias: ``col-end``) - `align text/content to the bottom`
+* ``col-left`` - `align content to the left of the column`
+* ``col-right``  - `align content to the right of the column`
+
+Usage:
+
+.. code-block:: rst
+   :linenos:
+
+   .. slide:: Example with Grid
+      :level: 2
+
+      .. container:: col-container
+
+         .. container:: col-6 col-middle text-80
+
+            Depending on the view configuration, editors can reorder elements using up and down controls.
+
+         .. container:: col-6
+
+            .. figure:: img/editor-control-updown.png
+
+Vertically aligned text (or content)
+++++++++++++++++++++++++++++++++++++
+
+Some extra configuration is needed to vertically align text, it's a combination of css flexbox and grid.
+
+The slide itself needs a class ``box``, the content needs a container with class ``col-container`` and a child with the classes ``col-12`` and ``col-middle`` or ``col-bottom``
+
+Available classes:
+
+* ``col-middle`` (alias: ``col-center``) - vertically center text/content
+* ``col-bottom`` (alias: ``col-end``) - align text/content to the bottom
+
+Usage:
+
+.. code-block:: rst
+   :linenos:
+
+   .. slide:: Vertical text example
+      :level: 2
+      :class: box
+
+      .. container:: col-container
+
+         .. container:: col-12 col-middle blue
+
+            Depending on the view configuration, editors can reorder elements using up and down controls.
+
+Custom colours
+++++++++++++++
+
+The base styles have some colouring options, you can use the class directly, or [declare a role](https://docutils.sourceforge.io/docs/ref/rst/directives.html#custom-interpreted-text-roles) and use it inline. The role has to be declared on the same level as a slide.
+
+Available classes (roles):
+
+* ``blue``
+* ``yellow``
+* ``green``
+* ``red``
+* ``black``
+* ``white``
+
+Example with a ``role`` and class (``blue``):
+
+.. code-block:: rst
+   :linenos:
+
+   .. role:: green
+
+   .. slide:: Re-ordering elements
+      :level: 2
+      :inline-contents: False
+      :class: box
+
+      .. container:: col-container
+
+         .. container:: col-12 col-middle blue
+
+            Depending on the view configuration, :green:``editors can`` reorder elements using up and down controls.
+
 
 Instructor notes
 ----------------

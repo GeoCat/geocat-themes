@@ -65,11 +65,13 @@ release = now.strftime('%Y.%m.%d')
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+  'sphinxcontrib.jquery',
   'sphinx.ext.todo',
   'sphinx.ext.ifconfig',
   'sphinx.ext.extlinks',
   'hieroglyph',
-  'sphinx_copybutton'
+  'sphinx_copybutton',
+  'myst_parser'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -99,7 +101,7 @@ language = 'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['Thumbs.db', '.DS_Store']
+exclude_patterns = ['**/Thumbs.db', '**/.DS_Store','**/README.md']
 
 # highlight language pygments lexer name (defaults to 'default' tries python3 and falls back to none)
 highlight_language = 'none'
@@ -167,6 +169,10 @@ html_show_sourcelink = False
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 #html_static_path = ['_static']
+
+html_js_files = [
+    'js/gctools.js'
+]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
