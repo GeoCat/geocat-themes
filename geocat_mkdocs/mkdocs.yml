@@ -1,8 +1,21 @@
 site_name: GeoCat Products
+# site_description: GeoCat is pleased to offer our customers an enterprise distribution of GeoNetwork offering a long-term-support, additionals schema plugins, a clean visual appearance, backed by our friendly commercial support.
+# site_dir: target/html
+# site_url:  !ENV [SITE_URL, 'https://www.geocat.net/docs/geonetwork-enterprise/']
+
+# Repository
+# repo_name: core-geonetwork
+# repo_url: https://github.com/geonetwork/core-geonetwork
+# edit_uri: edit/main/docs/manual/docs
+
 theme:
   name: material
+  language: en
   custom_dir: overrides
-  logo: assets/LogoOnly.svg
+  logo: assets/geocat-logo-notext-white.svg
+  favicon: assets/geocat-logo-notext.png
+  icon:
+    repo: fontawesome/brands/github
   palette:
 
     # Palette toggle for light mode
@@ -22,29 +35,43 @@ theme:
         name: Switch to light mode
 
   features:
-    - navigation.tabs
-    - content.code.annotate
+    - content.action.view
+    - content.action.edit
+    - content.code.copy
     - content.tabs.link
-    - navigation.expand
-    - navigation.top
-    - search.highlight
-    - search.share
-    - search.suggest
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.prune
+    - navigation.indexes
     - toc.follow
+    - navigation.top
+    - navigation.footer
+    - announce.dismiss
 
   font:
     text: Roboto
     code: Roboto Mono
 
+# Copyright
+copyright: Copyright &copy; 2001 - 2023 GeoCat BV
+
 extra_css:
   - stylesheets/extra.css
 
+# Extensions
 markdown_extensions:
   - admonition
   - attr_list
+  - def_list
   - tables
   - pymdownx.smartsymbols
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -58,20 +85,22 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - attr_list
   - md_in_html
   - pymdownx.keys
   - toc:
       permalink: true
       permalink_title: Anchor link to this section for reference
 
-copyright: Copyright &copy; 2022 GeoCat BV
-
 plugins:
   - search
   - inline-svg
 
 extra:
+  version:
+    provider: mike
+    default: stable
+  # redirect the logo link to another page, not to the home of the docs
+  # homepage: https://geonetwork-opensource.org/
   social:
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/geocatbv
