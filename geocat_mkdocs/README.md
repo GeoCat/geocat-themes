@@ -12,11 +12,6 @@ A quick preview (not use preprocessing of includes) is available using:
 mkdocs serve
 ```
 
-A quick preview using ant to preprocess includes is available using:
-```
-ant build-serve
-```
-
 ## Material for mkdocs
 
 * https://squidfunk.github.io/mkdocs-material/
