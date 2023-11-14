@@ -64,13 +64,13 @@ Changes are done to the working copy, that should go through the approval proces
 
 Once approved, the content of the working copy replaces the approved version and the working copy is removed.
 
-![Schema](assets/images/geoserver_data_directory_dark.svg)
+![Schema](images/geoserver_data_directory_dark.svg)
 
 Images can be different for _light_ and _dark_ mode:
 
-![Schema](assets/images/geoserver_data_directory.svg#only-light)
-![Schema](assets/images/geoserver_data_directory_dark.svg#only-dark)
+![Schema](images/geoserver_data_directory.svg#only-light)
+![Schema](images/geoserver_data_directory_dark.svg#only-dark)
 
 ## SVG Testing ground
 
-![Schema](assets/images/geoserver_webadministration.svg)
+![Schema](images/geoserver_webadministration.svg)

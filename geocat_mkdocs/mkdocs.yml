@@ -12,8 +12,8 @@ theme:
   name: material
   language: en
   custom_dir: overrides
-  logo: assets/geocat-logo-notext-white.svg
-  favicon: assets/geocat-logo-notext.png
+  logo: assets/images/geocat-logo-notext-white.svg
+  favicon: assets/images/geocat-logo-notext.png
   icon:
     repo: fontawesome/brands/github
   palette:
