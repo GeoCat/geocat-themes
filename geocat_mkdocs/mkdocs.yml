@@ -3,7 +3,7 @@ site_name: GeoCat Products
 # site_dir: target/html
 # site_url:  !ENV [SITE_URL, 'https://www.geocat.net/docs/geonetwork-enterprise/']
 
-# Repository
+# Repository - for GNE and GSE
 # repo_name: core-geonetwork
 # repo_url: https://github.com/geonetwork/core-geonetwork
 # edit_uri: edit/main/docs/manual/docs
@@ -49,14 +49,14 @@ theme:
     - announce.dismiss
 
   font:
-    text: Roboto
+    text: Inter
     code: Roboto Mono
 
 # Copyright
 copyright: Copyright &copy; 2001 - 2023 GeoCat BV
 
 extra_css:
-  - stylesheets/extra.css
+  - assets/stylesheets/extra.css
 
 # Extensions
 markdown_extensions:
@@ -93,14 +93,18 @@ markdown_extensions:
 
 plugins:
   - search
+  # inline links for styling and searching
   - inline-svg
 
 extra:
   version:
     provider: mike
     default: stable
+
   # redirect the logo link to another page, not to the home of the docs
   # homepage: https://geonetwork-opensource.org/
+
+  # social links in the footer
   social:
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/geocatbv
