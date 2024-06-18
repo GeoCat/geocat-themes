@@ -109,10 +109,18 @@ extra:
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/geocatbv
       name: GeoCat on Facebook
-    - icon: fontawesome/brands/x-twitter
-      link: https://twitter.com/geocat_bv
     - icon: fontawesome/brands/instagram
-      link: https://instagram.com/geocat_bv
+      link: https://www.instagram.com/geocat_bv
+      name: GeoCat on Instagram
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/geocat-bv
+      name: GeoCat on LinkedIn
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@geocat
+      name: GeoCat on Mastodon
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@geocatvideo
+      name: GeoCat on YouTube
 
 # Page tree
 nav:
