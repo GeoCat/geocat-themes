@@ -74,22 +74,29 @@
 	width: var(--gc-sidebar-width);
 }
 /* version */
-.wy-side-nav-search > div.version:before {
-	content: "v";
-	font-weight: normal;
-	text-align: left;
-	text-transform: uppercase;
-	font-size: 14px;
-}
 .wy-side-nav-search > div.version {
+	position: absolute;
+	top: 75px;
+	left: 0;
 	font-weight: bold;
-	background-color: var(--gc-gray-700);
-	color: var(--gc-white);
-	padding: 4px 8px;
+	/* default color - neutral color based on the GeoCat name */
+	color: #1d1934; /*var(--gc-white);*/
+	padding: 0;
 	border-radius: var(--gc-border-radius);
 	display: inline-block;
-	margin-left: 70px;
+	margin: 15px 0 0 20px;
+	width: 70px;
+	text-align: center;
 }
+/* another text color for Live docs - based on the the logo name containing '_live' in the src name */
+.wy-side-nav-search:has(img[src*="_live"]) > div.version {
+	color: #2c9ad7;
+}
+/* another text color for Map docs - based on the the logo name containing '_map' in the src name */
+.wy-side-nav-search:has(img[src*="_map"]) > div.version {
+	color: #24ad9f;
+}
+
 /* search */
 .wy-side-nav-search {
 	background-color: var(--gc-white);
@@ -104,10 +111,14 @@
 }
 .wy-side-nav-search>a {
 	margin-bottom: 0;
+	width: var(--gc-sidebar-width);
+	height: 125px;
 }
 .wy-side-nav-search>a img.logo {
 	padding: var(--gc-spacing-default);
 	max-height: 150px;
+	width: 230px;
+	margin: 0;
 }
 #rtd-search-form {
 	padding: 15px;
