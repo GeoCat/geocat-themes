@@ -35,7 +35,7 @@
     {% block breadcrumbs %}
       <!-- link to GeoCat docs home -->
       {% if theme_show_home %}
-        <li class="wy-breadcrumb-first"><a href="https://www.geocat.net/docs" title="GeoCat Documents Home" class="icon icon-home"> Docs</a></li>
+        <li class="wy-breadcrumb-first"><a href="https://www.geocat.net/docs" title="GeoCat Documents Home" class="icon icon-home" aria-label="Home"> Docs</a></li>
         <li>
       {% else %}
         <li class="wy-breadcrumb-first">
@@ -44,9 +44,9 @@
         </li>
       {% if title != project %}
           {% for doc in parents %}
-            <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
           {% endfor %}
-          <li>{{ title }}</li>
+          <li class="breadcrumb-item active">{{ title }}</li>
       {% endif %}
     {% endblock %}
     {% block breadcrumbs_aside %}

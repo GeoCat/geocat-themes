@@ -5,4 +5,4 @@ Pillow
 python-levenshtein
 myst-parser
 sphinx-copybutton
-sphinx_rtd_theme
+sphinx_rtd_theme==3.0.2
