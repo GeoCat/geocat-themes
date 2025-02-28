@@ -125,10 +125,16 @@
 }
 .wy-side-nav-search>a img.logo {
 	padding: var(--gc-spacing-default);
-	max-height: 150px;
+	max-height: 80px;
 	/* width: 230px; */
 	/* margin: 0; */
 }
+
+/* another padding for Live docs - based on the the logo name containing '_live' in the src name */
+.wy-side-nav-search:has(img[src*="_live"]) > a img.logo {
+	padding: 15px 145px 15px 5px;
+}
+
 #rtd-search-form {
 	padding: 15px;
 	border-top: 1px solid var(--gc-border-color);
