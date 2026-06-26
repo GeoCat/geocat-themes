@@ -1,7 +1,7 @@
 site_name: GeoCat Products
 # site_description: GeoCat is pleased to offer our customers an enterprise distribution of GeoNetwork offering a long-term-support, additionals schema plugins, a clean visual appearance, backed by our friendly commercial support.
 # site_dir: target/html
-# site_url:  !ENV [SITE_URL, 'https://www.geocat.net/docs/geonetwork-enterprise/']
+# site_url:  !ENV [SITE_URL, 'https://docs.geocat.com/find/']
 
 # Repository - for GNE and GSE
 # repo_name: core-geonetwork
